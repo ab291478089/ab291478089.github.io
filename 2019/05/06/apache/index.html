@@ -1,0 +1,765 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+       | Hexo
+    
+  </title>
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content>
+  <meta name="description" content>
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/Annie.css">
+  
+  <!-- jquery -->
+	<script src="/js/jquery.min.js"></script>
+
+  <!-- leancloud -->
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/js/leancloud.js"></script>
+</head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground" data-img-mode="normal" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+	<div class="mask">
+		<!-- Logo and navigation -->
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+						
+						<img src="/img/logo.png" alt="Logo">
+					
+				</a>
+			</div>
+			
+			<div id="navigation-show">
+				<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+
+	
+</ul>
+			</div>				
+		</div>
+
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<p class="motto"></p>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i>
+			</a>
+
+			
+				<!-- 
+	This is only a demo, please go to "https://time.is" to set your city time! 
+-->
+<style type="text/css">
+	.header-date {
+		font-size: 1.6rem;
+		color: #fff;
+		position: absolute;
+		bottom: 5px;
+		right: 1rem;
+		writing-mode: tb-rl;
+	}	
+	
+	.header-date a {
+		border-bottom: none;
+	}
+
+	@media only screen and (max-width: 768 ) {
+		.header-date {
+			font-size: 1rem;
+		}			
+	}
+</style>
+<div class="header-date">
+	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow"></a>
+	<span id="Beijing_z43d"></span>
+</div>
+<script src="//widget.time.is/zh.js"></script>
+<script>
+	time_is_widget.init({
+		Beijing_z43d:{
+			template:"DATE", 
+			date_format:"year年 monthname dnum日"
+		}
+	});
+</script>
+			
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			当前文章&nbsp;:&nbsp;《》
+		
+	</p>
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+
+	
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+		<script src="/plugin/toc/katelog.min.js"></script>
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+	<div class="article-title">
+		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+		
+	</div>
+
+	<div class="article-meta">
+		<span>
+			<i class="fa fa-calendar"></i>
+			
+
+
+	发布于
+
+	<a href="/2019/05/06/apache/" itemprop="url">
+		<time datetime="2019-05-06T10:36:08.739Z" itemprop="datePublished">
+	  		2019-05-06
+	  </time>
+	</a>
+	&nbsp;
+
+
+
+
+
+			
+
+
+
+
+	更新于
+
+	<a href="/2019/05/06/apache/" itemprop="url">
+		<time datetime="2019-05-06T10:36:08.739Z" itemprop="dateUpdated">
+	  		2019-05-06
+	  </time>
+	</a> 
+
+
+
+		</span>
+		<span>
+			<i class="fa fa-tags"></i>
+					
+		</span>
+		
+		
+
+
+
+	</div>
+
+	<div class="article-content" id="article-content">
+		<div class="post"><br>        <h1 class="postTitle"><br>            <a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/EricZLin/p/9139059.html" target="_blank" rel="noopener">Apache的安装和配置</a><br>        </h1><br>        <div class="clear"></div><br>        <div class="postBody"><br>            <div id="cnblogs_post_body" class="blogpost-body"><h2>一、<strong>官网下载Apache</strong></h2><br><p><span style="font-size: 18px;"><strong>官网地址：<a href="https://httpd.apache.org/" target="_blank" rel="noopener">https://httpd.apache.org/</a></strong></span></p><br><p><span style="font-size: 18px;">点击Download—&gt;点击Files for Microsoft Windows—&gt;点击ApacheHaus—&gt;选择版本(点击Apache 2.4 VC11)—–&gt;解压下载好的压缩包文件，移动文件夹Apache24到你想要的位置。</span></p><br><h2>二、安装Apache</h2><br><p><span style="font-size: 18px;">1.移动文件Apache到E:\WAMP\Apache2.4。【解压路径最好不要用中文。】</span></p><br><p><span style="font-size: 18px;">2.命令行到Apache下面的bin目录，录入命令[&nbsp;httpd -k install ]安装。</span></p><br><p><span style="font-size: 18px;">注：如果提示错误计算机中丢失 msvcr110.dll文件，请到<a href="http://www.microsoft.com/zh-CN/download/details.aspx?id=30679" target="_blank" rel="noopener">http://www.microsoft.com/zh-CN/download/details.aspx?id=30679</a> 这个网址来进行相关程序的<a href="http://www.microsoft.com/zh-CN/download/details.aspx?id=30679" target="_blank">下载</a></span></p><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605105637016-2004094485.png" alt></p><br><p><span style="font-size: 18px;">报错的大概意思：在启动Apache服务之前必须修正一个错误，在E:\WAMP\Apache2.4\conf 的httpd.conf文件的第39行，ServerRoot必须是有效的。</span></p><br><p><span style="font-size: 18px;">报错原因：httpd.conf里面配置的ServerRoot路径跟实际路径不一致，导致路径无效。</span></p><br><p><span style="font-size: 18px;">3.修改httpd.conf文件</span></p><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605111038142-251577807.png" alt></p><br><p><strong>4<span style="font-size: 18px;">.</span></strong><span style="font-size: 18px;">启动Apache服务命令启动Apache服务：【 httpd -k start 】</span></p><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605111144231-86741979.png" alt></p><br><p><span style="font-size: 18px;">5、安装成功验证</span></p><br><p>开始–&gt;运行–&gt;services.msc–&gt;确定（或回车键Enter）—&gt;服务列表中查看Apache服务，存在说明安装成功。</p><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605111340978-1162703197.png" alt></p><br><h4>补充：了解Apache文件夹里的相关目录和文件</h4><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605104943358-1041987373.png" alt></p><br><ul><br><li>bin目录（主程序文件）/httpd.exe 图标(羽毛)</li><br><li>conf目录(配置文件目录)/httpd.conf(主配置文件)和extra文件夹(扩展配置目录)/httpd-vhosts.conf(虚拟主机配置文件)</li><br><li>htdocs目录(站点根目录)—–域名对应的目录</li><br></ul><br><p>6.参考文章:</p><br><p><a href="https://www.cnblogs.com/yerenyuan/p/5460336.html" target="_blank">Apache服务器的下载与安装</a><a id="cb_post_title_url" href="https://www.cnblogs.com/yerenyuan/p/5460336.html" target="_blank" rel="noopener"></a></p><br><p><a href="https://www.cnblogs.com/lovetree/p/6385957.html" target="_blank">Apache 下载+安装</a><a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/lovetree/p/6385957.html" target="_blank"></a></p><br><h2>三、Apache相关配置——主机配置</h2><br><h4><span style="font-size: 18px; color: #000000; background-color: #ff6600;">1.httpd.conf——conf目录下</span></h4><br><ul><br><li><br><div><span style="font-size: 18px;"><span style="background-color: #ffff00;">SRVROOT</span>安装位置(通过在顶端定义了一个常量，在下面引用该常量来访问，好处不用多说了，之后改动只要改这一个即可，其他的都是相对路径了)</span></div><br></li><br></ul><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605133440706-950611914.png" alt></p><br><ul><br><li><br><div><span style="font-size: 18px;"><span style="background-color: #ffff00;">Listen </span>监听端口号,默认80</span></div><br></li><br></ul><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605133606266-1492381579.png" alt></p><br><ul><br><li><br><div><span style="font-size: 18px;"><span style="background-color: #ffff00;">ServerAdmin</span> 用于用户设置管理员邮箱（用于客户端的用户联系管理员，现在很少使用）</span></div><br></li><br></ul><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605133812462-322263658.png" alt></p><br><ul><br><li><br><div><em><span style="font-size: 18px;"><span style="background-color: #ffff00;">ServerName</span> 域名</span></em></div><br></li><br></ul><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605133914934-1857527337.png" alt></p><br><ul><br><li><br><div><span style="font-size: 18px;"><span style="background-color: #ffff00;">DocumentRoot</span>用于设置基站点根目录（网站根目录就是存放网站文件的最顶层目录，通过URL中域名后面的第一个斜线对应映射的就是网站根目录）</span></div><br></li><br></ul><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605135039258-529347357.png" alt></p><br><ul><br><li><span style="font-size: 18px;"><span style="background-color: #ffff00;">Directory</span>配置段</span></li><br></ul><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180613102929069-1962287918.png" alt></p><br><h4><span style="font-size: 18px; background-color: #ff6600;">2.hosts文件—-位置一般在C:\WINDOWS\system32\drivers\etc</span></h4><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605141040680-1691065577.png" alt></p><br><p>注:127.0.0.1永远代表本地ip</p><br><h4><span style="font-size: 18px; background-color: #ff6600;">3.httpd.exe—–bin目录下</span></h4><br><ul><br><li><span style="font-size: 18px;">cmd里dir可以查看当前目录的内容,cd可以更改目录的位置</span></li><br><li><span style="font-size: 18px;">httpd.exe文件可以进行Apache服务的启动(httpd.exe - k start),停止(httpd.exe - k stop)和重新启动(httpd.exe - k restart)</span></li><br><li><span style="font-size: 18px;">httpd.exe文件可以对配置文件进行语法检查(httpd -t)</span></li><br></ul><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605142544050-712855833.png" alt></p><br><p>注:在win10系统中,需要用管理员的身份运行</p><br><h4><span style="font-size: 18px;"><span style="background-color: #ff6600;">4.window环境变量</span>:window的环境变量记录了很多的路径,当在cmd窗口执行一个命令时,如果当前的目录找不到我们要执行的文件时,window会找到环境变量中所记录的位置,依次进行查找,找到了就运行,找不到则报错</span></h4><br><ul><br><li>&nbsp;.<span style="font-size: 18px;">“计算机”右键 → “高级系统设置” → “高级” → “环境变量”</span></li><br></ul><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605143043375-1811463453.png" alt></p><br><p>&nbsp;</p><br><ul><br><li>.<span style="font-size: 18px;">点击系统变量的“新建”→ 变量名”HTTPD_HOME” → 变量值“E:\WAMP\Apache2.4”（Apache安装路径）→ “确定”</span></li><br></ul><br><p>&nbsp; &nbsp; &nbsp;注意：变量值后面不能添加分号“;”,否则配置不成功。</p><br><ul><br><li>.<span style="font-size: 18px;">点击系统变量的“编辑”（没有时新建）→ 变量名”Path” → 变量值“%HTTPD_HOME%\bin;”（Apache的bin目录的路径）→ “确定”</span></li><br></ul><br><p>&nbsp; &nbsp; &nbsp;注意：变量值后面的分号“;”必须是英文分号。path：操作系统提供的环境变量。classpath：程序中引用的类所在的路径。</p><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605143729127-1698990863.png" alt></p><br><ul><br><li><span style="font-size: 18px;">.设置成功后，手动重启cmd，录入命令[ httpd -k restart ]重启Apache服务。若是启动，说明系统环境变量配置成功。</span></li><br></ul><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605144736630-1182551081.png" alt></p><br><ul><br><li><span style="font-size: 18px;">以上所在window7系统里的安装，window10里面安装更加便捷，可以自行百度</span></li><br></ul><br><h2>四、Apache相关配置——虚拟主机配置:使用一个Apache软件配置多个主机(域名)</h2><br><h4><span style="font-size: 18px; background-color: #ff6600;">1.开启扩展配置文件(默认是关闭的)—-httpd.conf</span></h4><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180613115714465-1650320541.png" alt></p><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180613115722956-851828834.png" alt></p><br><h4><span style="font-size: 18px; background-color: #ff6600;">2.配置虚拟主机—–httpd-vhosts.conf</span></h4><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180613120026749-420970558.png" alt></p><br><h3><span style="background-color: #99cc00; font-size: 18px;">3.注意的问题:</span></h3><br><ul><br><li><br><p><span style="font-size: 18px;">如果是测试需要使用配置的域名的话,需要修改host文件达到目的,原因是这个域名并不是属于自己的,没有办法修改这个域名在公网上的DNS</span></p><br></li><br></ul><br><p><span style="font-size: 18px;"><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180613135622137-1485263266.png" alt></span></p><br><ul><br><li><span style="font-size: 18px;"><span style="font-size: 18px;">如果使用了虚拟主机,则默认必须全部使用虚拟主机,即之前的默认网站也必须通过虚拟主机方式配置,否则访问不到,参考文章:</span></span><a href="http://blog.51cto.com/skypegnu1/1532454" target="_blank">Apache HTTP Server 虚拟主机配置</a></li><br><li><br><div>&nbsp;<span style="font-size: 18px;">Chrome 浏览器&nbsp;63版本以后，所有的&nbsp;.dev&nbsp;和&nbsp;.app 后缀的网址都将会自动将&nbsp;HTTP&nbsp;转到&nbsp;HTTPS&nbsp;上，所以如果使用上面的.dev后缀的网址,会出现在Chrome无法访问的情况,但是在其他浏览器可以正常访问,原因就出在这(确实被坑了一道!!!)</span></div><br></li><br></ul><br><h3>五、Apache相关配置——外部配置文件</h3><br><h4><span style="font-size: 18px; background-color: #99cc00;">1.开启外部配置文件httpd.conf中开启<strong>AllowOverride All</strong></span></h4><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180613134614991-1318032090.png" alt></p><br><h4><span style="font-size: 18px;">2.<span style="background-color: #99cc00;">.hatacss文件创建</span>(只能通过编辑器另存的方式来创建)—此文件中的配置不需要重新启动Apache</span></h4><br><h4><span style="font-size: 18px;">3.补充:自定义错误提示页面(<span style="background-color: #99cc00;">ErrorDocument</span>)</span></h4><br><p>&nbsp;<img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605145741517-1358924990.png" alt></p></div><div id="MySignature"></div><br><div class="clear"></div><br><div id="blog_post_info_block"><br><div id="BlogPostCategory">分类: <a href="https://www.cnblogs.com/EricZLin/category/1351645.html" target="_blank">PHP学习笔记</a></div><br><div id="EntryTag">标签: <a href="https://www.cnblogs.com/EricZLin/tag/PHP/" target="_blank" rel="noopener">PHP</a></div><br><div id="blog_post_info"><div id="green_channel"><br>        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(9139059,cb_blogId,1);green_channel_success(this,'谢谢推荐！');" target="_blank" rel="noopener">好文要顶</a><br>            <a id="green_channel_follow" onclick="follow('f367dcfd-7c41-4140-2772-08d54dbac325');" href="javascript:void(0);" target="_blank" rel="noopener">关注我</a><br>    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);" target="_blank" rel="noopener">收藏该文</a><br>    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()" target="_blank" rel="noopener"><img src="//common.cnblogs.com/images/icon_weibo_24.png" alt></a><br>    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()" target="_blank" rel="noopener"><img src="//common.cnblogs.com/images/wechat.png" alt></a><br></div><br><div id="author_profile"><br>    <div id="author_profile_info" class="author_profile_info"><br>            <a href="http://home.cnblogs.com/u/EricZLin/" target="_blank"><img src="//pic.cnblogs.com/face/1319779/20181029192702.png" class="author_avatar" alt></a><br>        <div id="author_profile_detail" class="author_profile_info"><br>            <a href="http://home.cnblogs.com/u/EricZLin/" target="_blank" rel="noopener">澎湃_L</a><br><br>            <a href="http://home.cnblogs.com/u/EricZLin/followees" target="_blank" rel="noopener">关注 - 0</a><br><br>            <a href="http://home.cnblogs.com/u/EricZLin/followers" target="_blank" rel="noopener">粉丝 - 4</a><br>        </div><br>    </div><br>    <div class="clear"></div><br>    <div id="author_profile_honor"></div><br>    <div id="author_profile_follow"><br>                <a href="javascript:void(0);" onclick="follow('f367dcfd-7c41-4140-2772-08d54dbac325');return false;" target="_blank" rel="noopener">+加关注</a><br>    </div><br></div><br><div id="div_digg"><br>    <div class="diggit" onclick="votePost(9139059,'Digg')"><br>        <span class="diggnum" id="digg_count">1</span><br>    </div><br>    <div class="buryit" onclick="votePost(9139059,'Bury')"><br>        <span class="burynum" id="bury_count">0</span><br>    </div><br>    <div class="clear"></div><br>    <div class="diggword" id="digg_tips"><br>    </div><br></div><br><script type="text/javascript"><br>    currentDiggType = 0;<br></script></div><br><div class="clear"></div><br><div id="post_next_prev"><a href="https://www.cnblogs.com/EricZLin/p/9138428.html" class="p_n_p_prefix" target="_blank" rel="noopener">« </a> 上一篇：<a href="https://www.cnblogs.com/EricZLin/p/9138428.html" title="发布于2018-06-05 10:28" target="_blank" rel="noopener">PHP介绍</a><br><a href="https://www.cnblogs.com/EricZLin/p/9140078.html" class="p_n_p_prefix" target="_blank" rel="noopener">» </a> 下一篇：<a href="https://www.cnblogs.com/EricZLin/p/9140078.html" title="发布于2018-06-05 15:37" target="_blank" rel="noopener">MySQL安装与配置</a><br></div><br></div>
+
+
+</div></div>	
+	</div>
+	
+	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
+
+	<!-- relate post, comment...-->
+	<div class="investment-container">
+		<div class="investment-header">
+			<div class="investment-title-1">
+				<div class="on">相关文章</div>
+				<div>评论</div>
+				<div>分享</div>
+			</div>
+			<div class="investment-title-2">	            
+				
+	<span>
+		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+		
+		
+			<a href="/2019/04/30/Ajax初体验/" title="Ajax 初体验" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+			</div>	
+		</div>
+		
+		<div class="investment-content">
+			<div class="investment-content-list">
+				
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/04/30/Ajax初体验/" title="Ajax 初体验">
+								Ajax 初体验			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 30日, 2019				
+							</p>
+							<p class="relate-post-content">
+								tags: Ajax概念
+首先要了解两个概念：
+
+同步 ：当JS代码加载到当前AJAX的时候会把页面里所有的代码停止加载，页面出现假死状态，当这个AJAX执行完毕后才会继续运行其他代码页面假死状态解除。通俗一点说就是，4个用户访问同一...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/04/30/Ajax初体验/" title="Ajax 初体验">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="Ajax 初体验">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/04/30/开博大吉/" title="开博大吉">
+								开博大吉			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 30日, 2019				
+							</p>
+							<p class="relate-post-content">
+								
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/04/30/开博大吉/" title="开博大吉">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="开博大吉">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/04/30/hello-world/" title="Hello World">
+								Hello World			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 30日, 2019				
+							</p>
+							<p class="relate-post-content">
+								Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/04/30/hello-world/" title="Hello World">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="Hello World">
+							</a>
+						</div>
+					</li>											
+			
+			
+		</ul>
+	
+</div>	
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-comment">
+
+	
+
+		
+
+			<!-- I don't know !!!-->
+			<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+			
+		
+		
+	
+
+</div>
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-share">
+	
+	
+
+		
+			
+			<!-- socialShare share -->
+			<div class="social-share"></div>
+
+<!--  css & js -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+			
+		
+		
+	
+</div>
+
+
+			</div>
+		</div>	
+	</div>
+	</div>
+</div>
+
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+
+<!-- show math formula -->
+
+
+
+	 
+	<script src="/plugin/clipboard/clipboard.js"></script>
+	<script>
+		// Copy code !
+	    function codePreprocessing() {
+	        $("#article-content .highlight").each(function() {
+
+	            $(this).wrap('<div id="post-code"></div>');
+
+	        })
+
+	        $("#article-content #post-code").each(function() {
+
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            var temp = $(this).next().attr('class'),
+	                language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+
+	            $(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+
+	        });
+	    }
+
+		function codeCopy() {
+		    $('#article-content #post-code').each(function(i) {
+		        var codeCopyId = 'codeCopy-' + i;
+
+		        var codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+
+		    
+			var clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn copy-status');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');
+			    
+			});
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		
+
+		}
+
+		if ($('.layout-post').length) {
+		    codePreprocessing();
+		    codeCopy();
+		} 
+	</script>
+
+
+
+
+
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+<script src="/plugin/fancybox/jquery.fancybox.js"></script>
+
+<script type="text/javascript">
+	var titleID = $('.article-title a'),
+		imageID = $('.article-content img'),
+		videoID = $('.article-content video');
+
+	var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+	imageID.each(function() {
+		var imgPath = $(this).attr('src'),
+			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+	});
+
+	videoID.each(function() {
+		var videoPath = $(this).attr('src');
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+	});
+	//TODO：支持html5 video
+
+	if($('#layout-post').length) {
+		$('[data-fancybox="gallery"]').fancybox({
+			loop: true,
+			buttons: [
+				"zoom",
+				"share",
+				"slideShow",
+				"fullScreen",
+				//"download",
+				"thumbs",
+				"close"
+			],
+			protect: false
+		});
+	}
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div class="social">
+		<ul>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+		
+	<div class="copyright">
+		<p>
+			 
+				&copy;2017 - 2019, content by John Doe. All Rights Reserved.
+			
+			
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+		
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+
+		<span id="busuanzi_container_page_pv">
+	  		本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+		</span>
+
+	
+
+
+
+
+		</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- set '1' to show motto in all pages! -->
+
+	<script src="/plugin/motto/motto.js"></script>
+	
+	<script type="text/javascript">
+		$(".motto").html( getMingYanContent() );
+	</script>	
+
+
+
+
+
+<!-- love effect -->
+
+	<script src="/plugin/love/love.js"></script>
+
+
+<!-- back to top -->
+
+	
+	<div id="totop">
+  		<a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a>
+	</div>
+
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<script src="/plugin/vibrant/vibrant.js"></script>
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/js/resizediv.js"></script>
+<script src="/js/main.js"></script>
+	</body>	
+</html>
