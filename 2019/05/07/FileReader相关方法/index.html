@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-       | Hexo
+      FileReader | Hexo
     
   </title>
   <meta name="author" content="John Doe">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			当前文章&nbsp;:&nbsp;《》
+			当前文章&nbsp;:&nbsp;《FileReader》
 		
 	</p>
 
@@ -258,18 +258,6 @@
 		插件作者：KELEN
 		插件来源: https://github.com/KELEN/katelog
 -->
-
-	
-		<div class="layout-toc">
-			<div id="layout-toc">
-				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
-			</div>
-		</div>
-
-		
-		<script src="/plugin/toc/katelog.min.js"></script>
-
-		
 	 
 
 <div class="layout-post">
@@ -277,6 +265,10 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
+	<a href="/2019/05/07/FileReader相关方法/" itemprop="url">
+		FileReader
+	</a>
+
 	</div>
 
 	<div class="article-meta">
@@ -326,8 +318,7 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<h2 id="title-FileReader"><a href="#title-FileReader" class="headerlink" title="title:FileReader"></a>title:FileReader</h2><p>###今天学习了H5新增属性读取文件的操作，就总结了一下。</p>
-<p>##FileReader读取文件内容提供的四种方法：</p>
+		<p>今天学习了H5新增属性读取文件的操作，就总结了一下。<br>FileReader读取文件内容提供的四种方法：</p>
 <ol>
 <li>readAsText():读取文本文件（可以使用Txt打开的文件），返回文本字符串，默认编码是UTF-8。</li>
 <li>readerAsBinaryString()：读取任意类型的文件，返回二进制字符串。这个方法不是用来给用户看的，而是用于存储文件。例如：读取到的文件内容，获取二进制的数据，传递给后台，后台接受了数据以后，再将数据存在。</li>
@@ -335,7 +326,7 @@
 <li>abort():中断文件读取。</li>
 </ol>
 <hr>
-<p>##FileReader还提供了一套事件处理函数</p>
+<p>FileReader还提供了一套事件处理函数</p>
 <ol>
 <li>onabort:读取文件中断时触发;</li>
 <li>onerror:读取文件失败时触发;</li>
@@ -393,8 +384,8 @@
 								五月 6日, 2019				
 							</p>
 							<p class="relate-post-content">
-								####今天被这个折磨了半天，所以整理了一下详细安装及操作。
-                                                        一、官网下载Apache官网地址：https://httpd...
+								今天被这个折磨了半天，所以整理了一下详细安装及操作。
+                                                        一、官网下载Apache官网地址：https://httpd.apa...
 							</p>
 						</div>
 
@@ -451,29 +442,6 @@
 							<a href="/2019/04/30/开博大吉/" title="开博大吉">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="开博大吉">
-							</a>
-						</div>
-					</li>											
-			
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/04/30/hello-world/" title="Hello World">
-								Hello World			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								四月 30日, 2019				
-							</p>
-							<p class="relate-post-content">
-								Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using ...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/04/30/hello-world/" title="Hello World">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="Hello World">
 							</a>
 						</div>
 					</li>											
