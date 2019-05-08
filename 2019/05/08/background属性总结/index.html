@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      Apache的安装和配置 | Hexo
+       | Hexo
     
   </title>
   <meta name="author" content="John Doe">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			当前文章&nbsp;:&nbsp;《Apache的安装和配置》
+			当前文章&nbsp;:&nbsp;《》
 		
 	</p>
 
@@ -258,18 +258,6 @@
 		插件作者：KELEN
 		插件来源: https://github.com/KELEN/katelog
 -->
-
-	
-		<div class="layout-toc">
-			<div id="layout-toc">
-				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
-			</div>
-		</div>
-
-		
-		<script src="/plugin/toc/katelog.min.js"></script>
-
-		
 	 
 
 <div class="layout-post">
@@ -277,10 +265,6 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
-	<a href="/2019/05/06/Apache的安装和配置/" itemprop="url">
-		Apache的安装和配置
-	</a>
-
 	</div>
 
 	<div class="article-meta">
@@ -291,9 +275,9 @@
 
 	发布于
 
-	<a href="/2019/05/06/Apache的安装和配置/" itemprop="url">
-		<time datetime="2019-05-06T10:50:48.075Z" itemprop="datePublished">
-	  		2019-05-06
+	<a href="/2019/05/08/background属性总结/" itemprop="url">
+		<time datetime="2019-05-08T10:13:35.079Z" itemprop="datePublished">
+	  		2019-05-08
 	  </time>
 	</a>
 	&nbsp;
@@ -309,9 +293,9 @@
 
 	更新于
 
-	<a href="/2019/05/06/Apache的安装和配置/" itemprop="url">
-		<time datetime="2019-05-06T10:50:48.075Z" itemprop="dateUpdated">
-	  		2019-05-07
+	<a href="/2019/05/08/background属性总结/" itemprop="url">
+		<time datetime="2019-05-08T10:13:35.079Z" itemprop="dateUpdated">
+	  		2019-05-08
 	  </time>
 	</a> 
 
@@ -330,13 +314,20 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<p>今天被这个折磨了半天，所以整理了一下详细安装及操作。</p>
-<div class="post"><br>        <h1 class="postTitle"><br>            <a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/EricZLin/p/9139059.html" target="_blank" rel="noopener"></a><br>        </h1><br>        <div class="clear"></div><br>        <div class="postBody"><br>            <div id="cnblogs_post_body" class="blogpost-body"><h2>一、<strong>官网下载Apache</strong></h2><br><p><span style="font-size: 18px;"><strong>官网地址：<a href="https://httpd.apache.org/" target="_blank" rel="noopener">https://httpd.apache.org/</a></strong></span></p><br><p><span style="font-size: 18px;">点击Download—&gt;点击Files for Microsoft Windows—&gt;点击ApacheHaus—&gt;选择版本(点击Apache 2.4 VC11)—–&gt;解压下载好的压缩包文件，移动文件夹Apache24到你想要的位置。</span></p><br><h2>二、安装Apache</h2><br><p><span style="font-size: 18px;">1.移动文件Apache到E:\WAMP\Apache2.4。【解压路径最好不要用中文。】</span></p><br><p><span style="font-size: 18px;">2.命令行到Apache下面的bin目录，录入命令[&nbsp;httpd -k install ]安装。</span></p><br><p><span style="font-size: 18px;">注：如果提示错误计算机中丢失 msvcr110.dll文件，请到<a href="http://www.microsoft.com/zh-CN/download/details.aspx?id=30679" target="_blank" rel="noopener">http://www.microsoft.com/zh-CN/download/details.aspx?id=30679</a> 这个网址来进行相关程序的<a href="http://www.microsoft.com/zh-CN/download/details.aspx?id=30679" target="_blank">下载</a></span></p><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605105637016-2004094485.png" alt></p><br><p><span style="font-size: 18px;">报错的大概意思：在启动Apache服务之前必须修正一个错误，在E:\WAMP\Apache2.4\conf 的httpd.conf文件的第39行，ServerRoot必须是有效的。</span></p><br><p><span style="font-size: 18px;">报错原因：httpd.conf里面配置的ServerRoot路径跟实际路径不一致，导致路径无效。</span></p><br><p><span style="font-size: 18px;">3.修改httpd.conf文件</span></p><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605111038142-251577807.png" alt></p><br><p><strong>4<span style="font-size: 18px;">.</span></strong><span style="font-size: 18px;">启动Apache服务命令启动Apache服务：【 httpd -k start 】</span></p><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605111144231-86741979.png" alt></p><br><p><span style="font-size: 18px;">5、安装成功验证</span></p><br><p>开始–&gt;运行–&gt;services.msc–&gt;确定（或回车键Enter）—&gt;服务列表中查看Apache服务，存在说明安装成功。</p><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605111340978-1162703197.png" alt></p><br><h4>补充：了解Apache文件夹里的相关目录和文件</h4><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605104943358-1041987373.png" alt></p><br><ul><br><li>bin目录（主程序文件）/httpd.exe 图标(羽毛)</li><br><li>conf目录(配置文件目录)/httpd.conf(主配置文件)和extra文件夹(扩展配置目录)/httpd-vhosts.conf(虚拟主机配置文件)</li><br><li>htdocs目录(站点根目录)—–域名对应的目录</li><br></ul><br><p>6.参考文章:</p><br><p><a href="https://www.cnblogs.com/yerenyuan/p/5460336.html" target="_blank">Apache服务器的下载与安装</a><a id="cb_post_title_url" href="https://www.cnblogs.com/yerenyuan/p/5460336.html" target="_blank" rel="noopener"></a></p><br><p><a href="https://www.cnblogs.com/lovetree/p/6385957.html" target="_blank">Apache 下载+安装</a><a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/lovetree/p/6385957.html" target="_blank"></a></p><br><h2>三、Apache相关配置——主机配置</h2><br><h4><span style="font-size: 18px; color: #000000; background-color: #ff6600;">1.httpd.conf——conf目录下</span></h4><br><ul><br><li><br><div><span style="font-size: 18px;"><span style="background-color: #ffff00;">SRVROOT</span>安装位置(通过在顶端定义了一个常量，在下面引用该常量来访问，好处不用多说了，之后改动只要改这一个即可，其他的都是相对路径了)</span></div><br></li><br></ul><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605133440706-950611914.png" alt></p><br><ul><br><li><br><div><span style="font-size: 18px;"><span style="background-color: #ffff00;">Listen </span>监听端口号,默认80</span></div><br></li><br></ul><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605133606266-1492381579.png" alt></p><br><ul><br><li><br><div><span style="font-size: 18px;"><span style="background-color: #ffff00;">ServerAdmin</span> 用于用户设置管理员邮箱（用于客户端的用户联系管理员，现在很少使用）</span></div><br></li><br></ul><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605133812462-322263658.png" alt></p><br><ul><br><li><br><div><em><span style="font-size: 18px;"><span style="background-color: #ffff00;">ServerName</span> 域名</span></em></div><br></li><br></ul><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605133914934-1857527337.png" alt></p><br><ul><br><li><br><div><span style="font-size: 18px;"><span style="background-color: #ffff00;">DocumentRoot</span>用于设置基站点根目录（网站根目录就是存放网站文件的最顶层目录，通过URL中域名后面的第一个斜线对应映射的就是网站根目录）</span></div><br></li><br></ul><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605135039258-529347357.png" alt></p><br><ul><br><li><span style="font-size: 18px;"><span style="background-color: #ffff00;">Directory</span>配置段</span></li><br></ul><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180613102929069-1962287918.png" alt></p><br><h4><span style="font-size: 18px; background-color: #ff6600;">2.hosts文件—-位置一般在C:\WINDOWS\system32\drivers\etc</span></h4><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605141040680-1691065577.png" alt></p><br><p>注:127.0.0.1永远代表本地ip</p><br><h4><span style="font-size: 18px; background-color: #ff6600;">3.httpd.exe—–bin目录下</span></h4><br><ul><br><li><span style="font-size: 18px;">cmd里dir可以查看当前目录的内容,cd可以更改目录的位置</span></li><br><li><span style="font-size: 18px;">httpd.exe文件可以进行Apache服务的启动(httpd.exe - k start),停止(httpd.exe - k stop)和重新启动(httpd.exe - k restart)</span></li><br><li><span style="font-size: 18px;">httpd.exe文件可以对配置文件进行语法检查(httpd -t)</span></li><br></ul><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605142544050-712855833.png" alt></p><br><p>注:在win10系统中,需要用管理员的身份运行</p><br><h4><span style="font-size: 18px;"><span style="background-color: #ff6600;">4.window环境变量</span>:window的环境变量记录了很多的路径,当在cmd窗口执行一个命令时,如果当前的目录找不到我们要执行的文件时,window会找到环境变量中所记录的位置,依次进行查找,找到了就运行,找不到则报错</span></h4><br><ul><br><li>&nbsp;.<span style="font-size: 18px;">“计算机”右键 → “高级系统设置” → “高级” → “环境变量”</span></li><br></ul><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605143043375-1811463453.png" alt></p><br><p>&nbsp;</p><br><ul><br><li>.<span style="font-size: 18px;">点击系统变量的“新建”→ 变量名”HTTPD_HOME” → 变量值“E:\WAMP\Apache2.4”（Apache安装路径）→ “确定”</span></li><br></ul><br><p>&nbsp; &nbsp; &nbsp;注意：变量值后面不能添加分号“;”,否则配置不成功。</p><br><ul><br><li>.<span style="font-size: 18px;">点击系统变量的“编辑”（没有时新建）→ 变量名”Path” → 变量值“%HTTPD_HOME%\bin;”（Apache的bin目录的路径）→ “确定”</span></li><br></ul><br><p>&nbsp; &nbsp; &nbsp;注意：变量值后面的分号“;”必须是英文分号。path：操作系统提供的环境变量。classpath：程序中引用的类所在的路径。</p><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605143729127-1698990863.png" alt></p><br><ul><br><li><span style="font-size: 18px;">.设置成功后，手动重启cmd，录入命令[ httpd -k restart ]重启Apache服务。若是启动，说明系统环境变量配置成功。</span></li><br></ul><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605144736630-1182551081.png" alt></p><br><ul><br><li><span style="font-size: 18px;">以上所在window7系统里的安装，window10里面安装更加便捷，可以自行百度</span></li><br></ul><br><h2>四、Apache相关配置——虚拟主机配置:使用一个Apache软件配置多个主机(域名)</h2><br><h4><span style="font-size: 18px; background-color: #ff6600;">1.开启扩展配置文件(默认是关闭的)—-httpd.conf</span></h4><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180613115714465-1650320541.png" alt></p><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180613115722956-851828834.png" alt></p><br><h4><span style="font-size: 18px; background-color: #ff6600;">2.配置虚拟主机—–httpd-vhosts.conf</span></h4><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180613120026749-420970558.png" alt></p><br><h3><span style="background-color: #99cc00; font-size: 18px;">3.注意的问题:</span></h3><br><ul><br><li><br><p><span style="font-size: 18px;">如果是测试需要使用配置的域名的话,需要修改host文件达到目的,原因是这个域名并不是属于自己的,没有办法修改这个域名在公网上的DNS</span></p><br></li><br></ul><br><p><span style="font-size: 18px;"><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180613135622137-1485263266.png" alt></span></p><br><ul><br><li><span style="font-size: 18px;"><span style="font-size: 18px;">如果使用了虚拟主机,则默认必须全部使用虚拟主机,即之前的默认网站也必须通过虚拟主机方式配置,否则访问不到,参考文章:</span></span><a href="http://blog.51cto.com/skypegnu1/1532454" target="_blank">Apache HTTP Server 虚拟主机配置</a></li><br><li><br><div>&nbsp;<span style="font-size: 18px;">Chrome 浏览器&nbsp;63版本以后，所有的&nbsp;.dev&nbsp;和&nbsp;.app 后缀的网址都将会自动将&nbsp;HTTP&nbsp;转到&nbsp;HTTPS&nbsp;上，所以如果使用上面的.dev后缀的网址,会出现在Chrome无法访问的情况,但是在其他浏览器可以正常访问,原因就出在这(确实被坑了一道!!!)</span></div><br></li><br></ul><br><h3>五、Apache相关配置——外部配置文件</h3><br><h4><span style="font-size: 18px; background-color: #99cc00;">1.开启外部配置文件httpd.conf中开启<strong>AllowOverride All</strong></span></h4><br><p><img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180613134614991-1318032090.png" alt></p><br><h4><span style="font-size: 18px;">2.<span style="background-color: #99cc00;">.hatacss文件创建</span>(只能通过编辑器另存的方式来创建)—此文件中的配置不需要重新启动Apache</span></h4><br><h4><span style="font-size: 18px;">3.补充:自定义错误提示页面(<span style="background-color: #99cc00;">ErrorDocument</span>)</span></h4><br><p>&nbsp;<img src="https://images2018.cnblogs.com/blog/1319779/201806/1319779-20180605145741517-1358924990.png" alt></p></div><div id="MySignature"></div>
-
-
-
-
-</div></div>	
+		<p>title: CSS3 background 新增属性总结</p>
+<p></p><p>今天解除了几个曾经没有用到的属性，所以想总结并且复习一下。</p><p></p>
+<p></p><p>&nbsp;</p><p></p>
+<p></p><p>　　<strong>background-origin属性：有三个属性值，分别是border-box，padding-box，content-box。看到border-box是不是联想到了CSS3中的盒子模型。</strong></p><p></p>
+<p></p><p><strong>　　box-sizing:<strong>border-box。它是为了减少CSS中的盒模型padding和border值计算的繁琐。</strong></strong></p><p></p>
+<p></p><p><strong><strong>　　首先先说一下：</strong></strong></p><p></p>
+<p></p><p><strong><strong>　　<strong>background-origin属性：它表示&nbsp;background-position 属性相对于什么位置来定位。</strong></strong></strong></p><p></p>
+<p></p><p><strong><strong>　　属性值border-box:背景图像相对于边框盒来定位。</strong></strong></p><p></p>
+<p></p><p><strong><strong><strong>&nbsp; &nbsp; &nbsp; &nbsp;<strong><strong>属性值</strong></strong>padding-box：背景图像相对于内边距框来定位。</strong></strong></strong></p><p></p>
+<p></p><p><strong><strong><strong><strong>&nbsp; &nbsp; &nbsp; &nbsp;<strong><strong><strong><strong><strong>属性值</strong></strong></strong></strong></strong>content-box：</strong>背景图像相对于内容框来定位。</strong></strong></strong></p><p></p>
+<p></p><p><strong>所以我们一般用这个属性做一些精灵图的定位与剪切。</strong></p><p></p>
+<p></p><p><strong>　　还需要了解的是 background-clip属性：同样也有三个属性值<strong>border-box，padding-box，content-box。</strong></strong></p><p></p>
+<p></p><p><strong>　　<strong>background-clip属性</strong>规定背景的绘制区域。</strong></p><p></p>
+<table class="dataintable" style="height: 104px; width: 274px;"><br><tbody><br><tr><th>值</th><th>描述</th></tr><br><tr><br><td>border-box</td><br><td>背景被裁剪到边框盒。</td><br></tr><br><tr><br><td>padding-box</td><br><td>背景被裁剪到内边距框。</td><br></tr><br><tr><br><td>content-box</td><br><td>背景被裁剪到内容框。</td><br></tr><br></tbody><br></table>	
 	</div>
 	
 	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
@@ -354,12 +345,8 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/2019/05/07/FileReader相关方法/" title="FileReader" rel="prev">
-				&laquo;上一篇
-			</a>
 		
-		
-			<a href="/2019/04/30/Ajax初体验/" title="Ajax 初体验" rel="next">
+			<a href="/2019/05/07/FileReader相关方法/" title="FileReader" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -377,32 +364,6 @@
 <div class="relate-post">
 	
 		<ul>
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/05/08/background属性总结/" title>
-											
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								五月 8日, 2019				
-							</p>
-							<p class="relate-post-content">
-								title: CSS3 background 新增属性总结
-今天解除了几个曾经没有用到的属性，所以想总结并且复习一下。
-&nbsp;
-　　background-origin属性：有三个属性值，分别是border-box，padding...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/05/08/background属性总结/" title>				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt>
-							</a>
-						</div>
-					</li>											
-			
 			
 					<li>
 						<div class="relate-post-text">
@@ -425,6 +386,30 @@ readerAsBin...
 							<a href="/2019/05/07/FileReader相关方法/" title="FileReader">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="FileReader">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/05/06/Apache的安装和配置/" title="Apache的安装和配置">
+								Apache的安装和配置			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 6日, 2019				
+							</p>
+							<p class="relate-post-content">
+								今天被这个折磨了半天，所以整理了一下详细安装及操作。
+                                                        一、官网下载Apache官网地址：https://httpd.apa...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/05/06/Apache的安装和配置/" title="Apache的安装和配置">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="Apache的安装和配置">
 							</a>
 						</div>
 					</li>											
