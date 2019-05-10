@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      Ajax 初体验 | Hexo
+      伸缩布局常用属性总结 | Hexo
     
   </title>
   <meta name="author" content="John Doe">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			当前文章&nbsp;:&nbsp;《Ajax 初体验》
+			当前文章&nbsp;:&nbsp;《伸缩布局常用属性总结》
 		
 	</p>
 
@@ -265,8 +265,8 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
-	<a href="/2019/04/30/Ajax初体验/" itemprop="url">
-		Ajax 初体验
+	<a href="/2019/05/10/伸缩布局总结/" itemprop="url">
+		伸缩布局常用属性总结
 	</a>
 
 	</div>
@@ -279,9 +279,9 @@
 
 	发布于
 
-	<a href="/2019/04/30/Ajax初体验/" itemprop="url">
-		<time datetime="2019-04-30T06:35:03.000Z" itemprop="datePublished">
-	  		2019-04-30
+	<a href="/2019/05/10/伸缩布局总结/" itemprop="url">
+		<time datetime="2019-05-10T02:48:08.045Z" itemprop="datePublished">
+	  		2019-05-10
 	  </time>
 	</a>
 	&nbsp;
@@ -297,9 +297,9 @@
 
 	更新于
 
-	<a href="/2019/04/30/Ajax初体验/" itemprop="url">
-		<time datetime="2019-04-30T06:35:03.000Z" itemprop="dateUpdated">
-	  		2019-04-30
+	<a href="/2019/05/10/伸缩布局总结/" itemprop="url">
+		<time datetime="2019-05-10T02:48:08.045Z" itemprop="dateUpdated">
+	  		2019-05-10
 	  </time>
 	</a> 
 
@@ -318,18 +318,11 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<p>tags: Ajax概念</p>
-<p>首先要了解两个概念：</p>
-<ol>
-<li>同步 ：当JS代码加载到当前AJAX的时候会把页面里所有的代码停止加载，页面出现假死状态，当这个AJAX执行完毕后才会继续运行其他代码页面假死状态解除。通俗一点说就是，4个用户访问同一个网站进行下载，同步就是等一个用户下载完，才继续让下一个用户进行下载。 </li>
-<li>异步：这个AJAX代码运行中的时候其他代码一样可以运行。就是这四个用户可以同时进行下载。 </li>
-</ol>
-<hr>
-<p>###Ajax事件函数<br>onreadyStatechange事件：当请求被发送到服务器的时候，我们需要进行一些响应操作，当readyState改变的时候，就会触发这个事件。</p>
-<p>####readyState 请求的状态码有4个<br>0：未初始化 open()还未调用；<br>1：载入 已经调用了  send()正在发送请求；<br>2：载入完成  send()已经完成 已经收到了全部响应内容；<br>3：解析 正在解析响应内容；<br>4：完成 响应完成  可以在客户端使用了。</p>
-<hr>
-<p>###具体代码实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">        //创建Ajax对象</span><br><span class="line">        var xhr =null;</span><br><span class="line">        if(window.XMLHttpRequest)&#123;</span><br><span class="line">            xhr =new XMLHttpRequest();</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            xhr = new ActiveXObject(&quot;Micosoft.XMLHTTP&quot;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        xhr.open(&apos;get&apos;,&quot;xx.html&quot;,true)</span><br><span class="line">        //发送请求</span><br><span class="line">        xhr.send();</span><br><span class="line">        </span><br><span class="line">        //事件处理函数</span><br><span class="line">        xhr.onreadystatechange = function()&#123;</span><br><span class="line">            alert(xhr.readyState);//依次弹出 2 3 4</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">    &lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-	
+		<p>Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。</p>
+<p>它即可以应用于容器中，也可以应用于行内元素。(以上说明结合微信开发者工具说明)2009年，W3C提出了一种新的方案—-Flex布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。</p>
+<p></p><p><span style="font-size: 14px;">以下6个属性设置在容器上：</span></p><p></p>
+<p><blockquote></blockquote></p>
+<ul><br><li style="list-style-type: none;"><br><ul><br><li>flex-direction属性　　设置容器内项目的排列方向(默认主轴方向排列)　其中有个属性值column 是设置为以侧轴方向排列子元素　</li><br><li>flex-wrap　　容器内项目换行方式  （默认值no-wrap不换行）</li><br><li>flex-flow　　以上两个属性的简写方式</li><br><li>justify-content　　项目在主轴上的对齐方式</li><br><li>align-items　　设置子元素在侧轴方向如何排列<br>                    有五个常用属性值<br>                    stretch 表示拉伸 填充整个侧轴<br><br>            center  表示侧轴居中对齐<br><br>        baseline  表示侧轴元素沿文本的基线对齐<br><br>        flex-start  表示侧轴父元素的开始位置<br><br>        flex-end    表示侧轴父元素的结尾位置<br></li><br><li>align-content　　定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</li><br></ul><br></li><br></ul><br><br><img title src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071004.png" alt><br><br><ul><br><li><code>order　　子元素的排列顺序。数值越小，排列越靠前，默认为0。</code></li><br><li><code>flex-grow　　子元素的放大比例，默认为<code>0</code>，即如果存在剩余空间，也不放大。</code></li><br><li><code>flex-shrink　　子元素的缩小比例，默认为1，即如果空间不足，该子元素将缩小。</code></li><br><li><code>flex-basis　　在分配多余空间之前，子元素占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为<code>auto</code>，即子元素的本来大小。</code></li><br><li><code>flex　　是<code>flex-grow</code>, <code>flex-shrink</code> 和 <code>flex-basis</code>的简写，默认值为<code>0 1 auto</code>。后两个属性可选。</code></li><br><li><code>align-self　　允许单个子元素有与其他子元素不一样的对齐方式，可覆盖<code>align-items</code>属性。默认值为<code>auto</code>，表示继承父元素的<code>align-items</code>属性，如果没有父元素，则等同于<code>stretch</code>。</code></li><br></ul>	
 	</div>
 	
 	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
@@ -347,12 +340,8 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/2019/05/06/Apache的安装和配置/" title="Apache的安装和配置" rel="prev">
-				&laquo;上一篇
-			</a>
 		
-		
-			<a href="/2019/04/30/开博大吉/" title="开博大吉" rel="next">
+			<a href="/2019/05/08/background属性总结/" title rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -370,30 +359,6 @@
 <div class="relate-post">
 	
 		<ul>
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/05/10/伸缩布局总结/" title="伸缩布局常用属性总结">
-								伸缩布局常用属性总结			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								五月 10日, 2019				
-							</p>
-							<p class="relate-post-content">
-								Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。
-它即可以应用于容器中，也可以应用于行内元素。(...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/05/10/伸缩布局总结/" title="伸缩布局常用属性总结">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="伸缩布局常用属性总结">
-							</a>
-						</div>
-					</li>											
-			
 			
 					<li>
 						<div class="relate-post-text">
@@ -466,6 +431,32 @@ readerAsBin...
 							<a href="/2019/05/06/Apache的安装和配置/" title="Apache的安装和配置">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="Apache的安装和配置">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/04/30/Ajax初体验/" title="Ajax 初体验">
+								Ajax 初体验			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 30日, 2019				
+							</p>
+							<p class="relate-post-content">
+								tags: Ajax概念
+首先要了解两个概念：
+
+同步 ：当JS代码加载到当前AJAX的时候会把页面里所有的代码停止加载，页面出现假死状态，当这个AJAX执行完毕后才会继续运行其他代码页面假死状态解除。通俗一点说就是，4个用户访问同一...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/04/30/Ajax初体验/" title="Ajax 初体验">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="Ajax 初体验">
 							</a>
 						</div>
 					</li>											
