@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      FileReader | Hexo
+      Node.js复习 | Hexo
     
   </title>
   <meta name="author" content="John Doe">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			当前文章&nbsp;:&nbsp;《FileReader》
+			当前文章&nbsp;:&nbsp;《Node.js复习》
 		
 	</p>
 
@@ -265,8 +265,8 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
-	<a href="/2019/05/07/FileReader相关方法/" itemprop="url">
-		FileReader
+	<a href="/2019/05/26/node复习/" itemprop="url">
+		Node.js复习
 	</a>
 
 	</div>
@@ -279,9 +279,9 @@
 
 	发布于
 
-	<a href="/2019/05/07/FileReader相关方法/" itemprop="url">
-		<time datetime="2019-05-07T07:15:37.927Z" itemprop="datePublished">
-	  		2019-05-07
+	<a href="/2019/05/26/node复习/" itemprop="url">
+		<time datetime="2019-05-26T04:10:23.339Z" itemprop="datePublished">
+	  		2019-05-26
 	  </time>
 	</a>
 	&nbsp;
@@ -297,9 +297,9 @@
 
 	更新于
 
-	<a href="/2019/05/07/FileReader相关方法/" itemprop="url">
-		<time datetime="2019-05-07T07:15:37.927Z" itemprop="dateUpdated">
-	  		2019-05-07
+	<a href="/2019/05/26/node复习/" itemprop="url">
+		<time datetime="2019-05-26T04:10:23.339Z" itemprop="dateUpdated">
+	  		2019-05-26
 	  </time>
 	</a> 
 
@@ -318,24 +318,123 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<p>今天学习了H5新增属性读取文件的操作，就总结了一下。<br>FileReader读取文件内容提供的四种方法：</p>
-<ol>
-<li>readAsText():读取文本文件（可以使用Txt打开的文件），返回文本字符串，默认编码是UTF-8。</li>
-<li>readerAsBinaryString()：读取任意类型的文件，返回二进制字符串。这个方法不是用来给用户看的，而是用于存储文件。例如：读取到的文件内容，获取二进制的数据，传递给后台，后台接受了数据以后，再将数据存在。</li>
-<li>readAsDataURL():读取文件以data开头的字符串，实质上就是一段DataURL.<br>这种文件是将文件（图像或者能够嵌入到文档的文件格式）嵌入到文档的方案，并将其转换成base64编码的字符串形式，直接存储到url中，因此不需要像服务器发起请求获取数据了。<br>》》优化网站的加载速度和效率</li>
-<li>abort():中断文件读取。</li>
-</ol>
-<hr>
-<p>FileReader还提供了一套事件处理函数</p>
-<ol>
-<li>onabort:读取文件中断时触发;</li>
-<li>onerror:读取文件失败时触发;</li>
-<li>onload:读取文件成功时触发;</li>
-<li>onloadend:读取完成时触发,无论成功还是失败;</li>
-<li>onloadstart:开始读取时触发;</li>
-<li>onprogress:读取文件过程中触发。</li>
-</ol>
-<p>—需求：实现上传文件即时预览效果—<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">html 部分：</span><br><span class="line">&lt;input type=&quot;file&quot; value=&quot;上传文件&quot; id=&quot;myFile&quot; onchange=&quot;getFile()&quot;&gt;</span><br><span class="line">&lt;img src=&quot;&quot; alt=&quot;&quot;&gt;</span><br><span class="line"></span><br><span class="line">script部分：</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    function getFile()&#123;</span><br><span class="line">        //创建读取文件的实例对象</span><br><span class="line">        var render = new FileReader();</span><br><span class="line">        //获取文件</span><br><span class="line">        var file = document.querySelector(&quot;#myFile&quot;).files[0];</span><br><span class="line">        //将file文件使用  FileReader提供的方法读取</span><br><span class="line">        render.readAsDataURL(file);</span><br><span class="line">        //读取完成后  添加到页面</span><br><span class="line">        render.onload = function()&#123;</span><br><span class="line">            console.log(render.result);//自己可以打印看一看这个base64编码</span><br><span class="line">            document.querySelector(&quot;img&quot;).src = render.result;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+		<ul>
+<li><p>网站开发模型</p>
+<ul>
+<li>黑盒子、哑巴</li>
+<li>写代码让它变得更智能</li>
+<li>按照你设计好的套路供用户使用</li>
+</ul>
+</li>
+<li><p>在 Node 中使用 art-template 模板引擎</p>
+<ul>
+<li>安装</li>
+<li>加载</li>
+<li>template.render()</li>
+</ul>
+</li>
+<li>客户端渲染和服务端渲染的区别<ul>
+<li>最少两次请求，发起 ajax 在客户端使用模板引擎渲染</li>
+<li>客户端拿到的就是服务端已经渲染好的</li>
+</ul>
+</li>
+<li>处理留言本案例首页数据列表渲染展示</li>
+<li>处理留言本案例发表留言功能<ul>
+<li>路径</li>
+<li>设计好的请求路径</li>
+<li>$GET 直接或查询字符串数据</li>
+<li>Node 中需要咱们自己动手来解析<ul>
+<li>url.parse()</li>
+</ul>
+</li>
+<li>/pinglun?name=jack&amp;message=hello</li>
+<li>split(‘?’)</li>
+<li>name=jack&amp;message=hello</li>
+<li>split(‘&amp;’)</li>
+<li>name=jack message=hello</li>
+<li>forEach()</li>
+<li>name=jack.split(‘=’)</li>
+<li>0 key</li>
+<li>1 value</li>
+</ul>
+</li>
+<li>掌握如何解析请求路径中的查询字符串<ul>
+<li>url.parse()</li>
+</ul>
+</li>
+<li>如何在 Node 中实现服务器重定向<ul>
+<li>header(‘location’)<ul>
+<li>301 永久重定向 浏览器会记住<ul>
+<li>a.com b.com</li>
+<li>a 浏览器不会请求 a 了</li>
+<li>直接去跳到 b 了</li>
+</ul>
+</li>
+<li>302 临时重定向 浏览器不记忆<ul>
+<li>a.com b.com</li>
+<li>a.com 还会请求 a</li>
+<li>a 告诉浏览器你往 b</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Node 中的 Console（REPL）使用</p>
+</li>
+<li><p>jQuery 的 each 和 原生的 JavaScript 方法 forEach</p>
+<ul>
+<li>EcmaScript 5 提供的<ul>
+<li>不兼容 IE 8</li>
+</ul>
+</li>
+<li>jQuery 的 each 由 jQuery 这个第三方库提供<ul>
+<li>jQuery 2 以下的版本是兼容 IE 8 的</li>
+<li>它的 each 方法主要用来遍历 jQuery 实例对象（伪数组）</li>
+<li>同时它也可以作为低版本浏览器中 forEach 替代品</li>
+<li>jQuery 的实例对象不能使用 forEach 方法，如果想要使用必须转为数组才可以使用</li>
+<li><code>[].slice.call(jQuery实例对象)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>模块中导出多个成员和导出单个成员</li>
+<li>301 和 302 状态码区别<ul>
+<li>301 永久重定向，浏览器会记住</li>
+<li>302 临时重定向</li>
+</ul>
+</li>
+<li>exports 和 module.exports 的区别<ul>
+<li>每个模块中都有一个 module 对象</li>
+<li>module 对象中有一个 exports 对象</li>
+<li>我们可以把需要导出的成员都挂载到 module.exports 接口对象中</li>
+<li>也就是：<code>moudle.exports.xxx = xxx</code> 的方式</li>
+<li>但是每次都 <code>moudle.exports.xxx = xxx</code> 很麻烦，点儿的太多了</li>
+<li>所以 Node 为了你方便，同时在每一个模块中都提供了一个成员叫：<code>exports</code></li>
+<li><code>exports === module.exports</code> 结果为  <code>true</code>s</li>
+<li>所以对于：<code>moudle.exports.xxx = xxx</code> 的方式 完全可以：<code>expots.xxx = xxx</code></li>
+<li>当一个模块需要导出单个成员的时候，这个时候必须使用：<code>module.exports = xxx</code> 的方式</li>
+<li>不要使用 <code>exports = xxx</code> 不管用</li>
+<li>因为每个模块最终向外 <code>return</code> 的是 <code>module.exports</code></li>
+<li>而 <code>exports</code> 只是 <code>module.exports</code> 的一个引用</li>
+<li>所以即便你为 <code>exports = xx</code> 重新赋值，也不会影响 <code>module.exports</code></li>
+<li>但是有一种赋值方式比较特殊：<code>exports = module.exports</code> 这个用来重新建立引用关系的</li>
+<li>之所以让大家明白这个道理，是希望可以更灵活的去用它</li>
+</ul>
+</li>
+<li>Node 是一个比肩 Java、PHP 的一个平台<ul>
+<li>JavaScript 既能写前端也能写服务端</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//exports.js</span></span><br><span class="line"><span class="keyword">var</span> foo = <span class="string">'123'</span></span><br><span class="line"></span><br><span class="line">exports.foo = foo</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports.add = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a+b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//require.js</span></span><br><span class="line"><span class="keyword">var</span> exportsObj = <span class="built_in">require</span>(<span class="string">'./exports'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(exportsObj)  <span class="comment">//打印结果&#123; foo: '123', add: [Function] &#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>说明 exports === module.exports<br>但是在node实现的底层  返回值是  module.exports<br>也就是说如果你想直接得到返回值而不是对象<br>不能用 exports = foo<br>只能用  module.exports =foo</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//exports.js</span></span><br><span class="line"><span class="built_in">module</span>.exports.add = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a+b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  a: <span class="number">123</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//上段代码会改变 moudle.exports的指向</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 重新建立 exports 和 module.exports 之间的引用关系</span></span><br><span class="line">exports = <span class="built_in">module</span>.exports</span><br><span class="line"></span><br><span class="line">exports.foo = <span class="string">'bar'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//require.js</span></span><br><span class="line"><span class="keyword">var</span> exportsObj = <span class="built_in">require</span>(<span class="string">'./exports'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(exportsObj)  <span class="comment">//&#123; a: 123, foo: 'bar' &#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>打印结果由此可见add方法不存在了，因为改变了module.exports的指向，开辟了新的内存空间，返回值是去返回此时的对象，所赋值的内容。</li>
+</ul>
 	
 	</div>
 	
@@ -354,12 +453,8 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/2019/05/08/background属性总结/" title rel="prev">
-				&laquo;上一篇
-			</a>
 		
-		
-			<a href="/2019/05/06/Apache的安装和配置/" title="Apache的安装和配置" rel="next">
+			<a href="/2019/05/18/touch/" title="移动端touch事件总结" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -377,45 +472,6 @@
 <div class="relate-post">
 	
 		<ul>
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/05/26/node复习/" title="Node.js复习">
-								Node.js复习			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								五月 26日, 2019				
-							</p>
-							<p class="relate-post-content">
-								
-网站开发模型
-
-黑盒子、哑巴
-写代码让它变得更智能
-按照你设计好的套路供用户使用
-
-
-在 Node 中使用 art-template 模板引擎
-
-安装
-加载
-template.render()
-
-
-客户端渲染和服务端渲染的区别
-最少...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/05/26/node复习/" title="Node.js复习">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="Node.js复习">
-							</a>
-						</div>
-					</li>											
-			
 			
 					<li>
 						<div class="relate-post-text">
@@ -485,6 +541,32 @@ template.render()
 							<a href="/2019/05/08/background属性总结/" title>				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/05/07/FileReader相关方法/" title="FileReader">
+								FileReader			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 7日, 2019				
+							</p>
+							<p class="relate-post-content">
+								今天学习了H5新增属性读取文件的操作，就总结了一下。FileReader读取文件内容提供的四种方法：
+
+readAsText():读取文本文件（可以使用Txt打开的文件），返回文本字符串，默认编码是UTF-8。
+readerAsBin...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/05/07/FileReader相关方法/" title="FileReader">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="FileReader">
 							</a>
 						</div>
 					</li>											
