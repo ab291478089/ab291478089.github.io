@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      mongodb在node中使用总结 | Hexo
+      webpack4 使用说明 | Hexo
     
   </title>
   <meta name="author" content="John Doe">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			当前文章&nbsp;:&nbsp;《mongodb在node中使用总结》
+			当前文章&nbsp;:&nbsp;《webpack4 使用说明》
 		
 	</p>
 
@@ -258,6 +258,18 @@
 		插件作者：KELEN
 		插件来源: https://github.com/KELEN/katelog
 -->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+		<script src="/plugin/toc/katelog.min.js"></script>
+
+		
 	 
 
 <div class="layout-post">
@@ -265,8 +277,8 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
-	<a href="/2019/05/29/mongodb在node中使用总结/" itemprop="url">
-		mongodb在node中使用总结
+	<a href="/2019/06/19/webpack4使用说明/" itemprop="url">
+		webpack4 使用说明
 	</a>
 
 	</div>
@@ -279,9 +291,9 @@
 
 	发布于
 
-	<a href="/2019/05/29/mongodb在node中使用总结/" itemprop="url">
-		<time datetime="2019-05-29T09:38:45.686Z" itemprop="datePublished">
-	  		2019-05-29
+	<a href="/2019/06/19/webpack4使用说明/" itemprop="url">
+		<time datetime="2019-06-19T10:30:23.801Z" itemprop="datePublished">
+	  		2019-06-19
 	  </time>
 	</a>
 	&nbsp;
@@ -297,9 +309,9 @@
 
 	更新于
 
-	<a href="/2019/05/29/mongodb在node中使用总结/" itemprop="url">
-		<time datetime="2019-05-29T09:38:45.686Z" itemprop="dateUpdated">
-	  		2019-05-29
+	<a href="/2019/06/19/webpack4使用说明/" itemprop="url">
+		<time datetime="2019-06-19T10:30:23.801Z" itemprop="dateUpdated">
+	  		2019-06-19
 	  </time>
 	</a> 
 
@@ -318,17 +330,32 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<ul>
-<li>首先想要在node中使用mongodb数据库，必须要安装mongodb和node.js。</li>
-<li><p>然后将mongodb运行起来</p>
+		<p>##1. 全局安装<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">       npm i webpack    -g</span><br><span class="line">OR     npm i webpack-cli -g</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-局部安装"><a href="#2-局部安装" class="headerlink" title="2. 局部安装"></a>2. 局部安装</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">       npm i webpack    -S</span><br><span class="line">OR     npm i webpack-cli -S</span><br></pre></td></tr></table></figure>
+<h2 id="3-webpack4-默认存在打包路径"><a href="#3-webpack4-默认存在打包路径" class="headerlink" title="3.webpack4 默认存在打包路径"></a>3.webpack4 默认存在打包路径</h2><p> 默认入口文件：src/index.js<br> 默认出口文件：dist/main.js   生产环境默认代码是一行显示</p>
+<p> 有办法让他不默认一行显示<br> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">webpack --mode production  压缩</span><br><span class="line">webpack --mode development  未压缩    （都是针对main.js）</span><br><span class="line">当然每次执行这个命令肯定会麻烦  我们可以在package.json中进行配置</span><br><span class="line">&#123;</span><br><span class="line">  "name": "day02",</span><br><span class="line">  "version": "1.0.0",</span><br><span class="line">  "description": "",</span><br><span class="line">  "main": "index.js",</span><br><span class="line">  "scripts": &#123;</span><br><span class="line">    "start": "webpack --mode development" //更改内容</span><br><span class="line">  &#125;,</span><br><span class="line">  "keywords": [],</span><br><span class="line">  "author": "",</span><br><span class="line">  "license": "ISC",</span><br><span class="line">  "dependencies": &#123;</span><br><span class="line">    "webpack": "^4.32.2",</span><br><span class="line">    "webpack-cli": "^3.3.2"</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">改过之后直接执行 npm run start 即可</span><br><span class="line"> 打包命令</span><br><span class="line">webpack</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="webpack本地服务"><a href="#webpack本地服务" class="headerlink" title="webpack本地服务"></a>webpack本地服务</h2><ol>
+<li><p>安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i webpack-dev-server -S</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>运行时 比如你在C盘目录下执行cmd 需要在C盘创建文件夹为data,其中在创建名为db的文件夹</p>
+<li><p>配置webpack.config.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry:<span class="string">'./src/index.js'</span>,</span><br><span class="line">    output:&#123;</span><br><span class="line">        path:path.resolve(__dirname,<span class="string">'dist'</span>),</span><br><span class="line">        filename:<span class="string">'bunble.js'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    devServer:&#123;</span><br><span class="line">        contentBase:<span class="string">"./dist"</span>,  <span class="comment">//表示浏览器访问的根路径</span></span><br><span class="line">        inline:<span class="literal">true</span>  <span class="comment">//实时刷新</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>这样使用命令 mongod 才能启动成功。</p>
+<li><p>同样可以配置package.json  使其运行简单</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">    <span class="string">"scripts"</span>: &#123;</span><br><span class="line">   <span class="string">"start"</span>: <span class="string">"webpack--mode development"</span>,</span><br><span class="line">   <span class="string">"dev"</span>:<span class="string">"webpack-dev-server --open --inline"</span></span><br><span class="line">     &#125;,</span><br><span class="line">  ---</span><br><span class="line">  ## loder的使用</span><br><span class="line">  因为webpack在打包文件时只能识别js语言，所以css文件，less，jpg，gif等文件都不能被webpack所识别。</span><br><span class="line">  这时我们就需要安装  文件所对应的依赖 </span><br><span class="line">  这里有相关依赖的信息  https:<span class="comment">//blog.csdn.net/xuelang532777032/article/details/65445604</span></span><br><span class="line"></span><br><span class="line">  ## loader的配置</span><br><span class="line">  <span class="string">``</span><span class="string">`shell</span></span><br><span class="line"><span class="string">  安装</span></span><br><span class="line"><span class="string">npm install --save-dev css-loader</span></span><br><span class="line"><span class="string"> npm install --save-dev ts-loader</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>接着就是怎样通过node连接mongodb了。<br>1.下载mongoose  并引包  npm i mongoose</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mongoose = <span class="built_in">require</span>(<span class="string">'mongoose'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Schema = mongoose.Schema</span><br><span class="line"></span><br><span class="line"><span class="comment">//2.连接数据库   test 为数据库名 不需要存在 </span></span><br><span class="line">mongoose.connect(<span class="string">'mongodb://localhost/test'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//3.设计集合架构Schema</span></span><br><span class="line"><span class="keyword">var</span> UserSchema = <span class="keyword">new</span> Schema(&#123;</span><br><span class="line">    username: &#123;</span><br><span class="line">        type: <span class="built_in">String</span>,</span><br><span class="line">        required: <span class="literal">true</span>  <span class="comment">//必须有</span></span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    password: &#123;</span><br><span class="line">        type: <span class="built_in">String</span>,</span><br><span class="line">        required: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    email: &#123;</span><br><span class="line">        type: <span class="built_in">String</span>,</span><br><span class="line">        required: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//4.创建模型  这里的User 大写单数 变为  小写复数 第二个参数 架构名</span></span><br><span class="line"><span class="keyword">var</span> User = mongoose.model(<span class="string">'User'</span>, UserSchema);</span><br><span class="line"></span><br><span class="line"><span class="comment">//5.当有了模型函数之后  就可以对  users 集合中的数据 为所欲为了</span></span><br><span class="line"><span class="comment">//增加数据</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> admin = <span class="keyword">new</span> User(&#123;</span><br><span class="line">      <span class="comment">//数据根据架构</span></span><br><span class="line">      username : <span class="string">'admin'</span>,</span><br><span class="line">      password : <span class="string">'123'</span>,</span><br><span class="line">      email    : <span class="string">'2914@qq.com'</span></span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="comment">//实现数据持久化</span></span><br><span class="line">  admin.save(<span class="function"><span class="keyword">function</span> (<span class="params">err, ret</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>( err )&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'保存失败'</span>)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'保存成功'</span>) </span><br><span class="line">            <span class="built_in">console</span>.log(ret)  <span class="comment">//&#123; _id: 5cee425b10672931806ebc69,</span></span><br><span class="line">                              <span class="comment">//     username: 'admin',</span></span><br><span class="line">                              <span class="comment">//     password: '123',</span></span><br><span class="line">                              <span class="comment">//     email: '2914@qq.com',</span></span><br><span class="line">                              <span class="comment">//     __v: 0 &#125;</span></span><br><span class="line">        &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//查询所有数据</span></span><br><span class="line">User.find(</span><br><span class="line">    <span class="function"><span class="keyword">function</span>(<span class="params">err,ret</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(ret)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//按条件查询</span></span><br><span class="line">User.findOne(</span><br><span class="line">    &#123;<span class="attr">username</span>:<span class="string">'admin'</span>&#125;,</span><br><span class="line">    <span class="function"><span class="keyword">function</span>(<span class="params">err,ret</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(ret)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">根据条件删除数据</span><br><span class="line">User.remove(</span><br><span class="line">    &#123;</span><br><span class="line">        username:<span class="string">'admin'</span></span><br><span class="line">    &#125;,<span class="function"><span class="keyword">function</span>(<span class="params">err,ret</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (err)&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(err)</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(ret)</span><br><span class="line">            &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">根据id更新数据</span><br><span class="line">User.findByIdAndUpdate(<span class="string">'5cee4dab01948f3be4110e0d'</span>, &#123;</span><br><span class="line">    password: <span class="string">'456'</span></span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">err, ret</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(ret)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></li>
-</ul>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">  webpack.config.js</span><br><span class="line"></span><br><span class="line">  <span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.css$/</span>, <span class="attr">use</span>: <span class="string">'css-loader'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.ts$/</span>, <span class="attr">use</span>: <span class="string">'ts-loader'</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>一、插件<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">1.html-webpack-plugin 项目代码完成后需要压缩 要用到此插件 </span><br><span class="line">                                用于压缩html的体积</span><br><span class="line">  1》安装（下载）</span><br><span class="line">npm install html-webpack-plugin -S</span><br><span class="line"></span><br><span class="line">2》配置(webpack.config.js)</span><br><span class="line"></span><br><span class="line"><span class="meta">1&gt;</span>const HtmlWebpackPlugin = require("html-webpack-plugin");</span><br><span class="line"><span class="meta">2&gt;</span>plugins:[</span><br><span class="line"></span><br><span class="line">	    new HtmlWebpackPlugin(&#123;</span><br><span class="line">	      template:"./src/index.html",</span><br><span class="line">	      minify:&#123;</span><br><span class="line">	          removeAttributeQuotes:true,//去除引号</span><br><span class="line">	          removeComments:true,//去除注释</span><br><span class="line">	          removeEmptyAttributes:true,//去除空属性</span><br><span class="line">	          collapseWhitespace:true//去除空格</span><br><span class="line">	        &#125;</span><br><span class="line"></span><br><span class="line">	    &#125;)</span><br><span class="line">  ]</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li><p>html-withimg-loader 作用：在html添加img标签路径通过webpack<br>打包需要使用这个插件进行解析，否则显示不出来。<br><code>`</code>shell<br>1》安装(下载)</p>
+<p>npm install html-withimg-loader -S</p>
+<p>2》配置webpack.config.js</p>
+<p>{<br>   test:/.html$/,<br>   use: ‘html-withimg-loader’<br>}</p>
+</li>
+</ol>
 	
 	</div>
 	
@@ -347,12 +374,8 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/2019/06/19/webpack4使用说明/" title="webpack4 使用说明" rel="prev">
-				&laquo;上一篇
-			</a>
 		
-		
-			<a href="/2019/05/28/JS实现异步请求/" title="JS实现异步请求4种方法对比" rel="next">
+			<a href="/2019/05/29/mongodb在node中使用总结/" title="mongodb在node中使用总结" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -373,23 +396,28 @@
 			
 					<li>
 						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/06/19/webpack4使用说明/" title="webpack4 使用说明">
-								webpack4 使用说明			
+							<a class="relate-post-title" href="/2019/05/29/mongodb在node中使用总结/" title="mongodb在node中使用总结">
+								mongodb在node中使用总结			
 							</a>
 							<p class="relate-post-date">
 								<i class="fa fa-calendar"></i>
-								六月 19日, 2019				
+								五月 29日, 2019				
 							</p>
 							<p class="relate-post-content">
-								##1. 全局安装12       npm i webpack    -gOR     npm i webpack-cli -g
-2. 局部安装12       npm i webpack    -SOR     npm i webp...
+								
+首先想要在node中使用mongodb数据库，必须要安装mongodb和node.js。
+然后将mongodb运行起来
+
+运行时 比如你在C盘目录下执行cmd 需要在C盘创建文件夹为data,其中在创建名为db的文件夹
+
+这样使用命...
 							</p>
 						</div>
 
 						<div class="relate-post-cover">
-							<a href="/2019/06/19/webpack4使用说明/" title="webpack4 使用说明">				
+							<a href="/2019/05/29/mongodb在node中使用总结/" title="mongodb在node中使用总结">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="webpack4 使用说明">
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="mongodb在node中使用总结">
 							</a>
 						</div>
 					</li>											
