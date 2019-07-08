@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-       | Hexo
+      小程序遇到的坑 | Hexo
     
   </title>
   <meta name="author" content="John Doe">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			当前文章&nbsp;:&nbsp;《》
+			当前文章&nbsp;:&nbsp;《小程序遇到的坑》
 		
 	</p>
 
@@ -258,18 +258,6 @@
 		插件作者：KELEN
 		插件来源: https://github.com/KELEN/katelog
 -->
-
-	
-		<div class="layout-toc">
-			<div id="layout-toc">
-				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
-			</div>
-		</div>
-
-		
-		<script src="/plugin/toc/katelog.min.js"></script>
-
-		
 	 
 
 <div class="layout-post">
@@ -277,6 +265,10 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
+	<a href="/2019/07/05/小程序开发遇到的坑/" itemprop="url">
+		小程序遇到的坑
+	</a>
+
 	</div>
 
 	<div class="article-meta">
@@ -307,7 +299,7 @@
 
 	<a href="/2019/07/05/小程序开发遇到的坑/" itemprop="url">
 		<time datetime="2019-07-05T01:57:49.476Z" itemprop="dateUpdated">
-	  		2019-07-06
+	  		2019-07-08
 	  </time>
 	</a> 
 
@@ -326,7 +318,7 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<h2 id="最近在公司开发小程序遇到了一些问题，趁今早比较闲，总结一下我在开发时遇到的“坑”。"><a href="#最近在公司开发小程序遇到了一些问题，趁今早比较闲，总结一下我在开发时遇到的“坑”。" class="headerlink" title="###最近在公司开发小程序遇到了一些问题，趁今早比较闲，总结一下我在开发时遇到的“坑”。"></a>###最近在公司开发小程序遇到了一些问题，趁今早比较闲，总结一下我在开发时遇到的“坑”。</h2><ol>
+		<ol>
 <li><p>首先就是setData限制最大存储1024kb，因为小程序中的data需要给它赋值的话一定要用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">```javascript</span><br><span class="line"> wx.request(&#123;</span><br><span class="line">    url: domain + &quot;dbRouter/findByBusinessId&quot;, //接口地址</span><br><span class="line">    data: &#123;</span><br><span class="line">      businessId: store.data.business[0]._id,  //商户的id</span><br><span class="line">      adminPhone: getApp().globalData.adminPhone,//商户手机号</span><br><span class="line">      limit: 10,//每次返回数据的个数</span><br><span class="line">      skip: 0  //第一页</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure></p>
 <p>以上代码就是在<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">既然要实现滑动触底  获取下一页的数据  我们就需要在```页面上拉触底事件的处理函数onReachBottom:function ()&#123;&#125; ```这里发起请求，其实只要对skip做操作就行了。  以下代码是我最开始写的。</span><br><span class="line">```javascript</span><br><span class="line"> wx.request(&#123;</span><br><span class="line">       url: domain + &quot;dbRouter/findByBusinessId&quot;,</span><br><span class="line">       data: &#123;</span><br><span class="line">         businessId: store.data.business[0]._id,</span><br><span class="line">         adminPhone: getApp().globalData.adminPhone,</span><br><span class="line">         limit: that.data.limit,</span><br><span class="line">         skip: that.data.skip++</span><br><span class="line">       &#125;,</span><br><span class="line">       header: &#123;</span><br><span class="line">         &apos;content-type&apos;: &apos;application/x-www-form-urlencoded&apos; // 默认值</span><br><span class="line">       &#125;,</span><br><span class="line">       method: &apos;get&apos;,</span><br><span class="line">       success: function (res) &#123;</span><br><span class="line">           that.setData(&#123;</span><br><span class="line">            storeListArray: [...that.data.storeListArray,...res.data.data.defaultStoreList]</span><br><span class="line">           &#125;)</span><br><span class="line">         &#125;</span><br><span class="line">       </span><br><span class="line">     &#125;);</span><br></pre></td></tr></table></figure></p>
 <p>这就是我当时的想法，很简单，只需要在上一次请求得到的10条数据后面加上新请求的数据就行了，可是当是数据量比较多的时候就出现了，文中刚开始提到问题<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">####这令我十分苦恼获取的数据都需要，所以不能和后台进行沟通，让他把没用的数据过滤，于是我又想出了一种方法，那就是让它成为一个三维数组。</span><br><span class="line">本来的结构是```brandList[0][0]```代表当前第一个品牌下的第一个店铺，现在改装成```brandList[0][0][0]```代表当前第一个品牌下的第一页下的第一个店铺，因为每一页只要10条数据，这样setData(&#123;&#125;)就不会出现问题了。</span><br><span class="line"></span><br><span class="line">修改过后的触底事件函数</span><br><span class="line">```javascript</span><br><span class="line">wx.request(&#123;</span><br><span class="line">        url: domain + &quot;dbRouter/findByBusinessId&quot;,</span><br><span class="line">        data: &#123;</span><br><span class="line">          businessId: store.data.business[0]._id,</span><br><span class="line">          adminPhone: getApp().globalData.adminPhone,</span><br><span class="line">          limit: that.data.limit,</span><br><span class="line">          skip: that.data.skip[that.data.index] * that.data.limit  //将每一页变成一个数组，每一页只能存放十条数据，这样setData(&#123;&#125;)就不会存在问题了</span><br><span class="line">        &#125;,</span><br><span class="line">        header: &#123;</span><br><span class="line">          &apos;content-type&apos;: &apos;application/x-www-form-urlencoded&apos; // 默认值</span><br><span class="line">        &#125;,</span><br><span class="line">        method: &apos;get&apos;,</span><br><span class="line">        ...</span><br></pre></td></tr></table></figure></p>
@@ -355,6 +347,10 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
+			<a href="/2019/07/08/React/" title rel="prev">
+				&laquo;上一篇
+			</a>
+		
 		
 			<a href="/2019/06/19/webpack4使用说明/" title="webpack4 使用说明" rel="next">
 				下一篇&raquo;
@@ -374,6 +370,29 @@
 <div class="relate-post">
 	
 		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/07/08/React/" title>
+											
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 8日, 2019				
+							</p>
+							<p class="relate-post-content">
+								
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/07/08/React/" title>				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt>
+							</a>
+						</div>
+					</li>											
+			
 			
 					<li>
 						<div class="relate-post-text">

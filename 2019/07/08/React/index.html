@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      FileReader | Hexo
+       | Hexo
     
   </title>
   <meta name="author" content="John Doe">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			当前文章&nbsp;:&nbsp;《FileReader》
+			当前文章&nbsp;:&nbsp;《》
 		
 	</p>
 
@@ -265,10 +265,6 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
-	<a href="/2019/05/07/FileReader相关方法/" itemprop="url">
-		FileReader
-	</a>
-
 	</div>
 
 	<div class="article-meta">
@@ -279,9 +275,9 @@
 
 	发布于
 
-	<a href="/2019/05/07/FileReader相关方法/" itemprop="url">
-		<time datetime="2019-05-07T07:15:37.927Z" itemprop="datePublished">
-	  		2019-05-07
+	<a href="/2019/07/08/React/" itemprop="url">
+		<time datetime="2019-07-08T02:12:00.537Z" itemprop="datePublished">
+	  		2019-07-08
 	  </time>
 	</a>
 	&nbsp;
@@ -297,9 +293,9 @@
 
 	更新于
 
-	<a href="/2019/05/07/FileReader相关方法/" itemprop="url">
-		<time datetime="2019-05-07T07:15:37.927Z" itemprop="dateUpdated">
-	  		2019-05-07
+	<a href="/2019/07/08/React/" itemprop="url">
+		<time datetime="2019-07-08T02:12:00.537Z" itemprop="dateUpdated">
+	  		2019-07-08
 	  </time>
 	</a> 
 
@@ -318,25 +314,7 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<p>今天学习了H5新增属性读取文件的操作，就总结了一下。<br>FileReader读取文件内容提供的四种方法：</p>
-<ol>
-<li>readAsText():读取文本文件（可以使用Txt打开的文件），返回文本字符串，默认编码是UTF-8。</li>
-<li>readerAsBinaryString()：读取任意类型的文件，返回二进制字符串。这个方法不是用来给用户看的，而是用于存储文件。例如：读取到的文件内容，获取二进制的数据，传递给后台，后台接受了数据以后，再将数据存在。</li>
-<li>readAsDataURL():读取文件以data开头的字符串，实质上就是一段DataURL.<br>这种文件是将文件（图像或者能够嵌入到文档的文件格式）嵌入到文档的方案，并将其转换成base64编码的字符串形式，直接存储到url中，因此不需要像服务器发起请求获取数据了。<br>》》优化网站的加载速度和效率</li>
-<li>abort():中断文件读取。</li>
-</ol>
-<hr>
-<p>FileReader还提供了一套事件处理函数</p>
-<ol>
-<li>onabort:读取文件中断时触发;</li>
-<li>onerror:读取文件失败时触发;</li>
-<li>onload:读取文件成功时触发;</li>
-<li>onloadend:读取完成时触发,无论成功还是失败;</li>
-<li>onloadstart:开始读取时触发;</li>
-<li>onprogress:读取文件过程中触发。</li>
-</ol>
-<p>—需求：实现上传文件即时预览效果—<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">html 部分：</span><br><span class="line">&lt;input type=&quot;file&quot; value=&quot;上传文件&quot; id=&quot;myFile&quot; onchange=&quot;getFile()&quot;&gt;</span><br><span class="line">&lt;img src=&quot;&quot; alt=&quot;&quot;&gt;</span><br><span class="line"></span><br><span class="line">script部分：</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    function getFile()&#123;</span><br><span class="line">        //创建读取文件的实例对象</span><br><span class="line">        var render = new FileReader();</span><br><span class="line">        //获取文件</span><br><span class="line">        var file = document.querySelector(&quot;#myFile&quot;).files[0];</span><br><span class="line">        //将file文件使用  FileReader提供的方法读取</span><br><span class="line">        render.readAsDataURL(file);</span><br><span class="line">        //读取完成后  添加到页面</span><br><span class="line">        render.onload = function()&#123;</span><br><span class="line">            console.log(render.result);//自己可以打印看一看这个base64编码</span><br><span class="line">            document.querySelector(&quot;img&quot;).src = render.result;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-	
+			
 	</div>
 	
 	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
@@ -354,12 +332,8 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/2019/05/08/background属性总结/" title rel="prev">
-				&laquo;上一篇
-			</a>
 		
-		
-			<a href="/2019/05/06/Apache的安装和配置/" title="Apache的安装和配置" rel="next">
+			<a href="/2019/07/05/小程序开发遇到的坑/" title="小程序遇到的坑" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -377,29 +351,6 @@
 <div class="relate-post">
 	
 		<ul>
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/07/08/React/" title>
-											
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								七月 8日, 2019				
-							</p>
-							<p class="relate-post-content">
-								
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/07/08/React/" title>				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt>
-							</a>
-						</div>
-					</li>											
-			
 			
 					<li>
 						<div class="relate-post-text">
@@ -584,6 +535,32 @@ template.render()
 							<a href="/2019/05/10/伸缩布局总结/" title="伸缩布局常用属性总结">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="伸缩布局常用属性总结">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/05/07/FileReader相关方法/" title="FileReader">
+								FileReader			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 7日, 2019				
+							</p>
+							<p class="relate-post-content">
+								今天学习了H5新增属性读取文件的操作，就总结了一下。FileReader读取文件内容提供的四种方法：
+
+readAsText():读取文本文件（可以使用Txt打开的文件），返回文本字符串，默认编码是UTF-8。
+readerAsBin...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/05/07/FileReader相关方法/" title="FileReader">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="FileReader">
 							</a>
 						</div>
 					</li>											

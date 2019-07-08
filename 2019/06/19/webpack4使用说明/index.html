@@ -311,7 +311,7 @@
 
 	<a href="/2019/06/19/webpack4使用说明/" itemprop="url">
 		<time datetime="2019-06-19T10:30:23.801Z" itemprop="dateUpdated">
-	  		2019-07-05
+	  		2019-07-08
 	  </time>
 	</a> 
 
@@ -359,6 +359,8 @@
 <li><p>安装webpack-cli 运行<figure class="highlight plain"><figcaption><span>i webpack-cli -D```  </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">6.  在根目录创建```webpack.config.js```并添加如下配置</span><br><span class="line"> ```node.js</span><br><span class="line"> module.exports = &#123;</span><br><span class="line">   mode : &apos;development&apos;</span><br><span class="line">   //development 开发模式 未被压缩  production 生产模式 压缩版本 </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
 </li>
 <li><p>这时如果需要实时打包你的JS文件 就要安装 <figure class="highlight plain"><figcaption><span>i webpack-dev-server -D``` 安装成功后需要在package.json中加入</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">```json</span><br><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">  &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,</span><br><span class="line">  &quot;dev&quot;: &quot;webpack-dev-server --open --port 3000 --hot --host 127.0.0.1&quot;  //加入dev</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+</li>
+<li><p>还可以将index.html放到虚拟内存中 需要安装插件<figure class="highlight plain"><figcaption><span>i html-webpack-plugin - D```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">  9.  安装完成后需要在webpack.config.js中配置该插件，具体如下：</span><br><span class="line">   ```javascript</span><br><span class="line">   //向外暴露一个对象</span><br><span class="line">const path = require(&apos;path&apos;)</span><br><span class="line">const HtmlWebPackPlugin = require(&apos;html-webpack-plugin&apos;)  //导入在内存中自动生成 index 页面插件</span><br><span class="line">//创建插件实例对象</span><br><span class="line">const htmlPlugin = new HtmlWebPackPlugin(&#123;</span><br><span class="line">    template: path.join(__dirname,&apos;./src/index.html&apos;),//源文件</span><br><span class="line">    filename: &apos;index.html&apos; //生成首页名称</span><br><span class="line">&#125;)</span><br><span class="line">module.exports = &#123;</span><br><span class="line">    mode : &apos;production&apos;,  //development 开发模式  未被压缩  production 生产模式 压缩版本</span><br><span class="line">    plugins: [ </span><br><span class="line">        htmlPlugin</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>如果使用 webpack-dev-server 就需要注意打包后的js路径是在项目的根目录但是我们看不到。<br><img src="http://pu5wdfura.bkt.clouddn.com/W%28FFF7M7B5RE7A%29@T%7BOD3$6.png" alt="avatar"><br>这样就可以直接运行 npm run dev 来预览代码效果了!</p>
 </li>
 </ol>
@@ -380,7 +382,7 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/2019/07/05/小程序开发遇到的坑/" title rel="prev">
+			<a href="/2019/07/05/小程序开发遇到的坑/" title="小程序遇到的坑" rel="prev">
 				&laquo;上一篇
 			</a>
 		
@@ -406,23 +408,46 @@
 			
 					<li>
 						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/07/05/小程序开发遇到的坑/" title>
+							<a class="relate-post-title" href="/2019/07/08/React/" title>
 											
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 8日, 2019				
+							</p>
+							<p class="relate-post-content">
+								
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/07/08/React/" title>				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/07/05/小程序开发遇到的坑/" title="小程序遇到的坑">
+								小程序遇到的坑			
 							</a>
 							<p class="relate-post-date">
 								<i class="fa fa-calendar"></i>
 								七月 5日, 2019				
 							</p>
 							<p class="relate-post-content">
-								###最近在公司开发小程序遇到了一些问题，趁今早比较闲，总结一下我在开发时遇到的“坑”。
-首先就是setData限制最大存储1024kb，因为小程序中的data需要给它赋值的话一定要用123456789```javascript wx...
+								
+首先就是setData限制最大存储1024kb，因为小程序中的data需要给它赋值的话一定要用123456789```javascript wx.request(&#123;    url: domain + &quot;dbRou...
 							</p>
 						</div>
 
 						<div class="relate-post-cover">
-							<a href="/2019/07/05/小程序开发遇到的坑/" title>				
+							<a href="/2019/07/05/小程序开发遇到的坑/" title="小程序遇到的坑">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt>
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="小程序遇到的坑">
 							</a>
 						</div>
 					</li>											
