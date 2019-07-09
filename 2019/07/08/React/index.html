@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-       | Hexo
+      React开发 | Hexo
     
   </title>
   <meta name="author" content="John Doe">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			当前文章&nbsp;:&nbsp;《》
+			当前文章&nbsp;:&nbsp;《React开发》
 		
 	</p>
 
@@ -265,6 +265,10 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
+	<a href="/2019/07/08/React/" itemprop="url">
+		React开发
+	</a>
+
 	</div>
 
 	<div class="article-meta">
@@ -295,7 +299,7 @@
 
 	<a href="/2019/07/08/React/" itemprop="url">
 		<time datetime="2019-07-08T02:12:00.537Z" itemprop="dateUpdated">
-	  		2019-07-08
+	  		2019-07-09
 	  </time>
 	</a> 
 
@@ -314,7 +318,15 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-			
+		<p>###React 开发步骤</p>
+<p>####一、先下载相关依赖包<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"> <span class="number">1.</span>用npm/cnpm安装            npm i  react react-dom -S </span><br><span class="line"> <span class="number">2.</span>安装babel                 npm i babel-core babel-loader babel-plugin-transform-runtime -D</span><br><span class="line"> <span class="number">3.</span>安装babel对React相关依赖   npm i babel-preset-env babel-preset-stage<span class="number">-0</span> babel-preset-react -D</span><br><span class="line"> <span class="number">4.</span>配置babel  </span><br><span class="line"> <span class="number">1</span>）在项目根目录下创建.babelrc文件。</span><br><span class="line"> <span class="number">2</span>）在其文件添加配置信息</span><br><span class="line"> &#123;</span><br><span class="line">    <span class="string">"presets"</span>: [<span class="string">"env"</span>,<span class="string">"stage-0"</span>,<span class="string">"react"</span>],</span><br><span class="line">    <span class="string">"plugins"</span>: [<span class="string">"transform-runtime"</span>]</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="number">5.</span>配置loader</span><br><span class="line"> <span class="number">1</span>)在webpack.config.js中添加以下配置文件</span><br><span class="line"> <span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    mode : <span class="string">'production'</span>,  <span class="comment">//development 开发模式  未被压缩  production 生产模式 压缩版本</span></span><br><span class="line">    plugins: [ </span><br><span class="line">        htmlPlugin</span><br><span class="line">    ],</span><br><span class="line">    <span class="built_in">module</span>: &#123;<span class="comment">//所有第三方配置规则</span></span><br><span class="line">        rules: [<span class="comment">//匹配规则</span></span><br><span class="line">            &#123;<span class="attr">test</span>: <span class="regexp">/\.js|.jsx$/</span>,<span class="attr">use</span>: <span class="string">'babel-loader'</span>, <span class="attr">exclude</span>:<span class="regexp">/node_modules/</span>&#125;,<span class="comment">//千万别忘记添加exclude 排除选项</span></span><br><span class="line">            &#123;<span class="attr">test</span>: <span class="regexp">/\.css|.sass$/</span>,<span class="attr">use</span>: [<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>]&#125;,<span class="comment">//打包处理css样式表的第三方loader</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    resolve:&#123;</span><br><span class="line">        extensions: [<span class="string">'.js'</span>,<span class="string">'.jsx'</span>,<span class="string">'.json'</span>,<span class="string">'.css'</span>], <span class="comment">//表示这几个文件的后缀名可以省略不写</span></span><br><span class="line">        alias: &#123; <span class="comment">//配置路径</span></span><br><span class="line">            <span class="string">'@'</span>: path.join(__dirname, <span class="string">'./src/'</span>)  <span class="comment">//这样 @ 就表示项目根路径下的src</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>####二、React基本模板<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 在index.js中先导入包</span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>  <span class="comment">//创建组件 虚拟Dom 生命周期</span></span><br><span class="line"><span class="keyword">import</span> ReactDom <span class="keyword">from</span> <span class="string">'react-dom'</span> <span class="comment">//把虚拟Dom 进行渲染显示</span></span><br><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">    name: <span class="string">'zs'</span>,</span><br><span class="line">    age: <span class="number">21</span></span><br><span class="line">&#125;</span><br><span class="line">React.render(&lt;div&gt;</span><br><span class="line">  &lt;Hello &#123;...user&#125;&gt;&lt;/Hello&gt;  &#123;/*自定义组件*/&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 创建组件  (有两种方式，方式一：构造函数创建)</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Hello</span>(<span class="params">props</span>)//<span class="title">props</span> 参数便于接收外界传来的值  可以渲染到自定义组件中</span>&#123;</span><br><span class="line">    <span class="comment">//return null  什么也不渲染</span></span><br><span class="line">    <span class="keyword">return</span> &lt;div&gt;我是构造函数创建的组件&#123;props.name&#125; &lt;/div&gt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//这种方式创建的组件只能接收外界传来的值  自己内部不能创建data</span></span><br><span class="line"></span><br><span class="line">方式二：<span class="class"><span class="keyword">class</span> 类创建</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">Hello</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>()&#123;</span><br><span class="line">        <span class="keyword">super</span>()</span><br><span class="line">        <span class="keyword">this</span>.state = &#123;</span><br><span class="line">            msg : <span class="string">'这是自己内部创建的数据'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;，</span><br><span class="line">    render()&#123;</span><br><span class="line">        <span class="keyword">return</span> &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;&#123;this.state.msg&#125;&lt;/h1&gt;</span><br><span class="line">        &lt;h2&gt;&#123;this.props.name&#125;&lt;/h2&gt;  &#123;/*不用设置props接收参数 */&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这种方式创建的组件虽然要比第一种更占内存 但是方便对数据的更新和修改</span></span><br></pre></td></tr></table></figure></p>
+<p>####三、注意事项</p>
+<ol>
+<li>当把组件分离出index.js时需要在 根目录<code>src</code>下创建<code>components</code>目录  便于存放组件<br>文件名以 <code>.jsx</code>结尾<br>如图所示：<br><img src="http://pu5wdfura.bkt.clouddn.com/1.png" alt="my-logo.png" title="my-logo"><br>分离之后的组件必须还是需要导入React包文件<br>还有记得导出组件 因为在index.js中需要引用</li>
+<li>类样式不再使用<code>class</code>表示 统一使用<code>className</code> </li>
+</ol>
+	
 	</div>
 	
 	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
@@ -542,6 +554,32 @@ template.render()
 			
 					<li>
 						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/05/08/background属性总结/" title>
+											
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 8日, 2019				
+							</p>
+							<p class="relate-post-content">
+								title: CSS3 background 新增属性总结
+今天解除了几个曾经没有用到的属性，所以想总结并且复习一下。
+&nbsp;
+　　background-origin属性：有三个属性值，分别是border-box，padding...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/05/08/background属性总结/" title>				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
 							<a class="relate-post-title" href="/2019/05/07/FileReader相关方法/" title="FileReader">
 								FileReader			
 							</a>
@@ -585,32 +623,6 @@ readerAsBin...
 							<a href="/2019/05/06/Apache的安装和配置/" title="Apache的安装和配置">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="Apache的安装和配置">
-							</a>
-						</div>
-					</li>											
-			
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/04/30/Ajax初体验/" title="Ajax 初体验">
-								Ajax 初体验			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								四月 30日, 2019				
-							</p>
-							<p class="relate-post-content">
-								tags: Ajax概念
-首先要了解两个概念：
-
-同步 ：当JS代码加载到当前AJAX的时候会把页面里所有的代码停止加载，页面出现假死状态，当这个AJAX执行完毕后才会继续运行其他代码页面假死状态解除。通俗一点说就是，4个用户访问同一...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/04/30/Ajax初体验/" title="Ajax 初体验">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="Ajax 初体验">
 							</a>
 						</div>
 					</li>											
