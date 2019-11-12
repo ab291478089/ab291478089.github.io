@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      伸缩布局常用属性总结 | Hexo
+       | Hexo
     
   </title>
   <meta name="author" content="John Doe">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			当前文章&nbsp;:&nbsp;《伸缩布局常用属性总结》
+			当前文章&nbsp;:&nbsp;《》
 		
 	</p>
 
@@ -258,6 +258,18 @@
 		插件作者：KELEN
 		插件来源: https://github.com/KELEN/katelog
 -->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+		<script src="/plugin/toc/katelog.min.js"></script>
+
+		
 	 
 
 <div class="layout-post">
@@ -265,10 +277,6 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
-	<a href="/2019/05/10/伸缩布局总结/" itemprop="url">
-		伸缩布局常用属性总结
-	</a>
-
 	</div>
 
 	<div class="article-meta">
@@ -279,9 +287,9 @@
 
 	发布于
 
-	<a href="/2019/05/10/伸缩布局总结/" itemprop="url">
-		<time datetime="2019-05-10T02:48:08.045Z" itemprop="datePublished">
-	  		2019-05-10
+	<a href="/2019/11/12/快速修改elementUI样式/" itemprop="url">
+		<time datetime="2019-11-12T05:51:19.981Z" itemprop="datePublished">
+	  		2019-11-12
 	  </time>
 	</a>
 	&nbsp;
@@ -297,9 +305,9 @@
 
 	更新于
 
-	<a href="/2019/05/10/伸缩布局总结/" itemprop="url">
-		<time datetime="2019-05-10T02:48:08.045Z" itemprop="dateUpdated">
-	  		2019-05-10
+	<a href="/2019/11/12/快速修改elementUI样式/" itemprop="url">
+		<time datetime="2019-11-12T05:51:19.981Z" itemprop="dateUpdated">
+	  		2019-11-12
 	  </time>
 	</a> 
 
@@ -318,11 +326,22 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<p>Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。</p>
-<p>它即可以应用于容器中，也可以应用于行内元素。(以上说明结合微信开发者工具说明)2009年，W3C提出了一种新的方案—-Flex布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。</p>
-<p></p><p><span style="font-size: 14px;">以下6个属性设置在容器上：</span></p><p></p>
-<p><blockquote></blockquote></p>
-<ul><br><li style="list-style-type: none;"><br><ul><br><li>flex-direction属性　　设置容器内项目的排列方向(默认主轴方向排列)　其中有个属性值column 是设置为以侧轴方向排列子元素　</li><br><li>flex-wrap　　容器内项目换行方式  （默认值no-wrap不换行）</li><br><li>flex-flow　　以上两个属性的简写方式</li><br><li>justify-content　　项目在主轴上的对齐方式</li><br><li>align-items　　设置子元素在侧轴方向如何排列<br>                    有五个常用属性值<br>                    stretch 表示拉伸 填充整个侧轴<br><br>            center  表示侧轴居中对齐<br><br>        baseline  表示侧轴元素沿文本的基线对齐<br><br>        flex-start  表示侧轴父元素的开始位置<br><br>        flex-end    表示侧轴父元素的结尾位置<br></li><br><li>align-content　　定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</li><br></ul><br></li><br></ul><br><br><img title src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071004.png" alt><br><br><ul><br><li><code>order　　子元素的排列顺序。数值越小，排列越靠前，默认为0。</code></li><br><li><code>flex-grow　　子元素的放大比例，默认为<code>0</code>，即如果存在剩余空间，也不放大。</code></li><br><li><code>flex-shrink　　子元素的缩小比例，默认为1，即如果空间不足，该子元素将缩小。</code></li><br><li><code>flex-basis　　在分配多余空间之前，子元素占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为<code>auto</code>，即子元素的本来大小。</code></li><br><li><code>flex　　是<code>flex-grow</code>, <code>flex-shrink</code> 和 <code>flex-basis</code>的简写，默认值为<code>0 1 auto</code>。后两个属性可选。</code></li><br><li><code>align-self　　允许单个子元素有与其他子元素不一样的对齐方式，可覆盖<code>align-items</code>属性。默认值为<code>auto</code>，表示继承父元素的<code>align-items</code>属性，如果没有父元素，则等同于<code>stretch</code>。</code></li><br></ul>	
+		<p>title: 记修改elemetUI样式问题</p>
+<h1 class="postTitle"><br><br><a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/liAnran/p/10214039.html" target="_blank" rel="noopener">快速修改elementUI组件样式</a></h1>
+
+
+
+<div class="postBody"><br><br><div id="cnblogs_post_body" class="blogpost-body "><br>    <p><span style="font-size: 18px;">使用elementUI时，我们经常需要对其中某些组件的样式进行自定义，介绍一种最简单的方式。</span></p><br><p><span style="font-size: 18px;">这是使用组件自带样式写出来的对话框：</span></p><br><p><span style="font-size: 18px;"><img src="https://img2018.cnblogs.com/blog/1490430/201901/1490430-20190103143006735-186392036.png" alt></span><br><span style="font-size: 18px;">我需要做成这样： </span></p><br><p><img src="https://img2018.cnblogs.com/blog/1490430/201901/1490430-20190103143014633-448700764.png" alt><br><strong><span style="font-size: 18pt;">方法一</span></strong><br><strong><span style="font-size: 18pt;">step1：</span></strong><br><span style="font-size: 18px;">在页面上审查元素，找到控制元素的样式： </span><br><span style="font-size: 18px;"> <img src="https://img2018.cnblogs.com/blog/1490430/201901/1490430-20190103143029828-2050000930.png" alt></span><br><span style="font-size: 18px;">如图：控制对话框顶端的类名是.el-dialog_header，我们就对这个类进行重写</span></p><br><p><span style="font-size: 18px;">step2：</span><br><span style="font-size: 18px;">在页面上再添加一个&lt;style&gt;&lt;/style&gt;标签，注意不需要scoped作用域，不然修改不了。 </span><br><span style="font-size: 18px;">将该元素包裹在某个父元素内，如图.appManage就是.el-dialog_header的一个父标签，这样能避免改写全局样式。 </span></p><br><p><img src="https://img2018.cnblogs.com/blog/1490430/201901/1490430-20190103143040343-1999095148.png" alt><br><strong><span style="font-size: 18pt;">方法二</span></strong><br><span style="font-size: 18px;">在需要更改组件样式的顶层容器的样式前，加上 /deep/ </span><br><span style="font-size: 18px;">如图： </span></p><br><p><img src="https://img2018.cnblogs.com/blog/1490430/201901/1490430-20190103143046615-430653347.png" alt><br><span style="font-size: 18px;">更改组件样式和写自定义样式互不影响。</span><br><br></p><br></div>
+
+
+
+
+
+
+
+
+
+</div>	
 	</div>
 	
 	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
@@ -340,12 +359,8 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/2019/05/18/touch/" title="移动端touch事件总结" rel="prev">
-				&laquo;上一篇
-			</a>
 		
-		
-			<a href="/2019/05/08/background属性总结/" title rel="next">
+			<a href="/2019/09/08/去哪网坑一/" title="去哪网坑一" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -363,34 +378,6 @@
 <div class="relate-post">
 	
 		<ul>
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/11/12/快速修改elementUI样式/" title>
-											
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								十一月 12日, 2019				
-							</p>
-							<p class="relate-post-content">
-								title: 记修改elemetUI样式问题
-快速修改elementUI组件样式
-
-
-
-    使用elementUI时，我们经常需要对其中某些组件的样式进行自定义，介绍一种最简单的方式。这是使用组件自带样式写出来的对话框：我需要做成...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/11/12/快速修改elementUI样式/" title>				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt>
-							</a>
-						</div>
-					</li>											
-			
 			
 					<li>
 						<div class="relate-post-text">
@@ -599,6 +586,30 @@ template.render()
 							<a href="/2019/05/18/touch/" title="移动端touch事件总结">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="移动端touch事件总结">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/05/10/伸缩布局总结/" title="伸缩布局常用属性总结">
+								伸缩布局常用属性总结			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 10日, 2019				
+							</p>
+							<p class="relate-post-content">
+								Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。
+它即可以应用于容器中，也可以应用于行内元素。(...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/05/10/伸缩布局总结/" title="伸缩布局常用属性总结">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="伸缩布局常用属性总结">
 							</a>
 						</div>
 					</li>											
