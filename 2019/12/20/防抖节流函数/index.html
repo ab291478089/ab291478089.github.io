@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      React开发 | Hexo
+       | Hexo
     
   </title>
   <meta name="author" content="John Doe">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			当前文章&nbsp;:&nbsp;《React开发》
+			当前文章&nbsp;:&nbsp;《》
 		
 	</p>
 
@@ -258,6 +258,18 @@
 		插件作者：KELEN
 		插件来源: https://github.com/KELEN/katelog
 -->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+		<script src="/plugin/toc/katelog.min.js"></script>
+
+		
 	 
 
 <div class="layout-post">
@@ -265,10 +277,6 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
-	<a href="/2019/07/08/React/" itemprop="url">
-		React开发
-	</a>
-
 	</div>
 
 	<div class="article-meta">
@@ -279,9 +287,9 @@
 
 	发布于
 
-	<a href="/2019/07/08/React/" itemprop="url">
-		<time datetime="2019-07-08T02:12:00.537Z" itemprop="datePublished">
-	  		2019-07-08
+	<a href="/2019/12/20/防抖节流函数/" itemprop="url">
+		<time datetime="2019-12-20T12:12:41.539Z" itemprop="datePublished">
+	  		2019-12-20
 	  </time>
 	</a>
 	&nbsp;
@@ -297,9 +305,9 @@
 
 	更新于
 
-	<a href="/2019/07/08/React/" itemprop="url">
-		<time datetime="2019-07-08T02:12:00.537Z" itemprop="dateUpdated">
-	  		2019-07-09
+	<a href="/2019/12/20/防抖节流函数/" itemprop="url">
+		<time datetime="2019-12-20T12:12:41.539Z" itemprop="dateUpdated">
+	  		2019-12-20
 	  </time>
 	</a> 
 
@@ -318,14 +326,23 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<p>###React 开发步骤</p>
-<p>####一、先下载相关依赖包<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"> <span class="number">1.</span>用npm/cnpm安装            npm i  react react-dom -S </span><br><span class="line"> <span class="number">2.</span>安装babel                 npm i babel-core babel-loader babel-plugin-transform-runtime -D</span><br><span class="line"> <span class="number">3.</span>安装babel对React相关依赖   npm i babel-preset-env babel-preset-stage<span class="number">-0</span> babel-preset-react -D</span><br><span class="line"> <span class="number">4.</span>配置babel  </span><br><span class="line"> <span class="number">1</span>）在项目根目录下创建.babelrc文件。</span><br><span class="line"> <span class="number">2</span>）在其文件添加配置信息</span><br><span class="line"> &#123;</span><br><span class="line">    <span class="string">"presets"</span>: [<span class="string">"env"</span>,<span class="string">"stage-0"</span>,<span class="string">"react"</span>],</span><br><span class="line">    <span class="string">"plugins"</span>: [<span class="string">"transform-runtime"</span>]</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="number">5.</span>配置loader</span><br><span class="line"> <span class="number">1</span>)在webpack.config.js中添加以下配置文件</span><br><span class="line"> <span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    mode : <span class="string">'production'</span>,  <span class="comment">//development 开发模式  未被压缩  production 生产模式 压缩版本</span></span><br><span class="line">    plugins: [ </span><br><span class="line">        htmlPlugin</span><br><span class="line">    ],</span><br><span class="line">    <span class="built_in">module</span>: &#123;<span class="comment">//所有第三方配置规则</span></span><br><span class="line">        rules: [<span class="comment">//匹配规则</span></span><br><span class="line">            &#123;<span class="attr">test</span>: <span class="regexp">/\.js|.jsx$/</span>,<span class="attr">use</span>: <span class="string">'babel-loader'</span>, <span class="attr">exclude</span>:<span class="regexp">/node_modules/</span>&#125;,<span class="comment">//千万别忘记添加exclude 排除选项</span></span><br><span class="line">            &#123;<span class="attr">test</span>: <span class="regexp">/\.css|.sass$/</span>,<span class="attr">use</span>: [<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>]&#125;,<span class="comment">//打包处理css样式表的第三方loader</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    resolve:&#123;</span><br><span class="line">        extensions: [<span class="string">'.js'</span>,<span class="string">'.jsx'</span>,<span class="string">'.json'</span>,<span class="string">'.css'</span>], <span class="comment">//表示这几个文件的后缀名可以省略不写</span></span><br><span class="line">        alias: &#123; <span class="comment">//配置路径</span></span><br><span class="line">            <span class="string">'@'</span>: path.join(__dirname, <span class="string">'./src/'</span>)  <span class="comment">//这样 @ 就表示项目根路径下的src</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>####二、React基本模板<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 在index.js中先导入包</span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>  <span class="comment">//创建组件 虚拟Dom 生命周期</span></span><br><span class="line"><span class="keyword">import</span> ReactDom <span class="keyword">from</span> <span class="string">'react-dom'</span> <span class="comment">//把虚拟Dom 进行渲染显示</span></span><br><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">    name: <span class="string">'zs'</span>,</span><br><span class="line">    age: <span class="number">21</span></span><br><span class="line">&#125;</span><br><span class="line">React.render(&lt;div&gt;</span><br><span class="line">  &lt;Hello &#123;...user&#125;&gt;&lt;/Hello&gt;  &#123;/*自定义组件*/&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 创建组件  (有两种方式，方式一：构造函数创建)</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Hello</span>(<span class="params">props</span>)//<span class="title">props</span> 参数便于接收外界传来的值  可以渲染到自定义组件中</span>&#123;</span><br><span class="line">    <span class="comment">//return null  什么也不渲染</span></span><br><span class="line">    <span class="keyword">return</span> &lt;div&gt;我是构造函数创建的组件&#123;props.name&#125; &lt;/div&gt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//这种方式创建的组件只能接收外界传来的值  自己内部不能创建data</span></span><br><span class="line"></span><br><span class="line">方式二：<span class="class"><span class="keyword">class</span> 类创建</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">Hello</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>()&#123;</span><br><span class="line">        <span class="keyword">super</span>()</span><br><span class="line">        <span class="keyword">this</span>.state = &#123;</span><br><span class="line">            msg : <span class="string">'这是自己内部创建的数据'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;，</span><br><span class="line">    render()&#123;</span><br><span class="line">        <span class="keyword">return</span> &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;&#123;this.state.msg&#125;&lt;/h1&gt;</span><br><span class="line">        &lt;h2&gt;&#123;this.props.name&#125;&lt;/h2&gt;  &#123;/*不用设置props接收参数 */&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这种方式创建的组件虽然要比第一种更占内存 但是方便对数据的更新和修改</span></span><br></pre></td></tr></table></figure></p>
-<p>####三、注意事项</p>
+		<h3 id="今天在改一个看似很简单以前也经常遇到的一个bug发现了很多问题。"><a href="#今天在改一个看似很简单以前也经常遇到的一个bug发现了很多问题。" class="headerlink" title="今天在改一个看似很简单以前也经常遇到的一个bug发现了很多问题。"></a>今天在改一个看似很简单以前也经常遇到的一个bug发现了很多问题。</h3><h2 id="实际结果肯定没有想象的那么简单。所以我想总结一下：保证下次不会踩坑。"><a href="#实际结果肯定没有想象的那么简单。所以我想总结一下：保证下次不会踩坑。" class="headerlink" title="####实际结果肯定没有想象的那么简单。所以我想总结一下：保证下次不会踩坑。"></a>####实际结果肯定没有想象的那么简单。所以我想总结一下：保证下次不会踩坑。</h2><p>###业务场景是点击一个按钮，会产生一个弹框。重复快速的点击多次，会产生多个弹框。<br>那么这个问题该怎么解决呢？</p>
 <ol>
-<li>当把组件分离出index.js时需要在 根目录<code>src</code>下创建<code>components</code>目录  便于存放组件<br>文件名以 <code>.jsx</code>结尾<br>如图所示：<br><img src="http://pu5wdfura.bkt.clouddn.com/1.png" alt="my-logo.png" title="my-logo"><br>分离之后的组件必须还是需要导入React包文件<br>还有记得导出组件 因为在index.js中需要引用</li>
-<li>类样式不再使用<code>class</code>表示 统一使用<code>className</code> </li>
+<li><p>函数防抖节流<br>这两个东西我不知道看过了多少文档，可到现在掌握的还是不够好。<br>所以今天我想趁热打铁一波，把他们彻彻底底给搞明白！</p>
+<p>防抖：什么是防抖呢？ 就是比如你规定一段延时 时间，在这段时间内你持续触发这个事件，事件处理函数才会执行一次，如果设定的时间到来之前，你又触发了一次事件，就重新开始延时。  来个图更加形象！<br><img src="https://images2018.cnblogs.com/blog/1022151/201806/1022151-20180613144209623-862434090.jpg"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//接着肯定就是实现防抖的代码了</span></span><br><span class="line"><span class="comment">//防抖</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">fn,wait</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> timeout = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(timeout !== <span class="literal">null</span>) clearTimeout(timeout)</span><br><span class="line">        timeout = setTimeout(fn,wait)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//处理函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handle</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">Math</span>.random())</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//滚动事件</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'scroll'</span>,debounce(handle,<span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
+<h2 id="当持续触发scroll事件时，事件处理函数handle只在停止滚动1000毫秒之后才会调用一次，也就是说在持续触发scroll事件的过程中，事件处理函数handle一直没有执行。"><a href="#当持续触发scroll事件时，事件处理函数handle只在停止滚动1000毫秒之后才会调用一次，也就是说在持续触发scroll事件的过程中，事件处理函数handle一直没有执行。" class="headerlink" title="#####当持续触发scroll事件时，事件处理函数handle只在停止滚动1000毫秒之后才会调用一次，也就是说在持续触发scroll事件的过程中，事件处理函数handle一直没有执行。"></a>#####当持续触发scroll事件时，事件处理函数handle只在停止滚动1000毫秒之后才会调用一次，也就是说在持续触发scroll事件的过程中，事件处理函数handle一直没有执行。</h2><p>节流：那么什么是节流呢？认识了防抖之后一定不要混淆了节流的概念，我之前就是犯这个错误。<br>言归正传，节流就是当你持续触发事件时，保证一段时间内只调用一次事件的处理函数，通俗点说就比如我们水龙头放水，阀门一打开，水哗哗的往下流，秉着勤俭节约的优良传统美德，我们要把水龙头关小点，最好是如我们心意按照一定规律在某个时间间隔内一滴一滴的往下滴。如下图，持续触发scroll事件时，并不立即执行handle函数，每隔1000毫秒才会执行一次handle函数。<br><img src="https://images2018.cnblogs.com/blog/1022151/201806/1022151-20180613144342847-660853255.jpg"><br>函数节流主要有两种实现方法：时间戳和定时器。接下来分别用两种方法实现throttle~<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//节流函数（时间戳）</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">fn, delay</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//记录第一次执行时的时间</span></span><br><span class="line">    <span class="keyword">var</span> prev = <span class="built_in">Date</span>.now()</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> contxt = <span class="keyword">this</span></span><br><span class="line">        <span class="keyword">var</span> args = <span class="built_in">arguments</span></span><br><span class="line">        <span class="keyword">var</span> now = <span class="built_in">Date</span>.now()</span><br><span class="line">        <span class="comment">//如果当前时间减去上一次执行的时间大于等于延时时间</span></span><br><span class="line">        <span class="keyword">if</span>(now -prev &gt;= delay) &#123;</span><br><span class="line">            <span class="comment">//执行</span></span><br><span class="line">            fn.apply(contxt, args)</span><br><span class="line">            <span class="comment">//执行后的时间</span></span><br><span class="line">            prev = <span class="built_in">Date</span>.now()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> <span class="comment">//处理函数</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">handle</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="built_in">Math</span>.random())</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">//滚动事件</span></span><br><span class="line"> <span class="built_in">window</span>.addEventListener(<span class="string">'scroll'</span>,throttle(handle,<span class="number">1000</span>))</span><br></pre></td></tr></table></figure></p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//节流函数（定时器）</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">fn, delay</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">var</span> timer = <span class="literal">null</span></span><br><span class="line">   <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">       <span class="keyword">var</span> contxt = <span class="keyword">this</span></span><br><span class="line">       <span class="keyword">var</span> args = <span class="built_in">arguments</span></span><br><span class="line">       <span class="comment">//如果定时器不存在</span></span><br><span class="line">       <span class="keyword">if</span>(!timer) &#123;</span><br><span class="line">           timer = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">               fn.apply(contxt,args)</span><br><span class="line">               timer = <span class="literal">null</span></span><br><span class="line">           &#125;,delay)</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"> <span class="comment">//处理函数</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">handle</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="built_in">Math</span>.random())</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">//滚动事件</span></span><br><span class="line"> <span class="built_in">window</span>.addEventListener(<span class="string">'scroll'</span>,throttle(handle,<span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
+<p> 当触发事件的时候，我们设置一个定时器，再次触发事件的时候，如果定时器存在，就不执行，直到delay时间后，定时器执行执行函数，并且清空定时器，这样就可以设置下个定时器。当第一次触发事件时，不会立即执行函数，而是在delay秒后才执行。而后再怎么频繁触发事件，也都是每delay时间才执行一次。当最后一次停止触发后，由于定时器的delay延迟，可能还会执行一次函数。</p>
+<hr>
+<p> 节流中用时间戳或定时器都是可以的。更精确地，可以用时间戳+定时器，当第一次触发事件时马上执行事件处理函数，最后一次触发事件后也还会执行一次事件处理函数。<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// 节流throttle代码（时间戳+定时器）：</span></span><br><span class="line"><span class="keyword">var</span> throttle = <span class="function"><span class="keyword">function</span>(<span class="params">func, delay</span>) </span>&#123;     </span><br><span class="line">    <span class="keyword">var</span> timer = <span class="literal">null</span>;     </span><br><span class="line">    <span class="keyword">var</span> startTime = <span class="built_in">Date</span>.now();     </span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;             </span><br><span class="line">        <span class="keyword">var</span> curTime = <span class="built_in">Date</span>.now();             </span><br><span class="line">        <span class="keyword">var</span> remaining = delay - (curTime - startTime);             </span><br><span class="line">        <span class="keyword">var</span> context = <span class="keyword">this</span>;             </span><br><span class="line">        <span class="keyword">var</span> args = <span class="built_in">arguments</span>;             </span><br><span class="line">        clearTimeout(timer);              </span><br><span class="line">        <span class="keyword">if</span> (remaining &lt;= <span class="number">0</span>) &#123;                    </span><br><span class="line">            func.apply(context, args);                    </span><br><span class="line">            startTime = <span class="built_in">Date</span>.now();              </span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;                    </span><br><span class="line">            timer = setTimeout(func, remaining);              </span><br><span class="line">        &#125;      </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handle</span>(<span class="params"></span>) </span>&#123;      </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">Math</span>.random());</span><br><span class="line">&#125; </span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'scroll'</span>, throttle(handle, <span class="number">1000</span>));</span><br></pre></td></tr></table></figure></p>
+<p>总结</p>
+<p>函数防抖：将几次操作合并为一此操作进行。原理是维护一个计时器，规定在delay时间后触发函数，但是在delay时间内再次触发的话，就会取消之前的计时器而重新设置。这样一来，只有最后一次操作能被触发。</p>
+<p>函数节流：使得一定时间内只触发一次函数。原理是通过判断是否到达一定时间来触发函数。</p>
+<p>区别： 函数节流不管事件触发有多频繁，都会保证在规定时间内一定会执行一次真正的事件处理函数，而函数防抖只是在最后一次事件后才触发一次函数。 比如在页面的无限加载场景下，我们需要用户在滚动页面时，每隔一段时间发一次 Ajax 请求，而不是在用户停下滚动页面操作时才去请求数据。这样的场景，就适合用节流技术来实现。</p>
+<p><code>`</code><br>今天本想用其中一种方法解决我前面提到的业务场景，可万万没想到的是，两种方法我试了，都不行，可能是微信小程序的机制和PC端不同的缘故吧，所以最后 我采用了遮罩层的方法实现。<br>就是在他第一次点击的时候就设置一个遮罩层，不让他点击了，不就成功解决了这个问题了么？？？</p>
 	
 	</div>
 	
@@ -344,12 +361,8 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/2019/09/08/去哪网坑一/" title="去哪网坑一" rel="prev">
-				&laquo;上一篇
-			</a>
 		
-		
-			<a href="/2019/07/05/小程序开发遇到的坑/" title="小程序遇到的坑" rel="next">
+			<a href="/2019/11/12/快速修改elementUI样式/" title rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -370,29 +383,6 @@
 			
 					<li>
 						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/12/20/防抖节流函数/" title>
-											
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								十二月 20日, 2019				
-							</p>
-							<p class="relate-post-content">
-								今天在改一个看似很简单以前也经常遇到的一个bug发现了很多问题。####实际结果肯定没有想象的那么简单。所以我想总结一下：保证下次不会踩坑。###业务场景是点击一个按钮，会产生一个弹框。重复快速的点击多次，会产生多个弹框。那么这个问题...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/12/20/防抖节流函数/" title>				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt>
-							</a>
-						</div>
-					</li>											
-			
-			
-					<li>
-						<div class="relate-post-text">
 							<a class="relate-post-title" href="/2019/09/08/去哪网坑一/" title="去哪网坑一">
 								去哪网坑一			
 							</a>
@@ -410,6 +400,30 @@
 							<a href="/2019/09/08/去哪网坑一/" title="去哪网坑一">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="去哪网坑一">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/07/08/React/" title="React开发">
+								React开发			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 8日, 2019				
+							</p>
+							<p class="relate-post-content">
+								###React 开发步骤
+####一、先下载相关依赖包123456789101112131415161718192021222324252627282930 1.用npm/cnpm安装            npm i  react...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/07/08/React/" title="React开发">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="React开发">
 							</a>
 						</div>
 					</li>											
