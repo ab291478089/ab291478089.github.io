@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="html-loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    Vue3新特性解析 - lx_blogs
+  </title>
+  <meta name="author" content="lx_blogs">
+  <meta name="keywords" content="前端开发,JavaScript,React,Vue,Node.js">
+  <meta name="description" content="个人技术博客">
+	<link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/Annie.css">
+  <script src="/js/jquery.min.js"></script>
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/js/leancloud.js"></script>
+</head>
+	<body>
+		<div id="preloader">
+		<div class="pre-container">
+			<div class="spinner">
+				<div class="double-bounce1"></div>
+				<div class="double-bounce2"></div>
+			</div>			
+		</div>
+	</div>
+
+<header class="fixbackground" data-img-mode="normal" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+	<div class="mask">
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+					<img src="/img/logo.png" alt="Logo">
+				</a>
+			</div>
+			<div id="navigation-show">
+				<ul>
+		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+</ul>
+			</div>				
+		</div>
+		<div class="h-body"><p class="motto"></p></div>		
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<div id="progress-bar"></div>
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+	<p>Vue3新特性解析</p>
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+		<li><a href="http://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
+		<li><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
+</ul>
+	</div>
+</nav>			
+		<main>
+			<div class="layout-cart">
+				<div id="layout-cart">
+					<div class="post" id="post">
+						<div class="post-text">
+							<h2 class="post-title-article">Vue3新特性解析</h2>
+							<p class="post-time">发布日期: 2020年03月15日</p>
+							<div class="post-content-article">
+<h3>前言</h3>
+<p>Vue3作为Vue.js框架的重大版本更新，带来了许多令人兴奋的新特性。本文将深入解析Vue3的核心新特性，包括Composition API、Proxy响应式系统、Teleport组件等，帮助开发者更好地理解和应用这些新特性。</p>
+
+<h3>Composition API</h3>
+<p>Composition API是Vue3最重要的新特性之一，它提供了一种更灵活的方式来组织组件逻辑。与Vue2的Options API相比，Composition API允许我们将相关的逻辑代码组织在一起，而不是分散在不同的选项中。</p>
+<p>在Vue2中，当组件逻辑变得复杂时，相关的代码会被分散到不同的选项中（如data、methods、computed等），这使得代码难以维护和理解。Composition API通过setup()函数解决了这个问题。</p>
+<pre><code>import { ref, computed, onMounted } from 'vue'
+
+export default {
+  setup() {
+    // 响应式数据
+    const count = ref(0)
+    const doubleCount = computed(() => count.value * 2)
+    
+    // 方法
+    function increment() {
+      count.value++
+    }
+    
+    // 生命周期
+    onMounted(() => {
+      console.log('组件已挂载')
+    })
+    
+    // 返回模板中需要的数据和方法
+    return {
+      count,
+      doubleCount,
+      increment
+    }
+  }
+}
+</code></pre>
+<p>Composition API的优势在于：逻辑复用性更强，可以方便地将逻辑提取为可复用的函数；代码组织更清晰，相关逻辑可以放在一起；更好的TypeScript支持。</p>
+
+<h3>Proxy响应式系统</h3>
+<p>Vue3使用Proxy重写了响应式系统，取代了Vue2中的Object.defineProperty。这带来了显著的性能提升和更好的功能支持。</p>
+<p>Proxy相比Object.defineProperty有以下优势：可以监听到属性的新增和删除；可以监听数组索引的变化和length属性；性能更好，采用惰性响应式的方式，只有在访问时才会进行响应式转换。</p>
+<pre><code>import { reactive, watchEffect } from 'vue'
+
+const state = reactive({
+  count: 0,
+  nested: {
+    value: 1
+  },
+  items: [1, 2, 3]
+})
+
+// 自动追踪依赖
+watchEffect(() => {
+  console.log('count:', state.count)
+  console.log('nested:', state.nested.value)
+})
+
+// 这些操作都能被监听到
+state.count++
+state.newProp = 'value'  // Vue2无法检测
+state.items.push(4)      // Vue2无法检测数组push
+</code></pre>
+<p>Vue3还提供了ref和reactive两种方式来创建响应式数据。ref用于基本类型，reactive用于对象类型。这种设计更加清晰，也避免了Vue2中的一些限制。</p>
+
+<h3>Teleport组件</h3>
+<p>Teleport是Vue3新增的内置组件，它允许我们将组件的模板内容传送到DOM中的其他位置，即使这些位置在组件的DOM层级之外。</p>
+<p>这在实际开发中非常有用，比如模态框、通知提示等组件，它们的逻辑属于某个组件，但DOM结构需要渲染到body下或其他位置。</p>
+<pre><code>&lt;template&gt;
+  &lt;button @click="showModal = true"&gt;
+    打开模态框
+  &lt;/button&gt;
+  
+  &lt;teleport to="body"&gt;
+    &lt;div v-if="showModal" class="modal"&gt;
+      &lt;div class="modal-content"&gt;
+        &lt;h3&gt;模态框标题&lt;/h3&gt;
+        &lt;p&gt;这是模态框内容&lt;/p&gt;
+        &lt;button @click="showModal = false"&gt;关闭&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/teleport&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import { ref } from 'vue'
+
+export default {
+  setup() {
+    const showModal = ref(false)
+    return { showModal }
+  }
+}
+&lt;/script&gt;
+</code></pre>
+<p>Teleport的to属性接收一个CSS选择器，表示目标位置。这样既保持了组件的逻辑完整性，又解决了CSS样式和DOM层级的问题。</p>
+
+<h3>Fragments</h3>
+<p>Vue3支持了多根节点组件，也就是Fragments。在Vue2中，组件必须有且仅有一个根节点，这在一些场景下会造成不必要的DOM嵌套。</p>
+<pre><code>&lt;template&gt;
+  &lt;header&gt;头部&lt;/header&gt;
+  &lt;main&gt;主要内容&lt;/main&gt;
+  &lt;footer&gt;底部&lt;/footer&gt;
+&lt;/template&gt;
+</code></pre>
+<p>现在组件可以有多个根节点，这减少了不必要的DOM层级，使HTML结构更加语义化。</p>
+
+<h3>性能优化</h3>
+<p>Vue3在性能方面做了大量优化。首先是编译时的优化，通过静态提升、事件监听器缓存等手段，减少了运行时的开销。其次是响应式系统的优化，Proxy的实现比Object.defineProperty更高效。</p>
+<p>另外，Vue3引入了Tree-shaking支持，使得最终打包的体积更小。只有使用到的API才会被包含在最终的构建产物中。</p>
+
+<h3>总结</h3>
+<p>Vue3带来了许多重要的改进，Composition API提供了更好的代码组织方式，Proxy响应式系统带来了更好的性能和功能，Teleport解决了DOM层级的限制。这些新特性使得Vue3成为一个更强大、更灵活的框架。对于开发者来说，学习Vue3的新特性将有助于构建更高质量的应用程序。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<footer>
+	<div class="copyright">
+		<p>&copy;2017 - 2026, content by lx_blogs. All Rights Reserved.</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+		</p>
+	</div>		
+</footer>		
+	<script src="/plugin/motto/motto.js"></script>	
+	<script type="text/javascript">$(".motto").html( getMingYanContent() );</script>	
+<script src="/plugin/love/love.js"></script>
+	<div id="totop"><a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a></div>
+<script src="/plugin/vibrant/vibrant.js"></script>
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/js/resizediv.js"></script>
+<script src="/js/main.js"></script>
+	</body>	
+</html>
