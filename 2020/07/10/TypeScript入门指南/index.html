@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html class="html-loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    TypeScript入门指南 - lx_blogs
+  </title>
+  <meta name="author" content="lx_blogs">
+  <meta name="keywords" content="前端开发,JavaScript,React,Vue,Node.js">
+  <meta name="description" content="个人技术博客">
+	<link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/Annie.css">
+  <script src="/js/jquery.min.js"></script>
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/js/leancloud.js"></script>
+</head>
+	<body>
+		<div id="preloader">
+		<div class="pre-container">
+			<div class="spinner">
+				<div class="double-bounce1"></div>
+				<div class="double-bounce2"></div>
+			</div>			
+		</div>
+	</div>
+
+<header class="fixbackground" data-img-mode="normal" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+	<div class="mask">
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+					<img src="/img/logo.png" alt="Logo">
+				</a>
+			</div>
+			<div id="navigation-show">
+				<ul>
+		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+</ul>
+			</div>				
+		</div>
+		<div class="h-body"><p class="motto"></p></div>		
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<div id="progress-bar"></div>
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+	<p>TypeScript入门指南</p>
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+		<li><a href="http://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
+		<li><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
+</ul>
+	</div>
+</nav>			
+		<main>
+			<div class="layout-cart">
+				<div id="layout-cart">
+					<div class="post" id="post">
+						<div class="post-text">
+							<h2 class="post-title-article">TypeScript入门指南</h2>
+							<p class="post-time">发布日期: 2020年07月10日</p>
+							<div class="post-content-article">
+<h3>前言</h3>
+<p>TypeScript是JavaScript的超集，由微软开发。它在JavaScript的基础上添加了类型系统，使得代码更加健壮、可维护。本文将介绍TypeScript的核心概念，包括类型系统、接口、泛型等，帮助开发者快速入门TypeScript。</p>
+
+<h3>为什么使用TypeScript</h3>
+<p>TypeScript的主要优势包括：静态类型检查可以在编译时发现错误，而不是在运行时；更好的IDE支持，提供智能提示、重构等功能；类型本身就是一种文档，提高代码的可读性；更好的团队协作，减少沟通成本。</p>
+<p>虽然TypeScript需要编译，增加了构建步骤，但它带来的好处远远超过了这一点成本。现在越来越多的开源项目和公司都在使用TypeScript。</p>
+
+<h3>基础类型</h3>
+<p>TypeScript提供了丰富的基础类型，包括基本类型、数组、元组、枚举等。</p>
+<pre><code>// 基本类型
+let isDone: boolean = false
+let count: number = 42
+let name: string = 'TypeScript'
+
+// 数组
+let list: number[] = [1, 2, 3]
+let list2: Array&lt;number&gt; = [1, 2, 3] // 泛型数组
+
+// 元组：固定长度的数组
+let tuple: [string, number] = ['hello', 10]
+
+// 枚举
+enum Color { Red, Green, Blue }
+let c: Color = Color.Green
+
+// any类型：任意类型
+let notSure: any = 4
+notSure = 'maybe a string'
+
+// void类型：没有返回值
+function warnUser(): void {
+  console.log('This is a warning')
+}
+
+// null和undefined
+let u: undefined = undefined
+let n: null = null
+</code></pre>
+
+<h3>接口</h3>
+<p>接口是TypeScript中最重要的概念之一，它用于定义对象的形状。接口可以被实现，也可以被继承。</p>
+<pre><code>// 基本接口
+interface User {
+  name: string
+  age: number
+  email?: string // 可选属性
+}
+
+function printUser(user: User) {
+  console.log(`${user.name}, ${user.age}岁`)
+}
+
+const user: User = {
+  name: '张三',
+  age: 25
+}
+
+// 只读属性
+interface Point {
+  readonly x: number
+  readonly y: number
+}
+
+let point: Point = { x: 10, y: 20 }
+// point.x = 5 // 错误：不能修改只读属性
+
+// 函数接口
+interface SearchFunc {
+  (source: string, subString: string): boolean
+}
+
+let mySearch: SearchFunc
+mySearch = function(src: string, sub: string): boolean {
+  return src.search(sub) !== -1
+}
+
+// 接口继承
+interface Animal {
+  name: string
+  eat(): void
+}
+
+interface Dog extends Animal {
+  bark(): void
+}
+
+let dog: Dog = {
+  name: '旺财',
+  eat() { console.log('eating') },
+  bark() { console.log('woof') }
+}
+</code></pre>
+
+<h3>泛型</h3>
+<p>泛型允许我们在定义函数、接口或类时不预先指定具体的类型，而在使用时再指定。这使得我们可以创建可重用的组件。</p>
+<pre><code>// 泛型函数
+function identity&lt;T&gt;(arg: T): T {
+  return arg
+}
+
+let output1 = identity&lt;string&gt;('hello')
+let output2 = identity&lt;number&gt;(100)
+
+// 泛型接口
+interface GenericIdentityFn&lt;T&gt; {
+  (arg: T): T
+}
+
+let myIdentity: GenericIdentityFn&lt;number&gt; = identity
+
+// 泛型类
+class GenericNumber&lt;T&gt; {
+  zeroValue: T
+  add: (x: T, y: T) =&gt; T
+}
+
+let myGenericNumber = new GenericNumber&lt;number&gt;()
+myGenericNumber.zeroValue = 0
+myGenericNumber.add = function(x, y) {
+  return x + y
+}
+
+// 泛型约束
+interface Lengthwise {
+  length: number
+}
+
+function loggingIdentity&lt;T extends Lengthwise&gt;(arg: T): T {
+  console.log(arg.length)
+  return arg
+}
+
+loggingIdentity([1, 2, 3]) // 正确
+// loggingIdentity(3) // 错误：number没有length属性
+</code></pre>
+
+<h3>类型别名与联合类型</h3>
+<p>类型别名用于给类型起一个新名字，联合类型表示值可以是多种类型之一。</p>
+<pre><code>// 类型别名
+type ID = string | number
+type User = {
+  id: ID
+  name: string
+}
+
+// 联合类型
+function printId(id: string | number) {
+  if (typeof id === 'string') {
+    console.log(id.toUpperCase())
+  } else {
+    console.log(id)
+  }
+}
+
+// 交叉类型
+type Employee = {
+  name: string
+  startDate: Date
+}
+
+type Manager = Employee & {
+  team: string[]
+}
+
+let manager: Manager = {
+  name: '李四',
+  startDate: new Date(),
+  team: ['张三', '王五']
+}
+
+// 字面量类型
+type Direction = 'up' | 'down' | 'left' | 'right'
+let direction: Direction = 'up'
+
+// 类型守卫
+function isString(value: any): value is string {
+  return typeof value === 'string'
+}
+
+function processValue(value: string | number) {
+  if (isString(value)) {
+    console.log(value.toUpperCase())
+  } else {
+    console.log(value.toFixed(2))
+  }
+}
+</code></pre>
+
+<h3>类与装饰器</h3>
+<p>TypeScript增强了JavaScript的类，添加了访问修饰符、抽象类等特性。装饰器是TypeScript的实验性特性，用于给类或类成员添加元数据或修改行为。</p>
+<pre><code>// 访问修饰符
+class Person {
+  public name: string
+  private age: number
+  protected id: string
+  
+  constructor(name: string, age: number, id: string) {
+    this.name = name
+    this.age = age
+    this.id = id
+  }
+  
+  public getAge(): number {
+    return this.age
+  }
+}
+
+// 抽象类
+abstract class Animal {
+  abstract makeSound(): void
+  
+  move(): void {
+    console.log('moving...')
+  }
+}
+
+class Dog extends Animal {
+  makeSound(): void {
+    console.log('woof')
+  }
+}
+
+// 装饰器（需要开启experimentalDecorators）
+function log(target: any, key: string) {
+  console.log(`Method ${key} was called`)
+}
+
+class Calculator {
+  @log
+  add(a: number, b: number): number {
+    return a + b
+  }
+}
+</code></pre>
+
+<h3>配置与编译</h3>
+<p>TypeScript通过tsconfig.json文件来配置编译选项。常用的配置包括目标版本、模块系统、严格模式等。</p>
+<pre><code>{
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "rootDir": "./src"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
+</code></pre>
+<p>strict选项开启后会启用所有严格的类型检查，包括noImplicitAny、strictNullChecks等。建议在新项目中始终开启strict模式。</p>
+
+<h3>总结</h3>
+<p>TypeScript为JavaScript添加了强大的类型系统，使得代码更加健壮、可维护。本文介绍了TypeScript的基础类型、接口、泛型、类型别名等核心概念。虽然TypeScript有一定的学习成本，但它带来的好处是显而易见的。对于大型项目和团队协作，TypeScript是一个非常好的选择。建议开发者在实际项目中逐步采用TypeScript，享受类型系统带来的便利。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+	<script src="/plugin/motto/motto.js"></script>	
+	<script type="text/javascript">$(".motto").html( getMingYanContent() );</script>	
+<script src="/plugin/love/love.js"></script>
+	<div id="totop"><a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a></div>
+<script src="/plugin/vibrant/vibrant.js"></script>
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/js/resizediv.js"></script>
+<script src="/js/main.js"></script>
+	</body>	
+</html>
