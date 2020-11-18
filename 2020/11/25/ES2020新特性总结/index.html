@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html class="html-loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    ES2020新特性总结 - lx_blogs
+  </title>
+  <meta name="author" content="lx_blogs">
+  <meta name="keywords" content="前端开发,JavaScript,React,Vue,Node.js">
+  <meta name="description" content="个人技术博客">
+	<link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/Annie.css">
+  <script src="/js/jquery.min.js"></script>
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/js/leancloud.js"></script>
+</head>
+	<body>
+		<div id="preloader">
+		<div class="pre-container">
+			<div class="spinner">
+				<div class="double-bounce1"></div>
+				<div class="double-bounce2"></div>
+			</div>			
+		</div>
+	</div>
+
+<header class="fixbackground" data-img-mode="normal" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+	<div class="mask">
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+					<img src="/img/logo.png" alt="Logo">
+				</a>
+			</div>
+			<div id="navigation-show">
+				<ul>
+		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+</ul>
+			</div>				
+		</div>
+		<div class="h-body"><p class="motto"></p></div>		
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<div id="progress-bar"></div>
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+	<p>ES2020新特性总结</p>
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+		<li><a href="http://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
+		<li><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
+</ul>
+	</div>
+</nav>			
+		<main>
+			<div class="layout-cart">
+				<div id="layout-cart">
+					<div class="post" id="post">
+						<div class="post-text">
+							<h2 class="post-title-article">ES2020新特性总结</h2>
+							<p class="post-time">发布日期: 2020年11月25日</p>
+							<div class="post-content-article">
+<h3>前言</h3>
+<p>ES2020（ES11）是JavaScript语言的最新版本，带来了许多实用的新特性。本文将总结ES2020的主要新特性，包括可选链操作符、空值合并操作符、Promise.allSettled、动态导入等，帮助开发者快速掌握这些新特性。</p>
+
+<h3>可选链操作符（Optional Chaining）</h3>
+<p>可选链操作符（?.）允许我们安全地访问嵌套对象的属性，而不用担心中间属性是否存在。如果某个属性为null或undefined，表达式会短路并返回undefined。</p>
+<pre><code>// 传统方式
+const street = user &amp;&amp; user.address &amp;&amp; user.address.street
+
+// 使用可选链
+const street = user?.address?.street
+
+// 访问数组元素
+const firstItem = arr?.[0]
+
+// 调用函数
+const result = someFunction?.()
+
+// 实际应用
+function getUserName(user) {
+  return user?.profile?.name || '匿名用户'
+}
+
+const user = {
+  profile: {
+    name: '张三'
+  }
+}
+
+console.log(getUserName(user)) // '张三'
+console.log(getUserName({})) // '匿名用户'
+console.log(getUserName(null)) // '匿名用户'
+</code></pre>
+<p>可选链操作符大大简化了嵌套属性的访问，避免了大量的if判断和逻辑与操作符。它只在属性不存在时返回undefined，不会抛出错误。</p>
+
+<h3>空值合并操作符（Nullish Coalescing）</h3>
+<p>空值合并操作符（??）用于提供默认值。与逻辑或操作符（||）不同，它只在左侧值为null或undefined时才返回右侧的值，而不是在左侧为假值时。</p>
+<pre><code>// 逻辑或的问题
+const count = 0
+const result1 = count || 10
+console.log(result1) // 10（0被当作假值）
+
+// 空值合并操作符
+const result2 = count ?? 10
+console.log(result2) // 0（0不是null或undefined）
+
+// 更多示例
+const emptyString = ''
+console.log(emptyString || 'default') // 'default'
+console.log(emptyString ?? 'default') // ''
+
+const falseValue = false
+console.log(falseValue || true) // true
+console.log(falseValue ?? true) // false
+
+// 实际应用
+function createUser(config) {
+  return {
+    name: config.name ?? '匿名用户',
+    age: config.age ?? 18,
+    role: config.role ?? 'user'
+  }
+}
+
+const user = createUser({ name: '李四', age: 0 })
+console.log(user) // { name: '李四', age: 0, role: 'user' }
+</code></pre>
+<p>空值合并操作符在处理数值、布尔值等可能为假值但有效的数据时非常有用，避免了逻辑或操作符的陷阱。</p>
+
+<h3>Promise.allSettled</h3>
+<p>Promise.allSettled返回一个Promise，该Promise在所有给定的Promise都已fulfilled或rejected后resolve，并返回一个数组，包含每个Promise的状态和结果。</p>
+<pre><code>const promise1 = Promise.resolve('成功1')
+const promise2 = Promise.reject('失败2')
+const promise3 = Promise.resolve('成功3')
+
+Promise.allSettled([promise1, promise2, promise3])
+  .then(results =&gt; {
+    results.forEach(result =&gt; {
+      console.log(result.status) // 'fulfilled' 或 'rejected'
+      if (result.status === 'fulfilled') {
+        console.log('值:', result.value)
+      } else {
+        console.log('原因:', result.reason)
+      }
+    })
+  })
+
+// 输出：
+// status: 'fulfilled', 值: '成功1'
+// status: 'rejected', 原因: '失败2'
+// status: 'fulfilled', 值: '成功3'
+
+// 与Promise.all的区别
+// Promise.all在任何一个Promise rejected时就会reject
+// Promise.allSettled会等待所有Promise完成，无论成功还是失败
+
+// 实际应用场景：批量请求，需要知道每个请求的结果
+async function fetchMultipleUsers(userIds) {
+  const promises = userIds.map(id =&gt; 
+    fetch(`/api/users/${id}`)
+      .then(res =&gt; res.json())
+      .catch(error =&gt; ({ error: error.message }))
+  )
+  
+  const results = await Promise.allSettled(promises)
+  
+  const successful = results
+    .filter(r =&gt; r.status === 'fulfilled')
+    .map(r =&gt; r.value)
+  
+  const failed = results
+    .filter(r =&gt; r.status === 'rejected')
+    .map(r =&gt; r.reason)
+  
+  return { successful, failed }
+}
+</code></pre>
+<p>Promise.allSettled在某些场景下比Promise.all更合适，特别是当我们不关心某个Promise是否失败，而是想知道所有Promise的最终状态时。</p>
+
+<h3>动态导入（Dynamic Import）</h3>
+<p>动态导入使用import()函数，可以在运行时动态加载模块。这返回一个Promise，使得我们可以按需加载代码。</p>
+<pre><code>// 静态导入（编译时确定）
+import { someFunction } from './module.js'
+
+// 动态导入（运行时确定）
+button.addEventListener('click', async () =&gt; {
+  const module = await import('./module.js')
+  module.someFunction()
+})
+
+// 条件导入
+async function loadModule(moduleName) {
+  if (moduleName === 'chart') {
+    return await import('./chart.js')
+  } else if (moduleName === 'table') {
+    return await import('./table.js')
+  }
+}
+
+// 路由级别的代码分割
+const routes = {
+  '/home': () =&gt; import('./pages/Home.js'),
+  '/about': () =&gt; import('./pages/About.js'),
+  '/contact': () =&gt; import('./pages/Contact.js')
+}
+
+async function navigate(path) {
+  const pageModule = await routes[path]()
+  pageModule.render()
+}
+
+// 配合Webpack使用
+// Webpack会自动进行代码分割，生成独立的chunk文件
+</code></pre>
+<p>动态导入是实现代码分割和懒加载的重要手段，可以显著减少初始加载时间，提升应用性能。</p>
+
+<h3>BigInt</h3>
+<p>BigInt是一种新的数据类型，用于表示任意精度的整数。它可以表示超过Number.MAX_SAFE_INTEGER（2^53 - 1）的整数。</p>
+<pre><code>// 创建BigInt
+const bigInt1 = 1234567890123456789012345678901234567890n
+const bigInt2 = BigInt('1234567890123456789012345678901234567890')
+const bigInt3 = BigInt(123) // 不推荐
+
+// BigInt运算
+const sum = bigInt1 + 1n
+const product = bigInt1 * 2n
+const division = bigInt1 / 2n
+
+// 注意事项
+// BigInt和Number不能直接混合运算
+// const invalid = bigInt1 + 1 // TypeError
+
+// 需要转换
+const num = 10
+const bigNum = BigInt(num)
+const result = bigInt1 + bigNum
+
+// 比较可以混合使用
+console.log(10n == 10) // true
+console.log(10n === 10) // false（类型不同）
+
+// 实际应用场景：处理大整数ID、加密算法等
+const largeId = 9007199254740992n
+console.log(largeId + 1n) // 9007199254740993n
+</code></pre>
+
+<h3>globalThis</h3>
+<p>globalThis提供了一个标准的方式来访问全局对象，无论在什么环境中（浏览器、Node.js、Web Worker等）。</p>
+<pre><code>// 不同环境的全局对象
+// 浏览器：window
+// Node.js：global
+// Web Worker：self
+
+// 以前需要判断环境
+let globalObject
+if (typeof window !== 'undefined') {
+  globalObject = window
+} else if (typeof global !== 'undefined') {
+  globalObject = global
+} else if (typeof self !== 'undefined') {
+  globalObject = self
+}
+
+// 现在可以直接使用globalThis
+console.log(globalThis === window) // 浏览器中为true
+console.log(globalThis === global) // Node.js中为true
+
+// 实际应用
+globalThis.myGlobalVar = 'value'
+
+//  polyfill示例
+if (!globalThis.someFeature) {
+  globalThis.someFeature = function() {
+    // 实现
+  }
+}
+</code></pre>
+
+<h3>String.prototype.matchAll</h3>
+<p>matchAll方法返回一个包含所有匹配正则表达式的结果的迭代器。</p>
+<pre><code>const str = 'test1test2test3'
+const regex = /t(e)(st(\d?))/g
+
+// 使用matchAll
+const matches = str.matchAll(regex)
+
+for (const match of matches) {
+  console.log(match)
+  // match[0] 完整匹配
+  // match[1] 第一个捕获组
+  // match[2] 第二个捕获组
+  // match.index 匹配位置
+}
+
+// 转换为数组
+const matchesArray = [...str.matchAll(regex)]
+console.log(matchesArray.length) // 3
+
+// 实际应用：提取所有匹配项
+const text = '价格：100元，折扣：20元，最终价格：80元'
+const priceRegex = /(\d+)元/g
+const prices = [...text.matchAll(priceRegex)].map(match =&gt; match[1])
+console.log(prices) // ['100', '20', '80']
+</code></pre>
+
+<h3>总结</h3>
+<p>ES2020带来了许多实用的新特性。可选链和空值合并操作符简化了代码，减少了常见的错误；Promise.allSettled提供了更灵活的Promise处理方式；动态导入使得代码分割和懒加载更加容易；BigInt解决了大整数处理的问题；globalThis统一了全局对象的访问方式；matchAll简化了正则匹配的处理。这些新特性使得JavaScript更加强大和易用。建议开发者在实际项目中逐步采用这些新特性，提升代码质量和开发效率。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		
+	<script src="/plugin/motto/motto.js"></script>	
+	<script type="text/javascript">$(".motto").html( getMingYanContent() );</script>	
+<script src="/plugin/love/love.js"></script>
+	<div id="totop"><a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a></div>
+<script src="/plugin/vibrant/vibrant.js"></script>
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/js/resizediv.js"></script>
+<script src="/js/main.js"></script>
+	</body>	
+</html>
