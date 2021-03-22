@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html class="html-loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    Vue3+TypeScript项目实战 - lx_blogs
+  </title>
+  <meta name="author" content="lx_blogs">
+  <meta name="keywords" content="前端开发,JavaScript,React,Vue,Node.js">
+  <meta name="description" content="个人技术博客">
+	<link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/Annie.css">
+  <script src="/js/jquery.min.js"></script>
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/js/leancloud.js"></script>
+</head>
+	<body>
+		<div id="preloader">
+		<div class="pre-container">
+			<div class="spinner">
+				<div class="double-bounce1"></div>
+				<div class="double-bounce2"></div>
+			</div>			
+		</div>
+	</div>
+
+<header class="fixbackground" data-img-mode="normal" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+	<div class="mask">
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+					<img src="/img/logo.png" alt="Logo">
+				</a>
+			</div>
+			<div id="navigation-show">
+				<ul>
+		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+</ul>
+			</div>				
+		</div>
+		<div class="h-body"><p class="motto"></p></div>		
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<div id="progress-bar"></div>
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+	<p>Vue3+TypeScript项目实战</p>
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+		<li><a href="http://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
+		<li><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
+</ul>
+	</div>
+</nav>			
+		<main>
+			<div class="layout-cart">
+				<div id="layout-cart">
+					<div class="post" id="post">
+						<div class="post-text">
+							<h2 class="post-title-article">Vue3+TypeScript项目实战</h2>
+							<p class="post-time">发布日期: 2021年03月22日</p>
+							<div class="post-content-article">
+<h3>一、项目搭建与配置</h3>
+<p>Vue3的发布带来了许多令人兴奋的新特性，包括Composition API、更好的TypeScript支持、更快的虚拟DOM等。在实际项目中，使用Vue3配合TypeScript可以大大提升代码的可维护性和开发体验。本文将分享一个完整的Vue3+TypeScript项目搭建过程。</p>
+<p>首先，我们需要使用Vite来创建项目。Vite是Vue3推荐的构建工具，它基于原生ES模块，启动速度极快。执行以下命令创建项目：</p>
+<pre><code>npm init vite@latest my-vue3-project -- --template vue-ts
+cd my-vue3-project
+npm install</code></pre>
+<p>项目创建后，我们需要配置一些必要的开发依赖。推荐使用ESLint+Prettier进行代码规范检查，使用Husky+lint-staged在提交代码时自动格式化。</p>
+
+<h3>二、TypeScript类型定义</h3>
+<p>在Vue3项目中，TypeScript的类型定义是非常重要的一环。我们需要为组件的props、emits、refs等定义清晰的类型。首先，在src目录下创建types文件夹，用于存放全局类型定义。</p>
+<pre><code>// types/index.ts
+export interface User {
+  id: number;
+  name: string;
+  email: string;
+  avatar?: string;
+}
+
+export interface ApiResponse&lt;T&gt; {
+  code: number;
+  data: T;
+  message: string;
+}
+
+export interface Pagination {
+  page: number;
+  pageSize: number;
+  total: number;
+}</code></pre>
+<p>对于组件的props，我们可以使用defineProps来定义类型。Vue3提供了类型推断，可以让我们的代码更加安全。</p>
+<pre><code>&lt;script setup lang="ts"&gt;
+interface Props {
+  title: string;
+  count?: number;
+  items: Array&lt;{ id: number; name: string }&gt;;
+}
+
+const props = withDefaults(defineProps&lt;Props&gt;(), {
+  count: 0,
+  items: () =&gt; []
+});
+&lt;/script&gt;</code></pre>
+
+<h3>三、组件封装实践</h3>
+<p>在实际项目中，组件封装是提升代码复用性的关键。Vue3的Composition API让我们可以更灵活地封装组件逻辑。下面以封装一个通用的Button组件为例，展示如何进行组件封装。</p>
+<pre><code>&lt;template&gt;
+  &lt;button 
+    :class="['btn', `btn-${type}`, { 'btn-loading': loading }]"
+    :disabled="disabled || loading"
+    @click="handleClick"
+  &gt;
+    &lt;span v-if="loading" class="btn-spinner"&gt;&lt;/span&gt;
+    &lt;slot&gt;&lt;/slot&gt;
+  &lt;/button&gt;
+&lt;/template&gt;
+
+&lt;script setup lang="ts"&gt;
+interface ButtonProps {
+  type?: 'primary' | 'success' | 'warning' | 'danger';
+  disabled?: boolean;
+  loading?: boolean;
+}
+
+const props = withDefaults(defineProps&lt;ButtonProps&gt;(), {
+  type: 'primary',
+  disabled: false,
+  loading: false
+});
+
+const emit = defineEmits&lt;{
+  (e: 'click', event: MouseEvent): void;
+}&gt;();
+
+const handleClick = (event: MouseEvent) =&gt; {
+  if (!props.disabled && !props.loading) {
+    emit('click', event);
+  }
+};
+&lt;/script&gt;</code></pre>
+<p>这个Button组件支持多种类型、禁用状态和加载状态。通过TypeScript的类型定义，我们可以在使用时获得完整的类型提示和检查。</p>
+
+<h3>四、Composition API的最佳实践</h3>
+<p>Composition API是Vue3最重要的特性之一。它让我们可以将相关的逻辑组织在一起，而不是分散在data、methods、computed等选项中。在实际项目中，我们可以使用composables来封装可复用的逻辑。</p>
+<pre><code>// composables/useLoading.ts
+import { ref } from 'vue';
+
+export function useLoading() {
+  const loading = ref(false);
+
+  const withLoading = async &lt;T&gt;(fn: () =&gt; Promise&lt;T&gt;): Promise&lt;T&gt; =&gt; {
+    loading.value = true;
+    try {
+      return await fn();
+    } finally {
+      loading.value = false;
+    }
+  };
+
+  return { loading, withLoading };
+}
+
+// 使用示例
+&lt;script setup lang="ts"&gt;
+import { useLoading } from '@/composables/useLoading';
+import { fetchUsers } from '@/api/user';
+
+const { loading, withLoading } = useLoading();
+
+const loadUsers = async () =&gt; {
+  await withLoading(async () =&gt; {
+    const users = await fetchUsers();
+    // 处理用户数据
+  });
+};
+&lt;/script&gt;</code></pre>
+<p>通过这种方式，我们可以将loading状态管理逻辑封装成一个composable，在多个组件中复用。这种模式比Vue2的mixins更加清晰，避免了命名冲突和来源不明确的问题。</p>
+
+<h3>五、状态管理方案</h3>
+<p>Vue3推荐使用Pinia作为状态管理库，它比Vuex更加轻量，且对TypeScript的支持更好。Pinia的API设计更加直观，没有mutations的概念，只有state、getters和actions。</p>
+<pre><code>// stores/user.ts
+import { defineStore } from 'pinia';
+import { ref, computed } from 'vue';
+import type { User } from '@/types';
+import { login, logout } from '@/api/auth';
+
+export const useUserStore = defineStore('user', () =&gt; {
+  const user = ref&lt;User | null&gt;(null);
+  const token = ref&lt;string&gt;('');
+
+  const isLoggedIn = computed(() =&gt; !!user.value);
+
+  const loginAction = async (username: string, password: string) =&gt; {
+    const response = await login(username, password);
+    user.value = response.data.user;
+    token.value = response.data.token;
+  };
+
+  const logoutAction = async () =&gt; {
+    await logout();
+    user.value = null;
+    token.value = '';
+  };
+
+  return { user, token, isLoggedIn, loginAction, logoutAction };
+});</code></pre>
+<p>Pinia支持Composition API的写法，让我们可以使用ref和computed来定义state和getters，代码更加简洁。同时，Pinia对TypeScript的类型推断非常完善，无需手动定义类型。</p>
+
+<h3>六、总结</h3>
+<p>Vue3+TypeScript的组合为前端开发带来了更好的开发体验和代码质量。通过合理的类型定义、组件封装和状态管理，我们可以构建出可维护性强的中大型应用。在实际项目中，还需要注意性能优化、错误处理、单元测试等方面，这些都需要在实践中不断探索和总结。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		
+	<script src="/plugin/motto/motto.js"></script>	
+	<script type="text/javascript">$(".motto").html( getMingYanContent() );</script>	
+<script src="/plugin/love/love.js"></script>
+	<div id="totop"><a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a></div>
+<script src="/plugin/vibrant/vibrant.js"></script>
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/js/resizediv.js"></script>
+<script src="/js/main.js"></script>
+	</body>	
+</html>
