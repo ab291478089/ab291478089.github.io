@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html class="html-loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    React18新特性与并发模式 - lx_blogs
+  </title>
+  <meta name="author" content="lx_blogs">
+  <meta name="keywords" content="前端开发,JavaScript,React,Vue,Node.js">
+  <meta name="description" content="个人技术博客">
+	<link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/Annie.css">
+  <script src="/js/jquery.min.js"></script>
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/js/leancloud.js"></script>
+</head>
+	<body>
+		<div id="preloader">
+		<div class="pre-container">
+			<div class="spinner">
+				<div class="double-bounce1"></div>
+				<div class="double-bounce2"></div>
+			</div>			
+		</div>
+	</div>
+
+<header class="fixbackground" data-img-mode="normal" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+	<div class="mask">
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+					<img src="/img/logo.png" alt="Logo">
+				</a>
+			</div>
+			<div id="navigation-show">
+				<ul>
+		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+</ul>
+			</div>				
+		</div>
+		<div class="h-body"><p class="motto"></p></div>		
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<div id="progress-bar"></div>
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+	<p>React18新特性与并发模式</p>
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+		<li><a href="http://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
+		<li><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
+</ul>
+	</div>
+</nav>			
+		<main>
+			<div class="layout-cart">
+				<div id="layout-cart">
+					<div class="post" id="post">
+						<div class="post-text">
+							<h2 class="post-title-article">React18新特性与并发模式</h2>
+							<p class="post-time">发布日期: 2022年04月12日</p>
+							<div class="post-content-article">
+<h3>一、React 18 概述</h3>
+<p>React 18 是 React 框架自 2020 年发布 React 17 之后，时隔两年推出的全新大版本更新。它于 2022 年 3 月正式发布，带来了诸多令人兴奋的新特性，其中最核心的变化是引入了<strong>并发渲染（Concurrent Rendering）</strong>能力。React 18 并非完全重写，而是在保持向后兼容的基础上，通过底层调度机制的升级，使 React 应用能够获得更流畅的用户体验、更高的性能以及更灵活的状态管理能力。React 18 的更新可以划分为三个主要方向：并发特性、Suspense 增强、以及开发者体验的优化。</p>
+
+<h3>二、并发模式（Concurrent Mode）</h3>
+<p>并发模式是 React 18 最核心的底层能力升级。在 React 17 及之前的版本中，React 的渲染过程是<strong>同步且不可中断</strong>的：一旦 React 开始渲染，它会一直执行直到整棵组件树渲染完成，期间不会让出主线程。如果组件树庞大或计算密集，就会导致主线程被长时间占用，页面出现卡顿、掉帧等问题。</p>
+<p>React 18 引入了基于 <strong>Fiber 架构</strong>的并发渲染机制。Fiber 将渲染任务拆分为一个个小的工作单元（Fiber Node），每个单元执行完成后，React 可以检查主线程是否有更紧急的任务（如用户输入、动画），如果有，React 会暂停当前渲染，让出主线程，等主线程空闲时再继续渲染。这种"可中断渲染"的能力就是并发模式的核心。</p>
+<p>需要注意的是，React 18 的"并发"并非多线程并发，而是<strong>单线程上的任务优先级调度</strong>。React 内部维护了一个优先级队列，高优先级任务（如用户点击）可以打断低优先级任务（如数据列表渲染），从而保证交互的即时响应。</p>
+
+<h3>三、Suspense 的增强</h3>
+<p>Suspense 最早在 React 16.6 引入，但最初仅支持 <code>React.lazy</code> 进行代码分割。React 18 将 Suspense 提升为一等公民，使其成为处理异步数据加载的标准方式。配合 <code>useDeferredValue</code> 和 <code>startTransition</code> 等新 API，Suspense 可以在数据请求期间展示优雅的 fallback UI，而不会阻塞整个应用的交互。</p>
+<p>以下是一个典型的 Suspense 使用示例：</p>
+<pre><code>import { Suspense } from 'react';
+import UserProfile from './UserProfile';
+import Posts from './Posts';
+
+function ProfilePage() {
+  return (
+    &lt;Suspense fallback={&lt;div&gt;加载用户信息中...&lt;/div&gt;}&gt;
+      &lt;UserProfile /&gt;
+      &lt;Suspense fallback={&lt;div&gt;加载文章列表中...&lt;/div&gt;}&gt;
+        &lt;Posts /&gt;
+      &lt;/Suspense&gt;
+    &lt;/Suspense&gt;
+  );
+}</code></pre>
+<p>在这个例子中，<code>UserProfile</code> 和 <code>Posts</code> 各自独立加载，即使 <code>Posts</code> 数据尚未就绪，<code>UserProfile</code> 也可以先渲染出来，实现了<strong>渐进式加载</strong>，大幅提升了用户感知性能。</p>
+
+<h3>四、Transitions（过渡更新）</h3>
+<p>React 18 引入了 <code>useTransition</code> 和 <code>startTransition</code> API，用于区分<strong>紧急更新</strong>和<strong>非紧急更新</strong>。紧急更新是指用户直接交互（如输入框打字、按钮点击），需要立即响应；非紧急更新是指 UI 的过渡效果（如列表过滤、页面切换），可以延迟执行而不影响用户体验。</p>
+<p>使用 <code>useTransition</code> 的示例如下：</p>
+<pre><code>import { useTransition, useState } from 'react';
+
+function SearchResults() {
+  const [query, setQuery] = useState('');
+  const [isPending, startTransition] = useTransition();
+
+  const handleChange = (e) => {
+    // 紧急更新：立即更新输入框
+    setQuery(e.target.value);
+
+    // 非紧急更新：延迟过滤结果
+    startTransition(() => {
+      setSearchQuery(e.target.value);
+    });
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;input value={query} onChange={handleChange} /&gt;
+      {isPending &amp;&amp; &lt;div&gt;正在搜索...&lt;/div&gt;}
+      &lt;Results query={searchQuery} /&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+<p>通过 <code>startTransition</code>，React 知道 <code>setSearchQuery</code> 触发的渲染是低优先级的，可以被用户后续的输入打断。这样即使用户快速输入，也不会因为大量重渲染而卡顿。<code>isPending</code> 状态则允许我们展示过渡指示器，提升用户体验。</p>
+
+<h3>五、自动批处理（Automatic Batching）</h3>
+<p>在 React 17 及之前，React 仅在自身管理的事件处理函数中进行<strong>状态批处理</strong>。这意味着在 <code>setTimeout</code>、<code>Promise.then</code>、原生事件处理器中多次调用 <code>setState</code>，每次都会触发一次重新渲染，造成不必要的性能损耗。</p>
+<p>React 18 引入了<strong>自动批处理</strong>机制，无论状态更新发生在何处，React 都会自动将它们合并为一次渲染。示例如下：</p>
+<pre><code>function handleClick() {
+  setCount(c => c + 1);
+  setFlag(f => !f);
+  // React 18: 仅触发一次渲染
+  // React 17: 在 setTimeout 中会触发两次渲染
+}
+
+setTimeout(() => {
+  setCount(c => c + 1);
+  setFlag(f => !f);
+  // React 18: 同样仅触发一次渲染
+}, 1000);</code></pre>
+<p>自动批处理是一个"免费"的性能优化，开发者无需修改现有代码即可享受收益。如果某些场景确实需要立即同步渲染，可以使用 <code>ReactDOM.flushSync()</code> 显式退出批处理。</p>
+
+<h3>六、新的 Root API 与 Strict Mode 变更</h3>
+<p>React 18 引入了新的 <code>createRoot</code> API 来替代旧的 <code>ReactDOM.render</code>。新 API 是启用并发特性的前提：</p>
+<pre><code>// React 17
+ReactDOM.render(&lt;App /&gt;, document.getElementById('root'));
+
+// React 18
+import { createRoot } from 'react-dom/client';
+const root = createRoot(document.getElementById('root'));
+root.render(&lt;App /&gt;);</code></pre>
+<p>此外，React 18 的 Strict Mode 在开发环境下会<strong>双重调用</strong>组件的挂载、卸载和状态更新函数，以检测副作用是否正确清理。这有助于开发者提前发现内存泄漏、重复请求等问题，为并发模式下的组件行为提供保障。</p>
+
+<h3>七、总结与展望</h3>
+<p>React 18 是一次承前启后的重要更新。并发模式为 React 应用带来了更流畅的交互体验，Suspense 的增强让异步数据加载变得优雅，Transitions 提供了精细化的优先级控制，自动批处理则带来了开箱即用的性能提升。对于前端工程师而言，深入理解这些新特性的原理和使用场景，不仅有助于构建高性能应用，也是面试中展示技术深度的重要加分项。未来，随着 React Server Components 等特性的成熟，React 的性能上限还将进一步提升。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		
+	<script src="/plugin/motto/motto.js"></script>	
+	<script type="text/javascript">$(".motto").html( getMingYanContent() );</script>	
+<script src="/plugin/love/love.js"></script>
+	<div id="totop"><a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a></div>
+<script src="/plugin/vibrant/vibrant.js"></script>
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/js/resizediv.js"></script>
+<script src="/js/main.js"></script>
+	</body>	
+</html>
