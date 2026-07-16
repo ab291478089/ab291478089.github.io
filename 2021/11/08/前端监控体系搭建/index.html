@@ -5,17 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
-    前端监控体系搭建 - lx_blogs
+    前端监控体系搭建 | lx_blogs
   </title>
   <meta name="author" content="lx_blogs">
-  <meta name="keywords" content="前端开发,JavaScript,React,Vue,Node.js">
-  <meta name="description" content="个人技术博客">
-	<link rel="shortcut icon" href="/img/favicon.ico">
+  <meta name="keywords" content="监控,性能,错误追踪,Web Vitals">
+  <meta name="description" content="前端监控体系搭建">
+	<link rel="shortcut icon" href="../../../../img/favicon.ico">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/Annie.css">
-  <script src="/js/jquery.min.js"></script>
+<link rel="stylesheet" href="../../../../css/Annie.css">
+  <script src="../../../../js/jquery.min.js"></script>
   <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-<script src="/js/leancloud.js"></script>
+<script src="../../../../js/leancloud.js"></script>
 </head>
 	<body>
 		<div id="preloader">
@@ -27,22 +27,22 @@
 		</div>
 	</div>
 
-<header class="fixbackground" data-img-mode="normal" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+<header class="fixbackground" data-img-mode="normal" data-normal-src="../../../../img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
 	<div class="mask">
 		<div class="h-header">
 			<div id="logo">
-				<a href="/">
-					<img src="/img/logo.png" alt="Logo">
+				<a href="../../../../">
+					<img src="../../../../img/logo.png" alt="Logo">
 				</a>
 			</div>
 			<div id="navigation-show">
 				<ul>
-		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
-		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
-		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
-		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
-		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
-		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+		<li class="menu-home"><a href="../../../../" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="../../../../archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="../../../../categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="../../../../tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="../../../../about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="../../../../gallery" class="menu-item-gallery">相册</a></li>
 </ul>
 			</div>				
 		</div>
@@ -57,7 +57,7 @@
 	<div id="progress-bar"></div>
 	<div id="progress-percentage"><h1>0.0%</h1></div>
 	<div class="toc-switch"><span class="switch-button">目录</span></div>
-	<p>前端监控体系搭建</p>
+	<p>当前文章&nbsp;:&nbsp;《前端监控体系搭建》</p>
 	<a class="nav-trigger"><span></span></a>
 </div>
 
@@ -68,33 +68,51 @@
 	</div>
 	<div class="nav-body">
 		<ul>
-		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
-		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
-		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
-		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
-		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
-		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+		<li class="menu-home"><a href="../../../../" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="../../../../archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="../../../../categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="../../../../tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="../../../../about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="../../../../gallery" class="menu-item-gallery">相册</a></li>
 </ul>
 	</div>
 	<div class="nav-footer">
 		<ul>
 		<li><a href="http://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
-		<li><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
+		<li><a href="../../../../atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
 </ul>
 	</div>
-</nav>			
+</nav>
 		<main>
-			<div class="layout-cart">
-				<div id="layout-cart">
-					<div class="post" id="post">
-						<div class="post-text">
-							<h2 class="post-title-article">前端监控体系搭建</h2>
-							<p class="post-time">发布日期: 2021年11月08日</p>
-							<div class="post-content-article">
-<h3>一、前端监控体系概述</h3>
+			<div class="layout-post">
+				<div id="layout-post">
+					<div class="article-title">
+						<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+						<a href="/2021/11/08/前端监控体系搭建/" itemprop="url">
+							前端监控体系搭建
+						</a>
+					</div>
+
+					<div class="article-meta">
+						<span>
+							<i class="fa fa-calendar"></i>
+							发布于
+							<a href="/2021/11/08/前端监控体系搭建/" itemprop="url">
+								<time datetime="2021-11-08T00:00:00.000Z" itemprop="datePublished">
+									2021-11-08
+								</time>
+							</a>
+						</span>
+						<span>
+							<i class="fa fa-tags"></i>
+							<a href="../../../../tags/#监控" rel="tag">监控</a>, <a href="../../../../tags/#性能" rel="tag">性能</a>, <a href="../../../../tags/#错误追踪" rel="tag">错误追踪</a>, <a href="../../../../tags/#Web Vitals" rel="tag">Web Vitals</a>
+						</span>
+					</div>
+
+					<div class="article-content" id="article-content">
+						<h3>一、前端监控体系概述</h3>
 <p>前端监控体系是保障线上应用质量和用户体验的重要基础设施。一个完善的前端监控体系通常包含三大核心模块：性能监控、错误监控和用户行为追踪。性能监控关注页面的加载速度和运行时性能指标；错误监控负责捕获和上报应用中的各类异常；用户行为追踪则记录用户的操作路径和交互行为，为产品优化提供数据支撑。</p>
 <p>搭建前端监控体系的核心流程包括：数据采集（SDK层）、数据传输（上报策略）、数据处理（服务端清洗聚合）和数据展示（可视化大盘）。其中，SDK层的设计是整个体系的基础，它直接决定了数据的准确性、完整性和对应用性能的影响程度。</p>
-
 <h3>二、性能监控：核心指标采集</h3>
 <p>现代前端性能监控主要基于Performance API和Web Vitals指标体系。Google提出的Core Web Vitals包含三个核心指标：LCP（Largest Contentful Paint，最大内容绘制）衡量页面主要内容加载速度，理想值在2.5秒以内；FID（First Input Delay，首次输入延迟）衡量页面交互响应速度，理想值在100毫秒以内；CLS（Cumulative Layout Shift，累积布局偏移）衡量页面视觉稳定性，理想值在0.1以内。</p>
 <pre><code>// 性能指标采集核心实现
@@ -106,9 +124,9 @@ class PerformanceMonitor {
 
   init() {
     // 采集Navigation Timing数据
-    window.addEventListener('load', () =&gt; {
+    window.addEventListener(&#39;load&#39;, () =&gt; {
       setTimeout(() =&gt; {
-        const timing = performance.getEntriesByType('navigation')[0];
+        const timing = performance.getEntriesByType(&#39;navigation&#39;)[0];
         this.metrics = {
           // DNS查询时间
           dns: timing.domainLookupEnd - timing.domainLookupStart,
@@ -139,14 +157,14 @@ class PerformanceMonitor {
     new PerformanceObserver((entryList) =&gt; {
       const entries = entryList.getEntries();
       this.metrics.lcp = entries[entries.length - 1].startTime;
-    }).observe({ type: 'largest-contentful-paint', buffered: true });
+    }).observe({ type: &#39;largest-contentful-paint&#39;, buffered: true });
   }
 
   observeFID() {
     new PerformanceObserver((entryList) =&gt; {
       const entries = entryList.getEntries();
       this.metrics.fid = entries[0].processingStart - entries[0].startTime;
-    }).observe({ type: 'first-input', buffered: true });
+    }).observe({ type: &#39;first-input&#39;, buffered: true });
   }
 
   observeCLS() {
@@ -158,7 +176,7 @@ class PerformanceMonitor {
         }
       }
       this.metrics.cls = clsValue;
-    }).observe({ type: 'layout-shift', buffered: true });
+    }).observe({ type: &#39;layout-shift&#39;, buffered: true });
   }
 
   report() {
@@ -169,11 +187,11 @@ class PerformanceMonitor {
       ...this.metrics,
     };
     // 使用sendBeacon保证页面卸载时数据不丢失
-    navigator.sendBeacon('/api/performance', JSON.stringify(data));
+    navigator.sendBeacon(&#39;/api/performance&#39;, JSON.stringify(data));
   }
-}</code></pre>
+}
+</code></pre>
 <p>除了页面级别的性能指标，还需要关注资源加载性能。通过PerformanceObserver监听resource类型的条目，可以统计每个资源的加载耗时，识别加载缓慢的第三方脚本、图片和字体资源，为资源优化提供数据依据。</p>
-
 <h3>三、错误监控：全方位异常捕获</h3>
 <p>前端错误监控需要覆盖多种异常类型：JavaScript运行时错误、Promise未捕获异常、资源加载失败、接口请求异常以及框架层面的错误。对于JavaScript运行时错误，通过window.onerror全局监听；对于Promise异常，通过unhandledrejection事件捕获；对于React和Vue等框架的错误，需要利用框架提供的错误边界机制。</p>
 <pre><code>// 错误监控SDK核心实现
@@ -187,32 +205,32 @@ class ErrorMonitor {
     // 捕获JS运行时错误
     window.onerror = (message, source, lineno, colno, error) =&gt; {
       this.handleError({
-        type: 'js_error',
+        type: &#39;js_error&#39;,
         message,
         source,
         lineno,
         colno,
-        stack: error?.stack || 'No stack trace',
+        stack: error?.stack || &#39;No stack trace&#39;,
         timestamp: Date.now(),
       });
     };
 
     // 捕获Promise未处理异常
-    window.addEventListener('unhandledrejection', (event) =&gt; {
+    window.addEventListener(&#39;unhandledrejection&#39;, (event) =&gt; {
       this.handleError({
-        type: 'promise_error',
+        type: &#39;promise_error&#39;,
         message: event.reason?.message || String(event.reason),
-        stack: event.reason?.stack || 'No stack trace',
+        stack: event.reason?.stack || &#39;No stack trace&#39;,
         timestamp: Date.now(),
       });
     });
 
     // 捕获资源加载错误（利用事件捕获阶段）
-    window.addEventListener('error', (event) =&gt; {
+    window.addEventListener(&#39;error&#39;, (event) =&gt; {
       const target = event.target;
-      if (target !== window && (target.src || target.href)) {
+      if (target !== window &amp;&amp; (target.src || target.href)) {
         this.handleError({
-          type: 'resource_error',
+          type: &#39;resource_error&#39;,
           url: target.src || target.href,
           tagName: target.tagName.toLowerCase(),
           timestamp: Date.now(),
@@ -227,7 +245,7 @@ class ErrorMonitor {
         const response = await originalFetch(...args);
         if (!response.ok) {
           this.handleError({
-            type: 'http_error',
+            type: &#39;http_error&#39;,
             url: args[0],
             status: response.status,
             statusText: response.statusText,
@@ -237,7 +255,7 @@ class ErrorMonitor {
         return response;
       } catch (error) {
         this.handleError({
-          type: 'http_error',
+          type: &#39;http_error&#39;,
           url: args[0],
           message: error.message,
           timestamp: Date.now(),
@@ -268,11 +286,11 @@ class ErrorMonitor {
   flush() {
     if (this.errorQueue.length === 0) return;
     const data = this.errorQueue.splice(0);
-    navigator.sendBeacon('/api/errors', JSON.stringify(data));
+    navigator.sendBeacon(&#39;/api/errors&#39;, JSON.stringify(data));
   }
-}</code></pre>
+}
+</code></pre>
 <p>错误监控的关键在于错误信息的完整性和准确性。对于压缩后的代码，错误堆栈中的行列号往往无法直接定位到源码位置，需要配合SourceMap进行反向解析。在生产环境中，SourceMap文件不应该部署到CDN上，而是保存在内部服务中，由错误监控服务端在需要时进行解析，将行列号还原为源码位置。</p>
-
 <h3>四、用户行为追踪：操作路径还原</h3>
 <p>用户行为追踪的目的是记录用户在页面上的操作路径，帮助还原问题发生时的用户场景。常见的追踪维度包括：页面PV/UV统计、用户点击行为、页面跳转路径、表单输入行为等。在实现上，通常采用无埋点（全埋点）和手动埋点相结合的方式。</p>
 <pre><code>// 用户行为追踪SDK
@@ -285,10 +303,10 @@ class BehaviorTracker {
 
   init() {
     // 自动采集点击事件（基于事件委托）
-    document.addEventListener('click', (event) =&gt; {
+    document.addEventListener(&#39;click&#39;, (event) =&gt; {
       const target = event.target;
       const behavior = {
-        type: 'click',
+        type: &#39;click&#39;,
         tagName: target.tagName,
         text: this.getElementText(target),
         className: target.className,
@@ -310,15 +328,15 @@ class BehaviorTracker {
       originalPushState.apply(history, args);
       this.trackPageView();
     };
-    window.addEventListener('popstate', () =&gt; this.trackPageView());
+    window.addEventListener(&#39;popstate&#39;, () =&gt; this.trackPageView());
 
     // 页面卸载时上报剩余数据
-    window.addEventListener('beforeunload', () =&gt; this.flush());
+    window.addEventListener(&#39;beforeunload&#39;, () =&gt; this.flush());
   }
 
   trackPageView() {
     this.behaviors.push({
-      type: 'pv',
+      type: &#39;pv&#39;,
       url: location.href,
       referrer: document.referrer,
       title: document.title,
@@ -328,11 +346,11 @@ class BehaviorTracker {
 
   getElementText(element) {
     const text = element.textContent || element.innerText;
-    return text ? text.trim().substring(0, 50) : '';
+    return text ? text.trim().substring(0, 50) : &#39;&#39;;
   }
 
   getXPath(element) {
-    if (element.id) return `//*[@id="${element.id}"]`;
+    if (element.id) return `//*[@id=&quot;${element.id}&quot;]`;
     const paths = [];
     while (element &amp;&amp; element.nodeType === Node.ELEMENT_NODE) {
       let index = 1;
@@ -347,7 +365,7 @@ class BehaviorTracker {
       paths.unshift(`${element.tagName.toLowerCase()}[${index}]`);
       element = element.parentNode;
     }
-    return '/' + paths.join('/');
+    return &#39;/&#39; + paths.join(&#39;/&#39;);
   }
 
   throttleReport() {
@@ -363,48 +381,210 @@ class BehaviorTracker {
   flush() {
     if (this.behaviors.length === 0) return;
     const data = this.behaviors.splice(0);
-    navigator.sendBeacon('/api/behaviors', JSON.stringify({
+    navigator.sendBeacon(&#39;/api/behaviors&#39;, JSON.stringify({
       userId: this.userId,
       behaviors: data,
     }));
   }
 
   generateUserId() {
-    let userId = localStorage.getItem('monitor_uid');
+    let userId = localStorage.getItem(&#39;monitor_uid&#39;);
     if (!userId) {
-      userId = 'uid_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-      localStorage.setItem('monitor_uid', userId);
+      userId = &#39;uid_&#39; + Date.now() + &#39;_&#39; + Math.random().toString(36).substr(2, 9);
+      localStorage.setItem(&#39;monitor_uid&#39;, userId);
     }
     return userId;
   }
-}</code></pre>
-
+}
+</code></pre>
 <h3>五、数据上报策略与性能优化</h3>
 <p>监控SDK的性能影响必须控制在最低限度。在数据上报方面，推荐使用navigator.sendBeacon API，它可以在页面卸载时异步发送数据，不会阻塞页面关闭，也不会影响用户体验。对于不支持sendBeacon的浏览器，可以降级为Image对象方式上报。</p>
 <p>上报策略上，应该采用批量上报和节流机制，避免频繁发送请求影响网络性能。对于错误数据，需要做去重处理，避免同一错误在短时间内被重复上报数千次。对于性能数据，可以在页面load完成后延迟采集和上报，避免阻塞关键渲染路径。此外，SDK本身应该支持动态配置，通过服务端下发的配置来控制采集频率、上报地址、功能开关等，实现监控策略的灵活调整。</p>
-
 <h3>六、监控数据的可视化与告警</h3>
 <p>采集到的数据最终需要通过可视化平台展示给开发和运营团队。性能监控大盘应该展示核心指标的P50、P75、P90分位值，以及趋势变化；错误监控大盘应该展示错误数量、影响用户数、错误类型分布和Top N错误排行；用户行为分析则应该支持操作路径回放和漏斗分析。</p>
 <p>告警机制是监控体系中不可或缺的一环。当错误率突增、性能指标劣化或接口异常率超过阈值时，应该通过钉钉、邮件、短信等渠道及时通知相关人员。告警规则应该支持灵活配置，避免误报导致告警疲劳。同时，告警信息应该包含足够的上下文（如错误堆栈、影响范围、发生时间），帮助开发者快速定位和修复问题。</p>
 <p>搭建一套完善的前端监控体系是前端工程化的重要一环。通过性能监控发现问题、通过错误监控定位问题、通过行为追踪还原问题，三者协同构成了前端质量保障的完整闭环。在实际落地过程中，可以根据团队规模选择使用Sentry、Fundebug等成熟的第三方方案，或者基于上述思路自研轻量级SDK，关键是建立数据驱动的质量意识，持续提升应用的用户体验。</p>
+
+					</div>
+					
+					<div id="current-post-cover" data-scr="../../../../img/cart_cover.jpg"></div>
+
+					<div class="investment-container">
+						<div class="investment-header">
+							<div class="investment-title-1">
+								<div class="on">相关文章</div>
+								<div>评论</div>
+								<div>分享</div>
 							</div>
+							<div class="investment-title-2">	            
+								<span>
+									<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+								</span>
+							</div>	
 						</div>
+						
+						<div class="investment-content">
+							<div class="investment-content-list">
+								<div class="relate-post">
+									<ul>
+										<li>
+											<div class="relate-post-text">
+												<p class="relate-post-content">
+													暂无相关文章
+												</p>
+											</div>
+										</li>											
+									</ul>
+								</div>	
+							</div>
+							<div class="investment-content-list">
+								<div class="layout-comment">
+									<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+								</div>
+							</div>
+							<div class="investment-content-list">
+								<div class="layout-share">
+									<div class="social-share"></div>
+									<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+									<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+								</div>
+							</div>
+						</div>	
 					</div>
 				</div>
 			</div>
+
+			<script src="../../../../plugin/clipboard/clipboard.js"></script>
+			<script>
+				function codePreprocessing() {
+					$("#article-content .highlight").each(function() {
+						$(this).wrap('<div id="post-code"></div>');
+					})
+
+					$("#article-content #post-code").each(function() {
+						$(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+					})
+
+					$("#article-content .copy-nav").each(function() {
+						var temp = $(this).next().attr('class'),
+							language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none";
+						$(this).find('.code-language').text(language);
+						$(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+					});
+				}
+
+				function codeCopy() {
+					$('#article-content #post-code').each(function(i) {
+						var codeCopyId = 'codeCopy-' + i;
+						var codeNode = $(this).find('.code'),
+							copyButton = $(this).find('.copy-btn');
+						codeNode.attr('id', codeCopyId);
+						copyButton.attr('data-clipboard-target-id', codeCopyId);
+					})
+
+					var clipboard = new ClipboardJS('.copy-btn', {
+						target: function(trigger) {
+							return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+						}
+					});
+
+					function showTooltip(elem, msg) {		   
+						elem.setAttribute('aria-label', msg);
+						elem.setAttribute('class', 'copy-btn copy-status');
+						setTimeout(function() {
+							elem.setAttribute('class', 'copy-btn');
+						}, 2000);
+					}
+
+					clipboard.on('success', function(e) {
+						e.clearSelection();
+						showTooltip(e.trigger, 'Copied!');
+					});
+					clipboard.on('error', function(e) {
+						console.error('Action:', e.action);
+						console.error('Trigger:', e.trigger);
+					});
+				}
+
+				if ($('.layout-post').length) {
+					codePreprocessing();
+					codeCopy();
+				} 
+			</script>
+
+			<link rel="stylesheet" href="../../../../plugin/fancybox/jquery.fancybox.css">
+			<script src="../../../../plugin/fancybox/jquery.fancybox.js"></script>
+
+			<script type="text/javascript">
+				var titleID = $('.article-title a'),
+					imageID = $('.article-content img'),
+					videoID = $('.article-content video');
+
+				var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+				imageID.each(function() {
+					var imgPath = $(this).attr('src'),
+						imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+					$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+				});
+
+				videoID.each(function() {
+					var videoPath = $(this).attr('src');
+					$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+				});
+
+				if($('#layout-post').length) {
+					$('[data-fancybox="gallery"]').fancybox({
+						loop: true,
+						buttons: [
+							"zoom",
+							"share",
+							"slideShow",
+							"fullScreen",
+							"thumbs",
+							"close"
+						],
+						protect: false
+					});
+				}
+			</script>
 		</main>
 
+		<footer>
+			<div class="social">
+				<ul>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-weibo"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="../../../../atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
+				</ul>
+			</div>		
+			<div class="copyright">
+				<p>
+					&copy;2017 - 2026, content by lx_blogs. All Rights Reserved.
+					<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>	
+					<span id="busuanzi_container_page_pv">
+						本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+					</span>
+				</p>
+				<p>
+					<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+				</p>
+			</div>		
+		</footer>
 
-	<script src="/plugin/motto/motto.js"></script>	
-	<script type="text/javascript">$(".motto").html( getMingYanContent() );</script>	
-<script src="/plugin/love/love.js"></script>
-	<div id="totop"><a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a></div>
-<script src="/plugin/vibrant/vibrant.js"></script>
-<script src="/plugin/chinese/chinese.js"></script>
-<script src="/plugin/imgLazyLoader/yall.min.js"></script>
-<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
-<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
-<script src="/js/resizediv.js"></script>
-<script src="/js/main.js"></script>
+		<script src="../../../../plugin/motto/motto.js"></script>	
+		<script type="text/javascript">$(".motto").html( getMingYanContent() );</script>	
+		<script src="../../../../plugin/love/love.js"></script>
+		<div id="totop"><a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a></div>
+		<script src="../../../../plugin/vibrant/vibrant.js"></script>
+		<script src="../../../../plugin/chinese/chinese.js"></script>
+		<script src="../../../../plugin/imgLazyLoader/yall.min.js"></script>
+		<script src="../../../../plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+		<script src="../../../../plugin/nicescroll/jquery.nicescroll.js"></script>
+		<script src="../../../../js/resizediv.js"></script>
+		<script src="../../../../js/main.js"></script>
 	</body>	
 </html>

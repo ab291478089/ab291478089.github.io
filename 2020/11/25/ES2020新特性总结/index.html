@@ -5,17 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
-    ES2020新特性总结 - lx_blogs
+    ES2020新特性总结 | lx_blogs
   </title>
   <meta name="author" content="lx_blogs">
-  <meta name="keywords" content="前端开发,JavaScript,React,Vue,Node.js">
-  <meta name="description" content="个人技术博客">
-	<link rel="shortcut icon" href="/img/favicon.ico">
+  <meta name="keywords" content="ES2020,JavaScript,可选链,空值合并">
+  <meta name="description" content="ES2020新特性总结">
+	<link rel="shortcut icon" href="../../../../img/favicon.ico">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/Annie.css">
-  <script src="/js/jquery.min.js"></script>
+<link rel="stylesheet" href="../../../../css/Annie.css">
+  <script src="../../../../js/jquery.min.js"></script>
   <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-<script src="/js/leancloud.js"></script>
+<script src="../../../../js/leancloud.js"></script>
 </head>
 	<body>
 		<div id="preloader">
@@ -27,22 +27,22 @@
 		</div>
 	</div>
 
-<header class="fixbackground" data-img-mode="normal" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+<header class="fixbackground" data-img-mode="normal" data-normal-src="../../../../img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
 	<div class="mask">
 		<div class="h-header">
 			<div id="logo">
-				<a href="/">
-					<img src="/img/logo.png" alt="Logo">
+				<a href="../../../../">
+					<img src="../../../../img/logo.png" alt="Logo">
 				</a>
 			</div>
 			<div id="navigation-show">
 				<ul>
-		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
-		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
-		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
-		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
-		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
-		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+		<li class="menu-home"><a href="../../../../" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="../../../../archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="../../../../categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="../../../../tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="../../../../about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="../../../../gallery" class="menu-item-gallery">相册</a></li>
 </ul>
 			</div>				
 		</div>
@@ -57,7 +57,7 @@
 	<div id="progress-bar"></div>
 	<div id="progress-percentage"><h1>0.0%</h1></div>
 	<div class="toc-switch"><span class="switch-button">目录</span></div>
-	<p>ES2020新特性总结</p>
+	<p>当前文章&nbsp;:&nbsp;《ES2020新特性总结》</p>
 	<a class="nav-trigger"><span></span></a>
 </div>
 
@@ -68,32 +68,50 @@
 	</div>
 	<div class="nav-body">
 		<ul>
-		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
-		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
-		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
-		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
-		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
-		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+		<li class="menu-home"><a href="../../../../" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="../../../../archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="../../../../categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="../../../../tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="../../../../about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="../../../../gallery" class="menu-item-gallery">相册</a></li>
 </ul>
 	</div>
 	<div class="nav-footer">
 		<ul>
 		<li><a href="http://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
-		<li><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
+		<li><a href="../../../../atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
 </ul>
 	</div>
-</nav>			
+</nav>
 		<main>
-			<div class="layout-cart">
-				<div id="layout-cart">
-					<div class="post" id="post">
-						<div class="post-text">
-							<h2 class="post-title-article">ES2020新特性总结</h2>
-							<p class="post-time">发布日期: 2020年11月25日</p>
-							<div class="post-content-article">
-<h3>前言</h3>
-<p>ES2020（ES11）是JavaScript语言的最新版本，带来了许多实用的新特性。本文将总结ES2020的主要新特性，包括可选链操作符、空值合并操作符、Promise.allSettled、动态导入等，帮助开发者快速掌握这些新特性。</p>
+			<div class="layout-post">
+				<div id="layout-post">
+					<div class="article-title">
+						<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+						<a href="/2020/11/25/ES2020新特性总结/" itemprop="url">
+							ES2020新特性总结
+						</a>
+					</div>
 
+					<div class="article-meta">
+						<span>
+							<i class="fa fa-calendar"></i>
+							发布于
+							<a href="/2020/11/25/ES2020新特性总结/" itemprop="url">
+								<time datetime="2020-11-25T00:00:00.000Z" itemprop="datePublished">
+									2020-11-25
+								</time>
+							</a>
+						</span>
+						<span>
+							<i class="fa fa-tags"></i>
+							<a href="../../../../tags/#ES2020" rel="tag">ES2020</a>, <a href="../../../../tags/#JavaScript" rel="tag">JavaScript</a>, <a href="../../../../tags/#可选链" rel="tag">可选链</a>, <a href="../../../../tags/#空值合并" rel="tag">空值合并</a>
+						</span>
+					</div>
+
+					<div class="article-content" id="article-content">
+						<h3>前言</h3>
+<p>ES2020（ES11）是JavaScript语言的最新版本，带来了许多实用的新特性。本文将总结ES2020的主要新特性，包括可选链操作符、空值合并操作符、Promise.allSettled、动态导入等，帮助开发者快速掌握这些新特性。</p>
 <h3>可选链操作符（Optional Chaining）</h3>
 <p>可选链操作符（?.）允许我们安全地访问嵌套对象的属性，而不用担心中间属性是否存在。如果某个属性为null或undefined，表达式会短路并返回undefined。</p>
 <pre><code>// 传统方式
@@ -110,21 +128,20 @@ const result = someFunction?.()
 
 // 实际应用
 function getUserName(user) {
-  return user?.profile?.name || '匿名用户'
+  return user?.profile?.name || &#39;匿名用户&#39;
 }
 
 const user = {
   profile: {
-    name: '张三'
+    name: &#39;张三&#39;
   }
 }
 
-console.log(getUserName(user)) // '张三'
-console.log(getUserName({})) // '匿名用户'
-console.log(getUserName(null)) // '匿名用户'
+console.log(getUserName(user)) // &#39;张三&#39;
+console.log(getUserName({})) // &#39;匿名用户&#39;
+console.log(getUserName(null)) // &#39;匿名用户&#39;
 </code></pre>
 <p>可选链操作符大大简化了嵌套属性的访问，避免了大量的if判断和逻辑与操作符。它只在属性不存在时返回undefined，不会抛出错误。</p>
-
 <h3>空值合并操作符（Nullish Coalescing）</h3>
 <p>空值合并操作符（??）用于提供默认值。与逻辑或操作符（||）不同，它只在左侧值为null或undefined时才返回右侧的值，而不是在左侧为假值时。</p>
 <pre><code>// 逻辑或的问题
@@ -137,9 +154,9 @@ const result2 = count ?? 10
 console.log(result2) // 0（0不是null或undefined）
 
 // 更多示例
-const emptyString = ''
-console.log(emptyString || 'default') // 'default'
-console.log(emptyString ?? 'default') // ''
+const emptyString = &#39;&#39;
+console.log(emptyString || &#39;default&#39;) // &#39;default&#39;
+console.log(emptyString ?? &#39;default&#39;) // &#39;&#39;
 
 const falseValue = false
 console.log(falseValue || true) // true
@@ -148,39 +165,38 @@ console.log(falseValue ?? true) // false
 // 实际应用
 function createUser(config) {
   return {
-    name: config.name ?? '匿名用户',
+    name: config.name ?? &#39;匿名用户&#39;,
     age: config.age ?? 18,
-    role: config.role ?? 'user'
+    role: config.role ?? &#39;user&#39;
   }
 }
 
-const user = createUser({ name: '李四', age: 0 })
-console.log(user) // { name: '李四', age: 0, role: 'user' }
+const user = createUser({ name: &#39;李四&#39;, age: 0 })
+console.log(user) // { name: &#39;李四&#39;, age: 0, role: &#39;user&#39; }
 </code></pre>
 <p>空值合并操作符在处理数值、布尔值等可能为假值但有效的数据时非常有用，避免了逻辑或操作符的陷阱。</p>
-
 <h3>Promise.allSettled</h3>
 <p>Promise.allSettled返回一个Promise，该Promise在所有给定的Promise都已fulfilled或rejected后resolve，并返回一个数组，包含每个Promise的状态和结果。</p>
-<pre><code>const promise1 = Promise.resolve('成功1')
-const promise2 = Promise.reject('失败2')
-const promise3 = Promise.resolve('成功3')
+<pre><code>const promise1 = Promise.resolve(&#39;成功1&#39;)
+const promise2 = Promise.reject(&#39;失败2&#39;)
+const promise3 = Promise.resolve(&#39;成功3&#39;)
 
 Promise.allSettled([promise1, promise2, promise3])
   .then(results =&gt; {
     results.forEach(result =&gt; {
-      console.log(result.status) // 'fulfilled' 或 'rejected'
-      if (result.status === 'fulfilled') {
-        console.log('值:', result.value)
+      console.log(result.status) // &#39;fulfilled&#39; 或 &#39;rejected&#39;
+      if (result.status === &#39;fulfilled&#39;) {
+        console.log(&#39;值:&#39;, result.value)
       } else {
-        console.log('原因:', result.reason)
+        console.log(&#39;原因:&#39;, result.reason)
       }
     })
   })
 
 // 输出：
-// status: 'fulfilled', 值: '成功1'
-// status: 'rejected', 原因: '失败2'
-// status: 'fulfilled', 值: '成功3'
+// status: &#39;fulfilled&#39;, 值: &#39;成功1&#39;
+// status: &#39;rejected&#39;, 原因: &#39;失败2&#39;
+// status: &#39;fulfilled&#39;, 值: &#39;成功3&#39;
 
 // 与Promise.all的区别
 // Promise.all在任何一个Promise rejected时就会reject
@@ -197,43 +213,42 @@ async function fetchMultipleUsers(userIds) {
   const results = await Promise.allSettled(promises)
   
   const successful = results
-    .filter(r =&gt; r.status === 'fulfilled')
+    .filter(r =&gt; r.status === &#39;fulfilled&#39;)
     .map(r =&gt; r.value)
   
   const failed = results
-    .filter(r =&gt; r.status === 'rejected')
+    .filter(r =&gt; r.status === &#39;rejected&#39;)
     .map(r =&gt; r.reason)
   
   return { successful, failed }
 }
 </code></pre>
 <p>Promise.allSettled在某些场景下比Promise.all更合适，特别是当我们不关心某个Promise是否失败，而是想知道所有Promise的最终状态时。</p>
-
 <h3>动态导入（Dynamic Import）</h3>
 <p>动态导入使用import()函数，可以在运行时动态加载模块。这返回一个Promise，使得我们可以按需加载代码。</p>
 <pre><code>// 静态导入（编译时确定）
-import { someFunction } from './module.js'
+import { someFunction } from &#39;./module.js&#39;
 
 // 动态导入（运行时确定）
-button.addEventListener('click', async () =&gt; {
-  const module = await import('./module.js')
+button.addEventListener(&#39;click&#39;, async () =&gt; {
+  const module = await import(&#39;./module.js&#39;)
   module.someFunction()
 })
 
 // 条件导入
 async function loadModule(moduleName) {
-  if (moduleName === 'chart') {
-    return await import('./chart.js')
-  } else if (moduleName === 'table') {
-    return await import('./table.js')
+  if (moduleName === &#39;chart&#39;) {
+    return await import(&#39;./chart.js&#39;)
+  } else if (moduleName === &#39;table&#39;) {
+    return await import(&#39;./table.js&#39;)
   }
 }
 
 // 路由级别的代码分割
 const routes = {
-  '/home': () =&gt; import('./pages/Home.js'),
-  '/about': () =&gt; import('./pages/About.js'),
-  '/contact': () =&gt; import('./pages/Contact.js')
+  &#39;/home&#39;: () =&gt; import(&#39;./pages/Home.js&#39;),
+  &#39;/about&#39;: () =&gt; import(&#39;./pages/About.js&#39;),
+  &#39;/contact&#39;: () =&gt; import(&#39;./pages/Contact.js&#39;)
 }
 
 async function navigate(path) {
@@ -245,12 +260,11 @@ async function navigate(path) {
 // Webpack会自动进行代码分割，生成独立的chunk文件
 </code></pre>
 <p>动态导入是实现代码分割和懒加载的重要手段，可以显著减少初始加载时间，提升应用性能。</p>
-
 <h3>BigInt</h3>
 <p>BigInt是一种新的数据类型，用于表示任意精度的整数。它可以表示超过Number.MAX_SAFE_INTEGER（2^53 - 1）的整数。</p>
 <pre><code>// 创建BigInt
 const bigInt1 = 1234567890123456789012345678901234567890n
-const bigInt2 = BigInt('1234567890123456789012345678901234567890')
+const bigInt2 = BigInt(&#39;1234567890123456789012345678901234567890&#39;)
 const bigInt3 = BigInt(123) // 不推荐
 
 // BigInt运算
@@ -275,7 +289,6 @@ console.log(10n === 10) // false（类型不同）
 const largeId = 9007199254740992n
 console.log(largeId + 1n) // 9007199254740993n
 </code></pre>
-
 <h3>globalThis</h3>
 <p>globalThis提供了一个标准的方式来访问全局对象，无论在什么环境中（浏览器、Node.js、Web Worker等）。</p>
 <pre><code>// 不同环境的全局对象
@@ -285,11 +298,11 @@ console.log(largeId + 1n) // 9007199254740993n
 
 // 以前需要判断环境
 let globalObject
-if (typeof window !== 'undefined') {
+if (typeof window !== &#39;undefined&#39;) {
   globalObject = window
-} else if (typeof global !== 'undefined') {
+} else if (typeof global !== &#39;undefined&#39;) {
   globalObject = global
-} else if (typeof self !== 'undefined') {
+} else if (typeof self !== &#39;undefined&#39;) {
   globalObject = self
 }
 
@@ -298,7 +311,7 @@ console.log(globalThis === window) // 浏览器中为true
 console.log(globalThis === global) // Node.js中为true
 
 // 实际应用
-globalThis.myGlobalVar = 'value'
+globalThis.myGlobalVar = &#39;value&#39;
 
 //  polyfill示例
 if (!globalThis.someFeature) {
@@ -307,10 +320,9 @@ if (!globalThis.someFeature) {
   }
 }
 </code></pre>
-
 <h3>String.prototype.matchAll</h3>
 <p>matchAll方法返回一个包含所有匹配正则表达式的结果的迭代器。</p>
-<pre><code>const str = 'test1test2test3'
+<pre><code>const str = &#39;test1test2test3&#39;
 const regex = /t(e)(st(\d?))/g
 
 // 使用matchAll
@@ -329,32 +341,194 @@ const matchesArray = [...str.matchAll(regex)]
 console.log(matchesArray.length) // 3
 
 // 实际应用：提取所有匹配项
-const text = '价格：100元，折扣：20元，最终价格：80元'
+const text = &#39;价格：100元，折扣：20元，最终价格：80元&#39;
 const priceRegex = /(\d+)元/g
 const prices = [...text.matchAll(priceRegex)].map(match =&gt; match[1])
-console.log(prices) // ['100', '20', '80']
+console.log(prices) // [&#39;100&#39;, &#39;20&#39;, &#39;80&#39;]
 </code></pre>
-
 <h3>总结</h3>
 <p>ES2020带来了许多实用的新特性。可选链和空值合并操作符简化了代码，减少了常见的错误；Promise.allSettled提供了更灵活的Promise处理方式；动态导入使得代码分割和懒加载更加容易；BigInt解决了大整数处理的问题；globalThis统一了全局对象的访问方式；matchAll简化了正则匹配的处理。这些新特性使得JavaScript更加强大和易用。建议开发者在实际项目中逐步采用这些新特性，提升代码质量和开发效率。</p>
+
+					</div>
+					
+					<div id="current-post-cover" data-scr="../../../../img/cart_cover.jpg"></div>
+
+					<div class="investment-container">
+						<div class="investment-header">
+							<div class="investment-title-1">
+								<div class="on">相关文章</div>
+								<div>评论</div>
+								<div>分享</div>
 							</div>
+							<div class="investment-title-2">	            
+								<span>
+									<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+								</span>
+							</div>	
 						</div>
+						
+						<div class="investment-content">
+							<div class="investment-content-list">
+								<div class="relate-post">
+									<ul>
+										<li>
+											<div class="relate-post-text">
+												<p class="relate-post-content">
+													暂无相关文章
+												</p>
+											</div>
+										</li>											
+									</ul>
+								</div>	
+							</div>
+							<div class="investment-content-list">
+								<div class="layout-comment">
+									<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+								</div>
+							</div>
+							<div class="investment-content-list">
+								<div class="layout-share">
+									<div class="social-share"></div>
+									<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+									<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+								</div>
+							</div>
+						</div>	
 					</div>
 				</div>
 			</div>
+
+			<script src="../../../../plugin/clipboard/clipboard.js"></script>
+			<script>
+				function codePreprocessing() {
+					$("#article-content .highlight").each(function() {
+						$(this).wrap('<div id="post-code"></div>');
+					})
+
+					$("#article-content #post-code").each(function() {
+						$(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+					})
+
+					$("#article-content .copy-nav").each(function() {
+						var temp = $(this).next().attr('class'),
+							language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none";
+						$(this).find('.code-language').text(language);
+						$(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+					});
+				}
+
+				function codeCopy() {
+					$('#article-content #post-code').each(function(i) {
+						var codeCopyId = 'codeCopy-' + i;
+						var codeNode = $(this).find('.code'),
+							copyButton = $(this).find('.copy-btn');
+						codeNode.attr('id', codeCopyId);
+						copyButton.attr('data-clipboard-target-id', codeCopyId);
+					})
+
+					var clipboard = new ClipboardJS('.copy-btn', {
+						target: function(trigger) {
+							return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+						}
+					});
+
+					function showTooltip(elem, msg) {		   
+						elem.setAttribute('aria-label', msg);
+						elem.setAttribute('class', 'copy-btn copy-status');
+						setTimeout(function() {
+							elem.setAttribute('class', 'copy-btn');
+						}, 2000);
+					}
+
+					clipboard.on('success', function(e) {
+						e.clearSelection();
+						showTooltip(e.trigger, 'Copied!');
+					});
+					clipboard.on('error', function(e) {
+						console.error('Action:', e.action);
+						console.error('Trigger:', e.trigger);
+					});
+				}
+
+				if ($('.layout-post').length) {
+					codePreprocessing();
+					codeCopy();
+				} 
+			</script>
+
+			<link rel="stylesheet" href="../../../../plugin/fancybox/jquery.fancybox.css">
+			<script src="../../../../plugin/fancybox/jquery.fancybox.js"></script>
+
+			<script type="text/javascript">
+				var titleID = $('.article-title a'),
+					imageID = $('.article-content img'),
+					videoID = $('.article-content video');
+
+				var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+				imageID.each(function() {
+					var imgPath = $(this).attr('src'),
+						imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+					$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+				});
+
+				videoID.each(function() {
+					var videoPath = $(this).attr('src');
+					$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+				});
+
+				if($('#layout-post').length) {
+					$('[data-fancybox="gallery"]').fancybox({
+						loop: true,
+						buttons: [
+							"zoom",
+							"share",
+							"slideShow",
+							"fullScreen",
+							"thumbs",
+							"close"
+						],
+						protect: false
+					});
+				}
+			</script>
 		</main>
 
-		
-	<script src="/plugin/motto/motto.js"></script>	
-	<script type="text/javascript">$(".motto").html( getMingYanContent() );</script>	
-<script src="/plugin/love/love.js"></script>
-	<div id="totop"><a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a></div>
-<script src="/plugin/vibrant/vibrant.js"></script>
-<script src="/plugin/chinese/chinese.js"></script>
-<script src="/plugin/imgLazyLoader/yall.min.js"></script>
-<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
-<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
-<script src="/js/resizediv.js"></script>
-<script src="/js/main.js"></script>
+		<footer>
+			<div class="social">
+				<ul>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-weibo"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="../../../../atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
+				</ul>
+			</div>		
+			<div class="copyright">
+				<p>
+					&copy;2017 - 2026, content by lx_blogs. All Rights Reserved.
+					<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>	
+					<span id="busuanzi_container_page_pv">
+						本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+					</span>
+				</p>
+				<p>
+					<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+				</p>
+			</div>		
+		</footer>
+
+		<script src="../../../../plugin/motto/motto.js"></script>	
+		<script type="text/javascript">$(".motto").html( getMingYanContent() );</script>	
+		<script src="../../../../plugin/love/love.js"></script>
+		<div id="totop"><a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a></div>
+		<script src="../../../../plugin/vibrant/vibrant.js"></script>
+		<script src="../../../../plugin/chinese/chinese.js"></script>
+		<script src="../../../../plugin/imgLazyLoader/yall.min.js"></script>
+		<script src="../../../../plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+		<script src="../../../../plugin/nicescroll/jquery.nicescroll.js"></script>
+		<script src="../../../../js/resizediv.js"></script>
+		<script src="../../../../js/main.js"></script>
 	</body>	
 </html>

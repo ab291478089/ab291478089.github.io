@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html class="html-loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    React Hooks最佳实践总结 | lx_blogs
+  </title>
+  <meta name="author" content="lx_blogs">
+  <meta name="keywords" content="React,Hooks,前端">
+  <meta name="description" content="React Hooks最佳实践总结">
+	<link rel="shortcut icon" href="../../../../img/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../../../../css/Annie.css">
+  <script src="../../../../js/jquery.min.js"></script>
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="../../../../js/leancloud.js"></script>
+</head>
+	<body>
+		<div id="preloader">
+		<div class="pre-container">
+			<div class="spinner">
+				<div class="double-bounce1"></div>
+				<div class="double-bounce2"></div>
+			</div>			
+		</div>
+	</div>
+
+<header class="fixbackground" data-img-mode="normal" data-normal-src="../../../../img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+	<div class="mask">
+		<div class="h-header">
+			<div id="logo">
+				<a href="../../../../">
+					<img src="../../../../img/logo.png" alt="Logo">
+				</a>
+			</div>
+			<div id="navigation-show">
+				<ul>
+		<li class="menu-home"><a href="../../../../" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="../../../../archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="../../../../categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="../../../../tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="../../../../about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="../../../../gallery" class="menu-item-gallery">相册</a></li>
+</ul>
+			</div>				
+		</div>
+		<div class="h-body"><p class="motto"></p></div>		
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<div id="progress-bar"></div>
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+	<p>当前文章&nbsp;:&nbsp;《React Hooks最佳实践总结》</p>
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+		<li class="menu-home"><a href="../../../../" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="../../../../archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="../../../../categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="../../../../tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="../../../../about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="../../../../gallery" class="menu-item-gallery">相册</a></li>
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+		<li><a href="http://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
+		<li><a href="../../../../atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
+</ul>
+	</div>
+</nav>
+		<main>
+			<div class="layout-post">
+				<div id="layout-post">
+					<div class="article-title">
+						<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+						<a href="/2026/07/10/React Hooks最佳实践总结/" itemprop="url">
+							React Hooks最佳实践总结
+						</a>
+					</div>
+
+					<div class="article-meta">
+						<span>
+							<i class="fa fa-calendar"></i>
+							发布于
+							<a href="/2026/07/10/React Hooks最佳实践总结/" itemprop="url">
+								<time datetime="2026-07-10T00:00:00.000Z" itemprop="datePublished">
+									2026-07-10
+								</time>
+							</a>
+						</span>
+						<span>
+							<i class="fa fa-tags"></i>
+							<a href="../../../../tags/#React" rel="tag">React</a>, <a href="../../../../tags/#Hooks" rel="tag">Hooks</a>, <a href="../../../../tags/#前端" rel="tag">前端</a>
+						</span>
+					</div>
+
+					<div class="article-content" id="article-content">
+						<h1>React Hooks最佳实践总结</h1>
+<p>date: 2026-07-10
+tags: [React, Hooks, 前端]
+categories: [前端框架]</p>
+<h2>前言</h2>
+<p>React Hooks是React 16.8引入的新特性，它让函数组件也能拥有状态和生命周期。本文将总结在实际项目中使用Hooks的最佳实践。</p>
+<h2>useState的使用技巧</h2>
+<h3>基础用法</h3>
+<pre><code class="language-javascript">import { useState } from &#39;react&#39;;
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  
+  return (
+    &lt;div&gt;
+      &lt;p&gt;当前计数: {count}&lt;/p&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+        增加
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>对象状态管理</h3>
+<pre><code class="language-javascript">const [state, setState] = useState({
+  name: &#39;&#39;,
+  age: 0,
+  email: &#39;&#39;
+});
+
+// 更新单个字段
+setState(prev =&gt; ({
+  ...prev,
+  name: &#39;新名字&#39;
+}));
+</code></pre>
+<h2>useEffect的正确使用</h2>
+<h3>依赖数组的重要性</h3>
+<pre><code class="language-javascript">useEffect(() =&gt; {
+  // 副作用逻辑
+  console.log(&#39;组件挂载或依赖变化时执行&#39;);
+  
+  return () =&gt; {
+    // 清理函数
+    console.log(&#39;组件卸载或依赖变化前执行&#39;);
+  };
+}, [dependency1, dependency2]); // 依赖数组
+</code></pre>
+<h3>常见陷阱</h3>
+<pre><code class="language-javascript">// ❌ 错误：缺少依赖
+useEffect(() =&gt; {
+  fetchData(userId); // userId未加入依赖
+}, []);
+
+// ✅ 正确：包含所有依赖
+useEffect(() =&gt; {
+  fetchData(userId);
+}, [userId]);
+</code></pre>
+<h2>自定义Hooks</h2>
+<h3>提取通用逻辑</h3>
+<pre><code class="language-javascript">function useLocalStorage(key, initialValue) {
+  const [value, setValue] = useState(() =&gt; {
+    const stored = localStorage.getItem(key);
+    return stored ? JSON.parse(stored) : initialValue;
+  });
+
+  useEffect(() =&gt; {
+    localStorage.setItem(key, JSON.stringify(value));
+  }, [key, value]);
+
+  return [value, setValue];
+}
+
+// 使用
+const [theme, setTheme] = useLocalStorage(&#39;theme&#39;, &#39;light&#39;);
+</code></pre>
+<h2>性能优化</h2>
+<h3>useMemo和useCallback</h3>
+<pre><code class="language-javascript">const expensiveValue = useMemo(() =&gt; {
+  return computeExpensiveValue(a, b);
+}, [a, b]);
+
+const handleClick = useCallback(() =&gt; {
+  doSomething(a, b);
+}, [a, b]);
+</code></pre>
+<h2>总结</h2>
+<p>React Hooks让代码更简洁、更易复用。掌握这些最佳实践，能让你的React应用更加健壮和高效。</p>
+
+					</div>
+					
+					<div id="current-post-cover" data-scr="../../../../img/cart_cover.jpg"></div>
+
+					<div class="investment-container">
+						<div class="investment-header">
+							<div class="investment-title-1">
+								<div class="on">相关文章</div>
+								<div>评论</div>
+								<div>分享</div>
+							</div>
+							<div class="investment-title-2">	            
+								<span>
+									<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+								</span>
+							</div>	
+						</div>
+						
+						<div class="investment-content">
+							<div class="investment-content-list">
+								<div class="relate-post">
+									<ul>
+										<li>
+											<div class="relate-post-text">
+												<p class="relate-post-content">
+													暂无相关文章
+												</p>
+											</div>
+										</li>											
+									</ul>
+								</div>	
+							</div>
+							<div class="investment-content-list">
+								<div class="layout-comment">
+									<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+								</div>
+							</div>
+							<div class="investment-content-list">
+								<div class="layout-share">
+									<div class="social-share"></div>
+									<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+									<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+
+			<script src="../../../../plugin/clipboard/clipboard.js"></script>
+			<script>
+				function codePreprocessing() {
+					$("#article-content .highlight").each(function() {
+						$(this).wrap('<div id="post-code"></div>');
+					})
+
+					$("#article-content #post-code").each(function() {
+						$(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+					})
+
+					$("#article-content .copy-nav").each(function() {
+						var temp = $(this).next().attr('class'),
+							language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none";
+						$(this).find('.code-language').text(language);
+						$(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+					});
+				}
+
+				function codeCopy() {
+					$('#article-content #post-code').each(function(i) {
+						var codeCopyId = 'codeCopy-' + i;
+						var codeNode = $(this).find('.code'),
+							copyButton = $(this).find('.copy-btn');
+						codeNode.attr('id', codeCopyId);
+						copyButton.attr('data-clipboard-target-id', codeCopyId);
+					})
+
+					var clipboard = new ClipboardJS('.copy-btn', {
+						target: function(trigger) {
+							return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+						}
+					});
+
+					function showTooltip(elem, msg) {		   
+						elem.setAttribute('aria-label', msg);
+						elem.setAttribute('class', 'copy-btn copy-status');
+						setTimeout(function() {
+							elem.setAttribute('class', 'copy-btn');
+						}, 2000);
+					}
+
+					clipboard.on('success', function(e) {
+						e.clearSelection();
+						showTooltip(e.trigger, 'Copied!');
+					});
+					clipboard.on('error', function(e) {
+						console.error('Action:', e.action);
+						console.error('Trigger:', e.trigger);
+					});
+				}
+
+				if ($('.layout-post').length) {
+					codePreprocessing();
+					codeCopy();
+				} 
+			</script>
+
+			<link rel="stylesheet" href="../../../../plugin/fancybox/jquery.fancybox.css">
+			<script src="../../../../plugin/fancybox/jquery.fancybox.js"></script>
+
+			<script type="text/javascript">
+				var titleID = $('.article-title a'),
+					imageID = $('.article-content img'),
+					videoID = $('.article-content video');
+
+				var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+				imageID.each(function() {
+					var imgPath = $(this).attr('src'),
+						imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+					$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+				});
+
+				videoID.each(function() {
+					var videoPath = $(this).attr('src');
+					$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+				});
+
+				if($('#layout-post').length) {
+					$('[data-fancybox="gallery"]').fancybox({
+						loop: true,
+						buttons: [
+							"zoom",
+							"share",
+							"slideShow",
+							"fullScreen",
+							"thumbs",
+							"close"
+						],
+						protect: false
+					});
+				}
+			</script>
+		</main>
+
+		<footer>
+			<div class="social">
+				<ul>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-weibo"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="../../../../atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
+				</ul>
+			</div>		
+			<div class="copyright">
+				<p>
+					&copy;2017 - 2026, content by lx_blogs. All Rights Reserved.
+					<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>	
+					<span id="busuanzi_container_page_pv">
+						本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+					</span>
+				</p>
+				<p>
+					<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+				</p>
+			</div>		
+		</footer>
+
+		<script src="../../../../plugin/motto/motto.js"></script>	
+		<script type="text/javascript">$(".motto").html( getMingYanContent() );</script>	
+		<script src="../../../../plugin/love/love.js"></script>
+		<div id="totop"><a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a></div>
+		<script src="../../../../plugin/vibrant/vibrant.js"></script>
+		<script src="../../../../plugin/chinese/chinese.js"></script>
+		<script src="../../../../plugin/imgLazyLoader/yall.min.js"></script>
+		<script src="../../../../plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+		<script src="../../../../plugin/nicescroll/jquery.nicescroll.js"></script>
+		<script src="../../../../js/resizediv.js"></script>
+		<script src="../../../../js/main.js"></script>
+	</body>	
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "lx_blogs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "md2html.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ab291478089/lx_blogs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ab291478089/lx_blogs/issues"
+  },
+  "homepage": "https://github.com/ab291478089/lx_blogs#readme",
+  "dependencies": {
+    "marked": "^18.0.6"
+  }
+}

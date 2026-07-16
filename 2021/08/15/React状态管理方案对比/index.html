@@ -5,17 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
-    React状态管理方案对比 - lx_blogs
+    React状态管理方案对比 | lx_blogs
   </title>
   <meta name="author" content="lx_blogs">
-  <meta name="keywords" content="前端开发,JavaScript,React,Vue,Node.js">
-  <meta name="description" content="个人技术博客">
-	<link rel="shortcut icon" href="/img/favicon.ico">
+  <meta name="keywords" content="React,Redux,MobX,Zustand,Jotai">
+  <meta name="description" content="React状态管理方案对比">
+	<link rel="shortcut icon" href="../../../../img/favicon.ico">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/Annie.css">
-  <script src="/js/jquery.min.js"></script>
+<link rel="stylesheet" href="../../../../css/Annie.css">
+  <script src="../../../../js/jquery.min.js"></script>
   <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-<script src="/js/leancloud.js"></script>
+<script src="../../../../js/leancloud.js"></script>
 </head>
 	<body>
 		<div id="preloader">
@@ -27,22 +27,22 @@
 		</div>
 	</div>
 
-<header class="fixbackground" data-img-mode="normal" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+<header class="fixbackground" data-img-mode="normal" data-normal-src="../../../../img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
 	<div class="mask">
 		<div class="h-header">
 			<div id="logo">
-				<a href="/">
-					<img src="/img/logo.png" alt="Logo">
+				<a href="../../../../">
+					<img src="../../../../img/logo.png" alt="Logo">
 				</a>
 			</div>
 			<div id="navigation-show">
 				<ul>
-		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
-		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
-		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
-		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
-		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
-		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+		<li class="menu-home"><a href="../../../../" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="../../../../archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="../../../../categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="../../../../tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="../../../../about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="../../../../gallery" class="menu-item-gallery">相册</a></li>
 </ul>
 			</div>				
 		</div>
@@ -57,7 +57,7 @@
 	<div id="progress-bar"></div>
 	<div id="progress-percentage"><h1>0.0%</h1></div>
 	<div class="toc-switch"><span class="switch-button">目录</span></div>
-	<p>React状态管理方案对比</p>
+	<p>当前文章&nbsp;:&nbsp;《React状态管理方案对比》</p>
 	<a class="nav-trigger"><span></span></a>
 </div>
 
@@ -68,39 +68,57 @@
 	</div>
 	<div class="nav-body">
 		<ul>
-		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
-		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
-		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
-		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
-		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
-		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+		<li class="menu-home"><a href="../../../../" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="../../../../archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="../../../../categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="../../../../tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="../../../../about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="../../../../gallery" class="menu-item-gallery">相册</a></li>
 </ul>
 	</div>
 	<div class="nav-footer">
 		<ul>
 		<li><a href="http://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
-		<li><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
+		<li><a href="../../../../atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
 </ul>
 	</div>
-</nav>			
+</nav>
 		<main>
-			<div class="layout-cart">
-				<div id="layout-cart">
-					<div class="post" id="post">
-						<div class="post-text">
-							<h2 class="post-title-article">React状态管理方案对比</h2>
-							<p class="post-time">发布日期: 2021年08月15日</p>
-							<div class="post-content-article">
-<h3>一、React状态管理的演进</h3>
+			<div class="layout-post">
+				<div id="layout-post">
+					<div class="article-title">
+						<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+						<a href="/2021/08/15/React状态管理方案对比/" itemprop="url">
+							React状态管理方案对比
+						</a>
+					</div>
+
+					<div class="article-meta">
+						<span>
+							<i class="fa fa-calendar"></i>
+							发布于
+							<a href="/2021/08/15/React状态管理方案对比/" itemprop="url">
+								<time datetime="2021-08-15T00:00:00.000Z" itemprop="datePublished">
+									2021-08-15
+								</time>
+							</a>
+						</span>
+						<span>
+							<i class="fa fa-tags"></i>
+							<a href="../../../../tags/#React" rel="tag">React</a>, <a href="../../../../tags/#Redux" rel="tag">Redux</a>, <a href="../../../../tags/#MobX" rel="tag">MobX</a>, <a href="../../../../tags/#Zustand" rel="tag">Zustand</a>, <a href="../../../../tags/#Jotai" rel="tag">Jotai</a>
+						</span>
+					</div>
+
+					<div class="article-content" id="article-content">
+						<h3>一、React状态管理的演进</h3>
 <p>在React的发展历史中，状态管理一直是一个核心话题。从最初的setState，到Redux的出现，再到Context API的改进，以及近年来涌现的MobX、Zustand、Jotai等方案，React的状态管理经历了多次演进。每种方案都有其独特的设计理念和适用场景，选择合适的状态管理方案对于项目的可维护性和开发效率至关重要。</p>
 <p>本文将对比分析四种主流的React状态管理方案：Redux、MobX、Zustand和Jotai，帮助开发者根据项目需求做出合理的选择。</p>
-
 <h3>二、Redux：可预测的状态容器</h3>
-<p>Redux是React生态中最经典的状态管理方案，由Dan Abramov在2015年创建。Redux的核心理念是"单一数据源"和"状态只读"，通过纯函数（reducer）来管理状态的变更，使得状态变化可预测、可追踪。</p>
+<p>Redux是React生态中最经典的状态管理方案，由Dan Abramov在2015年创建。Redux的核心理念是&quot;单一数据源&quot;和&quot;状态只读&quot;，通过纯函数（reducer）来管理状态的变更，使得状态变化可预测、可追踪。</p>
 <pre><code>// Redux核心概念示例
 // 1. 定义Action Types
-const ADD_TODO = 'ADD_TODO';
-const TOGGLE_TODO = 'TOGGLE_TODO';
+const ADD_TODO = &#39;ADD_TODO&#39;;
+const TOGGLE_TODO = &#39;TOGGLE_TODO&#39;;
 
 // 2. 定义Action Creators
 const addTodo = (text) =&gt; ({ type: ADD_TODO, payload: text });
@@ -121,11 +139,11 @@ const todoReducer = (state = [], action) =&gt; {
 };
 
 // 4. 创建Store
-import { createStore } from 'redux';
+import { createStore } from &#39;redux&#39;;
 const store = createStore(todoReducer);
 
 // 5. 在组件中使用
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from &#39;react-redux&#39;;
 
 function TodoList() {
   const todos = useSelector(state =&gt; state);
@@ -135,19 +153,19 @@ function TodoList() {
     &lt;ul&gt;
       {todos.map(todo =&gt; (
         &lt;li key={todo.id} onClick={() =&gt; dispatch(toggleTodo(todo.id))}&gt;
-          {todo.text} {todo.done ? '✓' : ''}
+          {todo.text} {todo.done ? &#39;✓&#39; : &#39;&#39;}
         &lt;/li&gt;
       ))}
     &lt;/ul&gt;
   );
-}</code></pre>
+}
+</code></pre>
 <p>Redux的优点在于：状态变化可预测，便于调试和测试；有完善的开发者工具（Redux DevTools）；社区生态丰富，中间件众多。但Redux的缺点也很明显：样板代码过多，学习曲线陡峭，对于小型项目来说过于重量级。</p>
-
 <h3>三、MobX：响应式状态管理</h3>
-<p>MobX是一个基于响应式编程的状态管理库，它的理念是"任何源自应用状态的东西都应该自动获得"。MobX通过observable、action、computed等概念，将状态变为可观察的，当状态变化时，依赖该状态的组件会自动更新。</p>
+<p>MobX是一个基于响应式编程的状态管理库，它的理念是&quot;任何源自应用状态的东西都应该自动获得&quot;。MobX通过observable、action、computed等概念，将状态变为可观察的，当状态变化时，依赖该状态的组件会自动更新。</p>
 <pre><code>// MobX示例
-import { makeAutoObservable } from 'mobx';
-import { observer } from 'mobx-react-lite';
+import { makeAutoObservable } from &#39;mobx&#39;;
+import { observer } from &#39;mobx-react-lite&#39;;
 
 // 1. 定义Store
 class TodoStore {
@@ -180,20 +198,20 @@ const TodoList = observer(() =&gt; {
       &lt;ul&gt;
         {todoStore.todos.map(todo =&gt; (
           &lt;li key={todo.id} onClick={() =&gt; todoStore.toggleTodo(todo.id)}&gt;
-            {todo.text} {todo.done ? '✓' : ''}
+            {todo.text} {todo.done ? &#39;✓&#39; : &#39;&#39;}
           &lt;/li&gt;
         ))}
       &lt;/ul&gt;
       &lt;p&gt;待完成: {todoStore.pendingCount}&lt;/p&gt;
     &lt;/div&gt;
   );
-});</code></pre>
+});
+</code></pre>
 <p>MobX的优点在于：API简洁，学习成本低；响应式更新，性能优秀；支持面向对象风格。但MobX的缺点包括：响应式机制较为隐式，调试困难；对于复杂的状态关系，可能导致性能问题；社区生态不如Redux丰富。</p>
-
 <h3>四、Zustand：极简状态管理</h3>
-<p>Zustand是一个轻量级的状态管理库，由React生态的知名团队pmndrs开发。Zustand的设计理念是"极简"，它提供了类似Redux的API，但去除了大量的样板代码，使得状态管理变得非常简单。</p>
+<p>Zustand是一个轻量级的状态管理库，由React生态的知名团队pmndrs开发。Zustand的设计理念是&quot;极简&quot;，它提供了类似Redux的API，但去除了大量的样板代码，使得状态管理变得非常简单。</p>
 <pre><code>// Zustand示例
-import create from 'zustand';
+import create from &#39;zustand&#39;;
 
 // 1. 创建Store
 const useTodoStore = create((set) =&gt; ({
@@ -220,30 +238,30 @@ function TodoList() {
     &lt;ul&gt;
       {todos.map(todo =&gt; (
         &lt;li key={todo.id} onClick={() =&gt; toggleTodo(todo.id)}&gt;
-          {todo.text} {todo.done ? '✓' : ''}
+          {todo.text} {todo.done ? &#39;✓&#39; : &#39;&#39;}
         &lt;/li&gt;
       ))}
     &lt;/ul&gt;
   );
-}</code></pre>
+}
+</code></pre>
 <p>Zustand的优点在于：API极简，几乎不需要样板代码；不需要Provider包裹；支持中间件和持久化；体积小巧（约1KB）。Zustand的缺点主要是：功能相对简单，对于复杂场景可能需要额外的解决方案。</p>
-
 <h3>五、Jotai：原子化状态管理</h3>
-<p>Jotai是一个基于原子化理念的状态管理库，同样由pmndrs开发。Jotand的名字来源于日语"状態"（jōtai），意为"状态"。Jotai的设计理念是将状态分解为独立的原子（atom），每个原子可以独立更新，组件可以选择性地订阅需要的原子。</p>
+<p>Jotai是一个基于原子化理念的状态管理库，同样由pmndrs开发。Jotand的名字来源于日语&quot;状態&quot;（jōtai），意为&quot;状态&quot;。Jotai的设计理念是将状态分解为独立的原子（atom），每个原子可以独立更新，组件可以选择性地订阅需要的原子。</p>
 <pre><code>// Jotai示例
-import { atom, useAtom } from 'jotai';
+import { atom, useAtom } from &#39;jotai&#39;;
 
 // 1. 定义原子
 const todosAtom = atom([]);
-const filterAtom = atom('all');
+const filterAtom = atom(&#39;all&#39;);
 
 // 2. 派生原子（类似computed）
 const filteredTodosAtom = atom((get) =&gt; {
   const todos = get(todosAtom);
   const filter = get(filterAtom);
   switch (filter) {
-    case 'active': return todos.filter(t =&gt; !t.done);
-    case 'completed': return todos.filter(t =&gt; t.done);
+    case &#39;active&#39;: return todos.filter(t =&gt; !t.done);
+    case &#39;completed&#39;: return todos.filter(t =&gt; t.done);
     default: return todos;
   }
 });
@@ -266,41 +284,203 @@ function TodoList() {
         ))}
       &lt;/ul&gt;
       &lt;select value={filter} onChange={e =&gt; setFilter(e.target.value)}&gt;
-        &lt;option value="all"&gt;全部&lt;/option&gt;
-        &lt;option value="active"&gt;未完成&lt;/option&gt;
-        &lt;option value="completed"&gt;已完成&lt;/option&gt;
+        &lt;option value=&quot;all&quot;&gt;全部&lt;/option&gt;
+        &lt;option value=&quot;active&quot;&gt;未完成&lt;/option&gt;
+        &lt;option value=&quot;completed&quot;&gt;已完成&lt;/option&gt;
       &lt;/select&gt;
     &lt;/div&gt;
   );
-}</code></pre>
+}
+</code></pre>
 <p>Jotai的优点在于：原子化设计，状态粒度细，更新精准；API简单，与React Hooks风格一致；支持异步原子和派生原子；体积小巧。Jotai的缺点主要是：对于习惯了Redux等集中式状态管理的开发者，可能需要适应期；对于非常复杂的状态关系，原子之间的依赖可能变得复杂。</p>
-
 <h3>六、方案对比与选择建议</h3>
 <p>从设计理念来看，Redux强调可预测性和单一数据源，适合大型复杂应用；MobX强调响应式和自动化，适合需要频繁更新的应用；Zustand强调极简和实用，适合中小型项目；Jotai强调原子化和细粒度，适合需要精确控制更新的场景。</p>
 <p>从学习曲线来看，Redux的学习成本最高，需要理解action、reducer、middleware等概念；MobX次之，需要理解响应式编程的思想；Zustand和Jotai的学习成本较低，API设计更加直观。</p>
 <p>从性能角度来看，Redux需要手动优化以避免不必要的重渲染；MobX通过响应式机制自动优化；Zustand通过selector机制减少重渲染；Jotai通过原子化设计实现精确更新。</p>
 <p>选择建议：对于大型团队和复杂应用，推荐使用Redux或Redux Toolkit；对于需要快速开发的项目，推荐使用Zustand；对于需要细粒度状态管理的场景，推荐使用Jotai；对于熟悉面向对象编程的团队，推荐使用MobX。</p>
-
 <h3>七、总结</h3>
 <p>React状态管理方案的选择没有绝对的对错，关键在于根据项目需求、团队技术栈、维护成本等因素进行综合考量。Redux作为经典方案，依然有其不可替代的价值；MobX提供了响应式的优雅体验；Zustand和Jotai则代表了新一代轻量级状态管理的方向。无论选择哪种方案，都应该遵循单一职责原则，保持状态的清晰和可维护性。</p>
+
+					</div>
+					
+					<div id="current-post-cover" data-scr="../../../../img/cart_cover.jpg"></div>
+
+					<div class="investment-container">
+						<div class="investment-header">
+							<div class="investment-title-1">
+								<div class="on">相关文章</div>
+								<div>评论</div>
+								<div>分享</div>
 							</div>
+							<div class="investment-title-2">	            
+								<span>
+									<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+								</span>
+							</div>	
 						</div>
+						
+						<div class="investment-content">
+							<div class="investment-content-list">
+								<div class="relate-post">
+									<ul>
+										<li>
+											<div class="relate-post-text">
+												<p class="relate-post-content">
+													暂无相关文章
+												</p>
+											</div>
+										</li>											
+									</ul>
+								</div>	
+							</div>
+							<div class="investment-content-list">
+								<div class="layout-comment">
+									<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+								</div>
+							</div>
+							<div class="investment-content-list">
+								<div class="layout-share">
+									<div class="social-share"></div>
+									<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+									<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+								</div>
+							</div>
+						</div>	
 					</div>
 				</div>
 			</div>
+
+			<script src="../../../../plugin/clipboard/clipboard.js"></script>
+			<script>
+				function codePreprocessing() {
+					$("#article-content .highlight").each(function() {
+						$(this).wrap('<div id="post-code"></div>');
+					})
+
+					$("#article-content #post-code").each(function() {
+						$(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+					})
+
+					$("#article-content .copy-nav").each(function() {
+						var temp = $(this).next().attr('class'),
+							language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none";
+						$(this).find('.code-language').text(language);
+						$(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+					});
+				}
+
+				function codeCopy() {
+					$('#article-content #post-code').each(function(i) {
+						var codeCopyId = 'codeCopy-' + i;
+						var codeNode = $(this).find('.code'),
+							copyButton = $(this).find('.copy-btn');
+						codeNode.attr('id', codeCopyId);
+						copyButton.attr('data-clipboard-target-id', codeCopyId);
+					})
+
+					var clipboard = new ClipboardJS('.copy-btn', {
+						target: function(trigger) {
+							return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+						}
+					});
+
+					function showTooltip(elem, msg) {		   
+						elem.setAttribute('aria-label', msg);
+						elem.setAttribute('class', 'copy-btn copy-status');
+						setTimeout(function() {
+							elem.setAttribute('class', 'copy-btn');
+						}, 2000);
+					}
+
+					clipboard.on('success', function(e) {
+						e.clearSelection();
+						showTooltip(e.trigger, 'Copied!');
+					});
+					clipboard.on('error', function(e) {
+						console.error('Action:', e.action);
+						console.error('Trigger:', e.trigger);
+					});
+				}
+
+				if ($('.layout-post').length) {
+					codePreprocessing();
+					codeCopy();
+				} 
+			</script>
+
+			<link rel="stylesheet" href="../../../../plugin/fancybox/jquery.fancybox.css">
+			<script src="../../../../plugin/fancybox/jquery.fancybox.js"></script>
+
+			<script type="text/javascript">
+				var titleID = $('.article-title a'),
+					imageID = $('.article-content img'),
+					videoID = $('.article-content video');
+
+				var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+				imageID.each(function() {
+					var imgPath = $(this).attr('src'),
+						imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+					$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+				});
+
+				videoID.each(function() {
+					var videoPath = $(this).attr('src');
+					$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+				});
+
+				if($('#layout-post').length) {
+					$('[data-fancybox="gallery"]').fancybox({
+						loop: true,
+						buttons: [
+							"zoom",
+							"share",
+							"slideShow",
+							"fullScreen",
+							"thumbs",
+							"close"
+						],
+						protect: false
+					});
+				}
+			</script>
 		</main>
 
-	
-	<script src="/plugin/motto/motto.js"></script>	
-	<script type="text/javascript">$(".motto").html( getMingYanContent() );</script>	
-<script src="/plugin/love/love.js"></script>
-	<div id="totop"><a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a></div>
-<script src="/plugin/vibrant/vibrant.js"></script>
-<script src="/plugin/chinese/chinese.js"></script>
-<script src="/plugin/imgLazyLoader/yall.min.js"></script>
-<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
-<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
-<script src="/js/resizediv.js"></script>
-<script src="/js/main.js"></script>
+		<footer>
+			<div class="social">
+				<ul>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-weibo"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="../../../../atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
+				</ul>
+			</div>		
+			<div class="copyright">
+				<p>
+					&copy;2017 - 2026, content by lx_blogs. All Rights Reserved.
+					<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>	
+					<span id="busuanzi_container_page_pv">
+						本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+					</span>
+				</p>
+				<p>
+					<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+				</p>
+			</div>		
+		</footer>
+
+		<script src="../../../../plugin/motto/motto.js"></script>	
+		<script type="text/javascript">$(".motto").html( getMingYanContent() );</script>	
+		<script src="../../../../plugin/love/love.js"></script>
+		<div id="totop"><a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a></div>
+		<script src="../../../../plugin/vibrant/vibrant.js"></script>
+		<script src="../../../../plugin/chinese/chinese.js"></script>
+		<script src="../../../../plugin/imgLazyLoader/yall.min.js"></script>
+		<script src="../../../../plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+		<script src="../../../../plugin/nicescroll/jquery.nicescroll.js"></script>
+		<script src="../../../../js/resizediv.js"></script>
+		<script src="../../../../js/main.js"></script>
 	</body>	
 </html>

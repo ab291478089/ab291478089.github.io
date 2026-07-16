@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html class="html-loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    React Server Components详解 | lx_blogs
+  </title>
+  <meta name="author" content="lx_blogs">
+  <meta name="keywords" content="React,Server Components,SSR,RSC">
+  <meta name="description" content="React Server Components详解">
+	<link rel="shortcut icon" href="../../../../img/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../../../../css/Annie.css">
+  <script src="../../../../js/jquery.min.js"></script>
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="../../../../js/leancloud.js"></script>
+</head>
+	<body>
+		<div id="preloader">
+		<div class="pre-container">
+			<div class="spinner">
+				<div class="double-bounce1"></div>
+				<div class="double-bounce2"></div>
+			</div>			
+		</div>
+	</div>
+
+<header class="fixbackground" data-img-mode="normal" data-normal-src="../../../../img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+	<div class="mask">
+		<div class="h-header">
+			<div id="logo">
+				<a href="../../../../">
+					<img src="../../../../img/logo.png" alt="Logo">
+				</a>
+			</div>
+			<div id="navigation-show">
+				<ul>
+		<li class="menu-home"><a href="../../../../" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="../../../../archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="../../../../categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="../../../../tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="../../../../about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="../../../../gallery" class="menu-item-gallery">相册</a></li>
+</ul>
+			</div>				
+		</div>
+		<div class="h-body"><p class="motto"></p></div>		
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<div id="progress-bar"></div>
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+	<p>当前文章&nbsp;:&nbsp;《React Server Components详解》</p>
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+		<li class="menu-home"><a href="../../../../" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="../../../../archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="../../../../categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="../../../../tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="../../../../about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="../../../../gallery" class="menu-item-gallery">相册</a></li>
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+		<li><a href="http://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
+		<li><a href="../../../../atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
+</ul>
+	</div>
+</nav>
+		<main>
+			<div class="layout-post">
+				<div id="layout-post">
+					<div class="article-title">
+						<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+						<a href="/2021/01/18/React Server Components详解/" itemprop="url">
+							React Server Components详解
+						</a>
+					</div>
+
+					<div class="article-meta">
+						<span>
+							<i class="fa fa-calendar"></i>
+							发布于
+							<a href="/2021/01/18/React Server Components详解/" itemprop="url">
+								<time datetime="2021-01-18T00:00:00.000Z" itemprop="datePublished">
+									2021-01-18
+								</time>
+							</a>
+						</span>
+						<span>
+							<i class="fa fa-tags"></i>
+							<a href="../../../../tags/#React" rel="tag">React</a>, <a href="../../../../tags/#Server Components" rel="tag">Server Components</a>, <a href="../../../../tags/#SSR" rel="tag">SSR</a>, <a href="../../../../tags/#RSC" rel="tag">RSC</a>
+						</span>
+					</div>
+
+					<div class="article-content" id="article-content">
+						<h3>一、什么是React Server Components</h3>
+<p>React Server Components（简称RSC）是React团队在2020年底提出的一种全新的组件渲染模式。它允许我们在服务端渲染React组件，并将渲染结果以流式的方式发送到客户端。与传统的SSR不同，RSC并不是简单地将HTML字符串发送到客户端，而是发送一种特殊的序列化格式，客户端可以在不重新执行组件代码的情况下恢复组件树。</p>
+<p>RSC的核心思想是将组件分为两类：Server Components和Client Components。Server Components只在服务端执行，不会发送到客户端，因此不会增加客户端的JavaScript bundle大小。Client Components则会在客户端执行，包含交互逻辑和状态管理。</p>
+<h3>二、RSC的工作原理</h3>
+<p>RSC的工作原理可以分为以下几个步骤：首先，服务端会执行Server Components，生成一个特殊的序列化描述（称为&quot;Flight&quot;格式）。这个描述包含了组件的渲染结果，但不包含组件的代码本身。然后，这个描述会以流式的方式发送到客户端。客户端接收到描述后，会根据描述恢复组件树，并与Client Components进行合并。最后，客户端会对Client Components进行水合（hydration），使其具备交互能力。</p>
+<p>RSC的关键在于它使用了React的Suspense和lazy机制来实现流式渲染。当客户端在等待某个Server Component的数据时，可以先渲染其他部分，等数据到达后再填充对应的区域。这种方式可以显著提升首屏加载性能。</p>
+<h3>三、RSC与SSR的对比</h3>
+<p>RSC与传统的SSR有着本质的区别。首先，SSR是在服务端将组件渲染为HTML字符串，然后发送到客户端进行水合。这意味着客户端需要下载完整的JavaScript bundle才能进行水合。而RSC发送的是一种轻量级的序列化描述，客户端不需要重新执行Server Components的代码。</p>
+<p>其次，SSR的组件在服务端和客户端都会执行，这可能导致一些副作用被重复执行。而RSC的Server Components只在服务端执行，客户端永远不会执行这些组件的代码，因此避免了副作用重复执行的问题。</p>
+<p>最后，SSR的bundle大小与组件数量成正比，而RSC的Server Components不会增加客户端的bundle大小，只有Client Components才会被打包到客户端。</p>
+<h3>四、Server Components与Client Components的使用场景</h3>
+<p>Server Components适用于那些不需要交互、只负责展示数据的组件。例如，文章列表、商品详情、用户信息等展示型组件都可以使用Server Components。这些组件可以直接在服务端访问数据库或调用API，无需通过客户端发起网络请求。</p>
+<pre><code>// Server Component示例
+async function ArticleList() {
+  const articles = await db.query(&#39;SELECT * FROM articles&#39;);
+  return (
+    &lt;ul&gt;
+      {articles.map(article =&gt; (
+        &lt;li key={article.id}&gt;{article.title}&lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+</code></pre>
+<p>Client Components适用于需要交互、状态管理或访问浏览器API的组件。例如，表单、按钮、轮播图等需要用户交互的组件都应该使用Client Components。</p>
+<pre><code>// Client Component示例
+&#39;use client&#39;;
+import { useState } from &#39;react&#39;;
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  return (
+    &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+      Count: {count}
+    &lt;/button&gt;
+  );
+}
+</code></pre>
+<h3>五、RSC的优势与局限性</h3>
+<p>RSC的主要优势包括：减少客户端bundle大小，因为Server Components的代码不会发送到客户端；提升首屏加载性能，因为可以直接在服务端获取数据并渲染；简化数据获取逻辑，因为Server Components可以直接访问后端资源。</p>
+<p>RSC的局限性包括：Server Components不能使用useState、useEffect等Hook，也不能访问浏览器API；Server Components之间不能直接传递事件处理函数；目前RSC的支持还不够完善，需要配合Next.js 13+等框架使用。</p>
+<h3>六、总结</h3>
+<p>React Server Components是React生态中的一次重大革新，它重新定义了服务端渲染的方式。通过合理划分Server Components和Client Components，我们可以构建出性能更优、代码更简洁的React应用。虽然RSC目前还处于发展阶段，但它代表了React未来的发展方向，值得每一位前端开发者深入学习和关注。</p>
+
+					</div>
+					
+					<div id="current-post-cover" data-scr="../../../../img/cart_cover.jpg"></div>
+
+					<div class="investment-container">
+						<div class="investment-header">
+							<div class="investment-title-1">
+								<div class="on">相关文章</div>
+								<div>评论</div>
+								<div>分享</div>
+							</div>
+							<div class="investment-title-2">	            
+								<span>
+									<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+								</span>
+							</div>	
+						</div>
+						
+						<div class="investment-content">
+							<div class="investment-content-list">
+								<div class="relate-post">
+									<ul>
+										<li>
+											<div class="relate-post-text">
+												<p class="relate-post-content">
+													暂无相关文章
+												</p>
+											</div>
+										</li>											
+									</ul>
+								</div>	
+							</div>
+							<div class="investment-content-list">
+								<div class="layout-comment">
+									<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+								</div>
+							</div>
+							<div class="investment-content-list">
+								<div class="layout-share">
+									<div class="social-share"></div>
+									<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+									<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+
+			<script src="../../../../plugin/clipboard/clipboard.js"></script>
+			<script>
+				function codePreprocessing() {
+					$("#article-content .highlight").each(function() {
+						$(this).wrap('<div id="post-code"></div>');
+					})
+
+					$("#article-content #post-code").each(function() {
+						$(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+					})
+
+					$("#article-content .copy-nav").each(function() {
+						var temp = $(this).next().attr('class'),
+							language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none";
+						$(this).find('.code-language').text(language);
+						$(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+					});
+				}
+
+				function codeCopy() {
+					$('#article-content #post-code').each(function(i) {
+						var codeCopyId = 'codeCopy-' + i;
+						var codeNode = $(this).find('.code'),
+							copyButton = $(this).find('.copy-btn');
+						codeNode.attr('id', codeCopyId);
+						copyButton.attr('data-clipboard-target-id', codeCopyId);
+					})
+
+					var clipboard = new ClipboardJS('.copy-btn', {
+						target: function(trigger) {
+							return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+						}
+					});
+
+					function showTooltip(elem, msg) {		   
+						elem.setAttribute('aria-label', msg);
+						elem.setAttribute('class', 'copy-btn copy-status');
+						setTimeout(function() {
+							elem.setAttribute('class', 'copy-btn');
+						}, 2000);
+					}
+
+					clipboard.on('success', function(e) {
+						e.clearSelection();
+						showTooltip(e.trigger, 'Copied!');
+					});
+					clipboard.on('error', function(e) {
+						console.error('Action:', e.action);
+						console.error('Trigger:', e.trigger);
+					});
+				}
+
+				if ($('.layout-post').length) {
+					codePreprocessing();
+					codeCopy();
+				} 
+			</script>
+
+			<link rel="stylesheet" href="../../../../plugin/fancybox/jquery.fancybox.css">
+			<script src="../../../../plugin/fancybox/jquery.fancybox.js"></script>
+
+			<script type="text/javascript">
+				var titleID = $('.article-title a'),
+					imageID = $('.article-content img'),
+					videoID = $('.article-content video');
+
+				var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+				imageID.each(function() {
+					var imgPath = $(this).attr('src'),
+						imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+					$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+				});
+
+				videoID.each(function() {
+					var videoPath = $(this).attr('src');
+					$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+				});
+
+				if($('#layout-post').length) {
+					$('[data-fancybox="gallery"]').fancybox({
+						loop: true,
+						buttons: [
+							"zoom",
+							"share",
+							"slideShow",
+							"fullScreen",
+							"thumbs",
+							"close"
+						],
+						protect: false
+					});
+				}
+			</script>
+		</main>
+
+		<footer>
+			<div class="social">
+				<ul>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-weibo"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="../../../../atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
+				</ul>
+			</div>		
+			<div class="copyright">
+				<p>
+					&copy;2017 - 2026, content by lx_blogs. All Rights Reserved.
+					<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>	
+					<span id="busuanzi_container_page_pv">
+						本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+					</span>
+				</p>
+				<p>
+					<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+				</p>
+			</div>		
+		</footer>
+
+		<script src="../../../../plugin/motto/motto.js"></script>	
+		<script type="text/javascript">$(".motto").html( getMingYanContent() );</script>	
+		<script src="../../../../plugin/love/love.js"></script>
+		<div id="totop"><a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a></div>
+		<script src="../../../../plugin/vibrant/vibrant.js"></script>
+		<script src="../../../../plugin/chinese/chinese.js"></script>
+		<script src="../../../../plugin/imgLazyLoader/yall.min.js"></script>
+		<script src="../../../../plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+		<script src="../../../../plugin/nicescroll/jquery.nicescroll.js"></script>
+		<script src="../../../../js/resizediv.js"></script>
+		<script src="../../../../js/main.js"></script>
+	</body>	
+</html>

@@ -5,17 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
-    TypeScript入门指南 - lx_blogs
+    TypeScript入门指南 | lx_blogs
   </title>
   <meta name="author" content="lx_blogs">
-  <meta name="keywords" content="前端开发,JavaScript,React,Vue,Node.js">
-  <meta name="description" content="个人技术博客">
-	<link rel="shortcut icon" href="/img/favicon.ico">
+  <meta name="keywords" content="TypeScript,类型系统,接口,泛型">
+  <meta name="description" content="TypeScript入门指南">
+	<link rel="shortcut icon" href="../../../../img/favicon.ico">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/Annie.css">
-  <script src="/js/jquery.min.js"></script>
+<link rel="stylesheet" href="../../../../css/Annie.css">
+  <script src="../../../../js/jquery.min.js"></script>
   <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-<script src="/js/leancloud.js"></script>
+<script src="../../../../js/leancloud.js"></script>
 </head>
 	<body>
 		<div id="preloader">
@@ -27,22 +27,22 @@
 		</div>
 	</div>
 
-<header class="fixbackground" data-img-mode="normal" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+<header class="fixbackground" data-img-mode="normal" data-normal-src="../../../../img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
 	<div class="mask">
 		<div class="h-header">
 			<div id="logo">
-				<a href="/">
-					<img src="/img/logo.png" alt="Logo">
+				<a href="../../../../">
+					<img src="../../../../img/logo.png" alt="Logo">
 				</a>
 			</div>
 			<div id="navigation-show">
 				<ul>
-		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
-		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
-		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
-		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
-		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
-		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+		<li class="menu-home"><a href="../../../../" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="../../../../archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="../../../../categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="../../../../tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="../../../../about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="../../../../gallery" class="menu-item-gallery">相册</a></li>
 </ul>
 			</div>				
 		</div>
@@ -57,7 +57,7 @@
 	<div id="progress-bar"></div>
 	<div id="progress-percentage"><h1>0.0%</h1></div>
 	<div class="toc-switch"><span class="switch-button">目录</span></div>
-	<p>TypeScript入门指南</p>
+	<p>当前文章&nbsp;:&nbsp;《TypeScript入门指南》</p>
 	<a class="nav-trigger"><span></span></a>
 </div>
 
@@ -68,49 +68,66 @@
 	</div>
 	<div class="nav-body">
 		<ul>
-		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
-		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
-		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
-		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
-		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
-		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+		<li class="menu-home"><a href="../../../../" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="../../../../archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="../../../../categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="../../../../tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="../../../../about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="../../../../gallery" class="menu-item-gallery">相册</a></li>
 </ul>
 	</div>
 	<div class="nav-footer">
 		<ul>
 		<li><a href="http://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
-		<li><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
+		<li><a href="../../../../atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
 </ul>
 	</div>
-</nav>			
+</nav>
 		<main>
-			<div class="layout-cart">
-				<div id="layout-cart">
-					<div class="post" id="post">
-						<div class="post-text">
-							<h2 class="post-title-article">TypeScript入门指南</h2>
-							<p class="post-time">发布日期: 2020年07月10日</p>
-							<div class="post-content-article">
-<h3>前言</h3>
-<p>TypeScript是JavaScript的超集，由微软开发。它在JavaScript的基础上添加了类型系统，使得代码更加健壮、可维护。本文将介绍TypeScript的核心概念，包括类型系统、接口、泛型等，帮助开发者快速入门TypeScript。</p>
+			<div class="layout-post">
+				<div id="layout-post">
+					<div class="article-title">
+						<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+						<a href="/2020/07/10/TypeScript入门指南/" itemprop="url">
+							TypeScript入门指南
+						</a>
+					</div>
 
+					<div class="article-meta">
+						<span>
+							<i class="fa fa-calendar"></i>
+							发布于
+							<a href="/2020/07/10/TypeScript入门指南/" itemprop="url">
+								<time datetime="2020-07-10T00:00:00.000Z" itemprop="datePublished">
+									2020-07-10
+								</time>
+							</a>
+						</span>
+						<span>
+							<i class="fa fa-tags"></i>
+							<a href="../../../../tags/#TypeScript" rel="tag">TypeScript</a>, <a href="../../../../tags/#类型系统" rel="tag">类型系统</a>, <a href="../../../../tags/#接口" rel="tag">接口</a>, <a href="../../../../tags/#泛型" rel="tag">泛型</a>
+						</span>
+					</div>
+
+					<div class="article-content" id="article-content">
+						<h3>前言</h3>
+<p>TypeScript是JavaScript的超集，由微软开发。它在JavaScript的基础上添加了类型系统，使得代码更加健壮、可维护。本文将介绍TypeScript的核心概念，包括类型系统、接口、泛型等，帮助开发者快速入门TypeScript。</p>
 <h3>为什么使用TypeScript</h3>
 <p>TypeScript的主要优势包括：静态类型检查可以在编译时发现错误，而不是在运行时；更好的IDE支持，提供智能提示、重构等功能；类型本身就是一种文档，提高代码的可读性；更好的团队协作，减少沟通成本。</p>
 <p>虽然TypeScript需要编译，增加了构建步骤，但它带来的好处远远超过了这一点成本。现在越来越多的开源项目和公司都在使用TypeScript。</p>
-
 <h3>基础类型</h3>
 <p>TypeScript提供了丰富的基础类型，包括基本类型、数组、元组、枚举等。</p>
 <pre><code>// 基本类型
 let isDone: boolean = false
 let count: number = 42
-let name: string = 'TypeScript'
+let name: string = &#39;TypeScript&#39;
 
 // 数组
 let list: number[] = [1, 2, 3]
 let list2: Array&lt;number&gt; = [1, 2, 3] // 泛型数组
 
 // 元组：固定长度的数组
-let tuple: [string, number] = ['hello', 10]
+let tuple: [string, number] = [&#39;hello&#39;, 10]
 
 // 枚举
 enum Color { Red, Green, Blue }
@@ -118,18 +135,17 @@ let c: Color = Color.Green
 
 // any类型：任意类型
 let notSure: any = 4
-notSure = 'maybe a string'
+notSure = &#39;maybe a string&#39;
 
 // void类型：没有返回值
 function warnUser(): void {
-  console.log('This is a warning')
+  console.log(&#39;This is a warning&#39;)
 }
 
 // null和undefined
 let u: undefined = undefined
 let n: null = null
 </code></pre>
-
 <h3>接口</h3>
 <p>接口是TypeScript中最重要的概念之一，它用于定义对象的形状。接口可以被实现，也可以被继承。</p>
 <pre><code>// 基本接口
@@ -144,7 +160,7 @@ function printUser(user: User) {
 }
 
 const user: User = {
-  name: '张三',
+  name: &#39;张三&#39;,
   age: 25
 }
 
@@ -178,12 +194,11 @@ interface Dog extends Animal {
 }
 
 let dog: Dog = {
-  name: '旺财',
-  eat() { console.log('eating') },
-  bark() { console.log('woof') }
+  name: &#39;旺财&#39;,
+  eat() { console.log(&#39;eating&#39;) },
+  bark() { console.log(&#39;woof&#39;) }
 }
 </code></pre>
-
 <h3>泛型</h3>
 <p>泛型允许我们在定义函数、接口或类时不预先指定具体的类型，而在使用时再指定。这使得我们可以创建可重用的组件。</p>
 <pre><code>// 泛型函数
@@ -191,7 +206,7 @@ function identity&lt;T&gt;(arg: T): T {
   return arg
 }
 
-let output1 = identity&lt;string&gt;('hello')
+let output1 = identity&lt;string&gt;(&#39;hello&#39;)
 let output2 = identity&lt;number&gt;(100)
 
 // 泛型接口
@@ -226,7 +241,6 @@ function loggingIdentity&lt;T extends Lengthwise&gt;(arg: T): T {
 loggingIdentity([1, 2, 3]) // 正确
 // loggingIdentity(3) // 错误：number没有length属性
 </code></pre>
-
 <h3>类型别名与联合类型</h3>
 <p>类型别名用于给类型起一个新名字，联合类型表示值可以是多种类型之一。</p>
 <pre><code>// 类型别名
@@ -238,7 +252,7 @@ type User = {
 
 // 联合类型
 function printId(id: string | number) {
-  if (typeof id === 'string') {
+  if (typeof id === &#39;string&#39;) {
     console.log(id.toUpperCase())
   } else {
     console.log(id)
@@ -251,23 +265,23 @@ type Employee = {
   startDate: Date
 }
 
-type Manager = Employee & {
+type Manager = Employee &amp; {
   team: string[]
 }
 
 let manager: Manager = {
-  name: '李四',
+  name: &#39;李四&#39;,
   startDate: new Date(),
-  team: ['张三', '王五']
+  team: [&#39;张三&#39;, &#39;王五&#39;]
 }
 
 // 字面量类型
-type Direction = 'up' | 'down' | 'left' | 'right'
-let direction: Direction = 'up'
+type Direction = &#39;up&#39; | &#39;down&#39; | &#39;left&#39; | &#39;right&#39;
+let direction: Direction = &#39;up&#39;
 
 // 类型守卫
 function isString(value: any): value is string {
-  return typeof value === 'string'
+  return typeof value === &#39;string&#39;
 }
 
 function processValue(value: string | number) {
@@ -278,7 +292,6 @@ function processValue(value: string | number) {
   }
 }
 </code></pre>
-
 <h3>类与装饰器</h3>
 <p>TypeScript增强了JavaScript的类，添加了访问修饰符、抽象类等特性。装饰器是TypeScript的实验性特性，用于给类或类成员添加元数据或修改行为。</p>
 <pre><code>// 访问修饰符
@@ -303,13 +316,13 @@ abstract class Animal {
   abstract makeSound(): void
   
   move(): void {
-    console.log('moving...')
+    console.log(&#39;moving...&#39;)
   }
 }
 
 class Dog extends Animal {
   makeSound(): void {
-    console.log('woof')
+    console.log(&#39;woof&#39;)
   }
 }
 
@@ -325,45 +338,207 @@ class Calculator {
   }
 }
 </code></pre>
-
 <h3>配置与编译</h3>
 <p>TypeScript通过tsconfig.json文件来配置编译选项。常用的配置包括目标版本、模块系统、严格模式等。</p>
 <pre><code>{
-  "compilerOptions": {
-    "target": "ES2015",
-    "module": "commonjs",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist",
-    "rootDir": "./src"
+  &quot;compilerOptions&quot;: {
+    &quot;target&quot;: &quot;ES2015&quot;,
+    &quot;module&quot;: &quot;commonjs&quot;,
+    &quot;strict&quot;: true,
+    &quot;esModuleInterop&quot;: true,
+    &quot;skipLibCheck&quot;: true,
+    &quot;forceConsistentCasingInFileNames&quot;: true,
+    &quot;outDir&quot;: &quot;./dist&quot;,
+    &quot;rootDir&quot;: &quot;./src&quot;
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  &quot;include&quot;: [&quot;src/**/*&quot;],
+  &quot;exclude&quot;: [&quot;node_modules&quot;]
 }
 </code></pre>
 <p>strict选项开启后会启用所有严格的类型检查，包括noImplicitAny、strictNullChecks等。建议在新项目中始终开启strict模式。</p>
-
 <h3>总结</h3>
 <p>TypeScript为JavaScript添加了强大的类型系统，使得代码更加健壮、可维护。本文介绍了TypeScript的基础类型、接口、泛型、类型别名等核心概念。虽然TypeScript有一定的学习成本，但它带来的好处是显而易见的。对于大型项目和团队协作，TypeScript是一个非常好的选择。建议开发者在实际项目中逐步采用TypeScript，享受类型系统带来的便利。</p>
+
+					</div>
+					
+					<div id="current-post-cover" data-scr="../../../../img/cart_cover.jpg"></div>
+
+					<div class="investment-container">
+						<div class="investment-header">
+							<div class="investment-title-1">
+								<div class="on">相关文章</div>
+								<div>评论</div>
+								<div>分享</div>
 							</div>
+							<div class="investment-title-2">	            
+								<span>
+									<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+								</span>
+							</div>	
 						</div>
+						
+						<div class="investment-content">
+							<div class="investment-content-list">
+								<div class="relate-post">
+									<ul>
+										<li>
+											<div class="relate-post-text">
+												<p class="relate-post-content">
+													暂无相关文章
+												</p>
+											</div>
+										</li>											
+									</ul>
+								</div>	
+							</div>
+							<div class="investment-content-list">
+								<div class="layout-comment">
+									<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+								</div>
+							</div>
+							<div class="investment-content-list">
+								<div class="layout-share">
+									<div class="social-share"></div>
+									<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+									<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+								</div>
+							</div>
+						</div>	
 					</div>
 				</div>
 			</div>
+
+			<script src="../../../../plugin/clipboard/clipboard.js"></script>
+			<script>
+				function codePreprocessing() {
+					$("#article-content .highlight").each(function() {
+						$(this).wrap('<div id="post-code"></div>');
+					})
+
+					$("#article-content #post-code").each(function() {
+						$(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+					})
+
+					$("#article-content .copy-nav").each(function() {
+						var temp = $(this).next().attr('class'),
+							language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none";
+						$(this).find('.code-language').text(language);
+						$(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+					});
+				}
+
+				function codeCopy() {
+					$('#article-content #post-code').each(function(i) {
+						var codeCopyId = 'codeCopy-' + i;
+						var codeNode = $(this).find('.code'),
+							copyButton = $(this).find('.copy-btn');
+						codeNode.attr('id', codeCopyId);
+						copyButton.attr('data-clipboard-target-id', codeCopyId);
+					})
+
+					var clipboard = new ClipboardJS('.copy-btn', {
+						target: function(trigger) {
+							return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+						}
+					});
+
+					function showTooltip(elem, msg) {		   
+						elem.setAttribute('aria-label', msg);
+						elem.setAttribute('class', 'copy-btn copy-status');
+						setTimeout(function() {
+							elem.setAttribute('class', 'copy-btn');
+						}, 2000);
+					}
+
+					clipboard.on('success', function(e) {
+						e.clearSelection();
+						showTooltip(e.trigger, 'Copied!');
+					});
+					clipboard.on('error', function(e) {
+						console.error('Action:', e.action);
+						console.error('Trigger:', e.trigger);
+					});
+				}
+
+				if ($('.layout-post').length) {
+					codePreprocessing();
+					codeCopy();
+				} 
+			</script>
+
+			<link rel="stylesheet" href="../../../../plugin/fancybox/jquery.fancybox.css">
+			<script src="../../../../plugin/fancybox/jquery.fancybox.js"></script>
+
+			<script type="text/javascript">
+				var titleID = $('.article-title a'),
+					imageID = $('.article-content img'),
+					videoID = $('.article-content video');
+
+				var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+				imageID.each(function() {
+					var imgPath = $(this).attr('src'),
+						imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+					$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+				});
+
+				videoID.each(function() {
+					var videoPath = $(this).attr('src');
+					$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+				});
+
+				if($('#layout-post').length) {
+					$('[data-fancybox="gallery"]').fancybox({
+						loop: true,
+						buttons: [
+							"zoom",
+							"share",
+							"slideShow",
+							"fullScreen",
+							"thumbs",
+							"close"
+						],
+						protect: false
+					});
+				}
+			</script>
 		</main>
 
-	<script src="/plugin/motto/motto.js"></script>	
-	<script type="text/javascript">$(".motto").html( getMingYanContent() );</script>	
-<script src="/plugin/love/love.js"></script>
-	<div id="totop"><a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a></div>
-<script src="/plugin/vibrant/vibrant.js"></script>
-<script src="/plugin/chinese/chinese.js"></script>
-<script src="/plugin/imgLazyLoader/yall.min.js"></script>
-<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
-<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
-<script src="/js/resizediv.js"></script>
-<script src="/js/main.js"></script>
+		<footer>
+			<div class="social">
+				<ul>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-weibo"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="../../../../atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
+				</ul>
+			</div>		
+			<div class="copyright">
+				<p>
+					&copy;2017 - 2026, content by lx_blogs. All Rights Reserved.
+					<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>	
+					<span id="busuanzi_container_page_pv">
+						本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+					</span>
+				</p>
+				<p>
+					<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+				</p>
+			</div>		
+		</footer>
+
+		<script src="../../../../plugin/motto/motto.js"></script>	
+		<script type="text/javascript">$(".motto").html( getMingYanContent() );</script>	
+		<script src="../../../../plugin/love/love.js"></script>
+		<div id="totop"><a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a></div>
+		<script src="../../../../plugin/vibrant/vibrant.js"></script>
+		<script src="../../../../plugin/chinese/chinese.js"></script>
+		<script src="../../../../plugin/imgLazyLoader/yall.min.js"></script>
+		<script src="../../../../plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+		<script src="../../../../plugin/nicescroll/jquery.nicescroll.js"></script>
+		<script src="../../../../js/resizediv.js"></script>
+		<script src="../../../../js/main.js"></script>
 	</body>	
 </html>

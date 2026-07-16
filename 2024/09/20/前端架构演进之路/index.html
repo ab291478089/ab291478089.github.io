@@ -5,17 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
-    前端架构演进之路 - lx_blogs
+    前端架构演进之路 | lx_blogs
   </title>
   <meta name="author" content="lx_blogs">
-  <meta name="keywords" content="前端开发,JavaScript,React,Vue,Node.js">
-  <meta name="description" content="个人技术博客">
-	<link rel="shortcut icon" href="/img/favicon.ico">
+  <meta name="keywords" content="架构,MVC,MVVM,微前端,Islands">
+  <meta name="description" content="前端架构演进之路">
+	<link rel="shortcut icon" href="../../../../img/favicon.ico">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/Annie.css">
-  <script src="/js/jquery.min.js"></script>
+<link rel="stylesheet" href="../../../../css/Annie.css">
+  <script src="../../../../js/jquery.min.js"></script>
   <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-<script src="/js/leancloud.js"></script>
+<script src="../../../../js/leancloud.js"></script>
 </head>
 	<body>
 		<div id="preloader">
@@ -27,22 +27,22 @@
 		</div>
 	</div>
 
-<header class="fixbackground" data-img-mode="normal" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+<header class="fixbackground" data-img-mode="normal" data-normal-src="../../../../img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
 	<div class="mask">
 		<div class="h-header">
 			<div id="logo">
-				<a href="/">
-					<img src="/img/logo.png" alt="Logo">
+				<a href="../../../../">
+					<img src="../../../../img/logo.png" alt="Logo">
 				</a>
 			</div>
 			<div id="navigation-show">
 				<ul>
-		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
-		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
-		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
-		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
-		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
-		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+		<li class="menu-home"><a href="../../../../" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="../../../../archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="../../../../categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="../../../../tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="../../../../about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="../../../../gallery" class="menu-item-gallery">相册</a></li>
 </ul>
 			</div>				
 		</div>
@@ -57,7 +57,7 @@
 	<div id="progress-bar"></div>
 	<div id="progress-percentage"><h1>0.0%</h1></div>
 	<div class="toc-switch"><span class="switch-button">目录</span></div>
-	<p>前端架构演进之路</p>
+	<p>当前文章&nbsp;:&nbsp;《前端架构演进之路》</p>
 	<a class="nav-trigger"><span></span></a>
 </div>
 
@@ -68,32 +68,50 @@
 	</div>
 	<div class="nav-body">
 		<ul>
-		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
-		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
-		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
-		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
-		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
-		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+		<li class="menu-home"><a href="../../../../" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="../../../../archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="../../../../categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="../../../../tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="../../../../about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="../../../../gallery" class="menu-item-gallery">相册</a></li>
 </ul>
 	</div>
 	<div class="nav-footer">
 		<ul>
 		<li><a href="http://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
-		<li><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
+		<li><a href="../../../../atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
 </ul>
 	</div>
-</nav>			
+</nav>
 		<main>
-			<div class="layout-cart">
-				<div id="layout-cart">
-					<div class="post" id="post">
-						<div class="post-text">
-							<h2 class="post-title-article">前端架构演进之路</h2>
-							<p class="post-time">发布日期: 2024年09月20日</p>
-							<div class="post-content-article">
-<h3>前言</h3>
-<p>前端架构的演进是Web技术发展的缩影。从早期的MVC模式到微前端，再到近年兴起的Islands Architecture，每一次架构范式的转变都反映了业务复杂度提升和技术生态成熟的双重驱动。本文将系统梳理前端架构的演进历程，分析每种架构的设计思想、适用场景和局限性，帮助开发者在面试中展现出对架构设计的深入理解。</p>
+			<div class="layout-post">
+				<div id="layout-post">
+					<div class="article-title">
+						<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+						<a href="/2024/09/20/前端架构演进之路/" itemprop="url">
+							前端架构演进之路
+						</a>
+					</div>
 
+					<div class="article-meta">
+						<span>
+							<i class="fa fa-calendar"></i>
+							发布于
+							<a href="/2024/09/20/前端架构演进之路/" itemprop="url">
+								<time datetime="2024-09-20T00:00:00.000Z" itemprop="datePublished">
+									2024-09-20
+								</time>
+							</a>
+						</span>
+						<span>
+							<i class="fa fa-tags"></i>
+							<a href="../../../../tags/#架构" rel="tag">架构</a>, <a href="../../../../tags/#MVC" rel="tag">MVC</a>, <a href="../../../../tags/#MVVM" rel="tag">MVVM</a>, <a href="../../../../tags/#微前端" rel="tag">微前端</a>, <a href="../../../../tags/#Islands" rel="tag">Islands</a>
+						</span>
+					</div>
+
+					<div class="article-content" id="article-content">
+						<h3>前言</h3>
+<p>前端架构的演进是Web技术发展的缩影。从早期的MVC模式到微前端，再到近年兴起的Islands Architecture，每一次架构范式的转变都反映了业务复杂度提升和技术生态成熟的双重驱动。本文将系统梳理前端架构的演进历程，分析每种架构的设计思想、适用场景和局限性，帮助开发者在面试中展现出对架构设计的深入理解。</p>
 <h3>MVC时代：经典模式的引入</h3>
 <p>在Web 1.0时代，前端开发相对简单，主要是静态HTML页面的展示。随着Ajax技术的普及，Web应用开始具备动态交互能力，前端代码的复杂度也随之增加。此时，后端开发中成熟的MVC（Model-View-Controller）模式被引入到前端开发中。</p>
 <p>MVC模式将应用分为三层：Model负责数据和业务逻辑，View负责界面展示，Controller负责处理用户输入并协调Model和View。这种分层架构使得代码结构更加清晰，便于维护和扩展。</p>
@@ -102,23 +120,23 @@
 // Model
 var User = Backbone.Model.extend({
   defaults: {
-    name: '',
-    email: ''
+    name: &#39;&#39;,
+    email: &#39;&#39;
   },
   validate: function(attrs) {
     if (!attrs.email) {
-      return 'Email is required';
+      return &#39;Email is required&#39;;
     }
   }
 });
 
 // View
 var UserView = Backbone.View.extend({
-  tagName: 'div',
-  template: _.template('&lt;h3&gt;&lt;%= name %&gt;&lt;/h3&gt;&lt;p&gt;&lt;%= email %&gt;&lt;/p&gt;'),
+  tagName: &#39;div&#39;,
+  template: _.template(&#39;&lt;h3&gt;&lt;%= name %&gt;&lt;/h3&gt;&lt;p&gt;&lt;%= email %&gt;&lt;/p&gt;&#39;),
   
   initialize: function() {
-    this.listenTo(this.model, 'change', this.render);
+    this.listenTo(this.model, &#39;change&#39;, this.render);
   },
   
   render: function() {
@@ -130,32 +148,31 @@ var UserView = Backbone.View.extend({
 // Controller (在Backbone中通常是Router或View的事件处理)
 var AppRouter = Backbone.Router.extend({
   routes: {
-    'user/:id': 'showUser'
+    &#39;user/:id&#39;: &#39;showUser&#39;
   },
   showUser: function(id) {
     var user = new User({ id: id });
     user.fetch();
     var view = new UserView({ model: user });
-    $('#app').html(view.render().el);
+    $(&#39;#app&#39;).html(view.render().el);
   }
 });
 </code></pre>
 <p>然而，随着应用复杂度的进一步提升，传统MVC模式暴露出一些问题：Controller变得过于臃肿，View和Controller之间的依赖关系复杂，数据流不清晰导致调试困难。这些问题促使了MVVM等新模式的出现。</p>
-
 <h3>MVVM与组件化：现代框架的崛起</h3>
 <p>MVVM（Model-View-ViewModel）模式通过引入ViewModel层，解决了MVC中View和Model直接通信的问题。ViewModel负责将Model的数据转换为View可以使用的格式，并处理View的逻辑。双向数据绑定是MVVM的核心特性，它使得View和Model的同步变得自动化。</p>
 <p>Angular、Vue和React（虽然React更偏向于函数式，但也吸收了MVVM的思想）等现代框架的兴起，标志着前端开发进入了组件化时代。组件化将UI拆分为独立、可复用的单元，每个组件封装了自己的状态、逻辑和样式。</p>
 <pre><code>// Vue 3 组件化示例
 &lt;template&gt;
-  &lt;div class="user-card"&gt;
+  &lt;div class=&quot;user-card&quot;&gt;
     &lt;h3&gt;{{ user.name }}&lt;/h3&gt;
     &lt;p&gt;{{ user.email }}&lt;/p&gt;
-    &lt;button @click="handleClick"&gt;联系&lt;/button&gt;
+    &lt;button @click=&quot;handleClick&quot;&gt;联系&lt;/button&gt;
   &lt;/div&gt;
 &lt;/template&gt;
 
 &lt;script setup&gt;
-import { defineProps, defineEmits } from 'vue';
+import { defineProps, defineEmits } from &#39;vue&#39;;
 
 const props = defineProps({
   user: {
@@ -164,10 +181,10 @@ const props = defineProps({
   }
 });
 
-const emit = defineEmits(['contact']);
+const emit = defineEmits([&#39;contact&#39;]);
 
-const handleClick = () => {
-  emit('contact', props.user.id);
+const handleClick = () =&gt; {
+  emit(&#39;contact&#39;, props.user.id);
 };
 &lt;/script&gt;
 
@@ -180,23 +197,22 @@ const handleClick = () => {
 &lt;/style&gt;
 </code></pre>
 <p>组件化的优势在于：代码复用性更强，团队协作更高效，测试和维护更简单。然而，当应用规模继续扩大，单个SPA（单页应用）的体积变得庞大，构建时间变长，不同团队开发的模块难以独立部署。这时，微前端架构应运而生。</p>
-
 <h3>微前端：大型应用的架构方案</h3>
 <p>微前端（Micro Frontends）的概念借鉴了微服务的思想。它将一个大型前端应用拆分为多个独立的小型应用，每个小型应用由不同的团队独立开发、测试和部署，最终在运行时组合成一个完整的应用。</p>
 <p>微前端的核心挑战在于：如何在不牺牲用户体验的前提下，实现多个独立应用的无缝集成。目前主流的微前端方案包括：基于路由的切换、iframe隔离、Web Components和模块联邦（Module Federation）。</p>
 <pre><code>// Webpack 5 模块联邦配置
 // 主应用 webpack.config.js
-const { ModuleFederationPlugin } = require('webpack').container;
+const { ModuleFederationPlugin } = require(&#39;webpack&#39;).container;
 
 module.exports = {
   plugins: [
     new ModuleFederationPlugin({
-      name: 'host',
+      name: &#39;host&#39;,
       remotes: {
-        app1: 'app1@http://localhost:3001/remoteEntry.js',
-        app2: 'app2@http://localhost:3002/remoteEntry.js'
+        app1: &#39;app1@http://localhost:3001/remoteEntry.js&#39;,
+        app2: &#39;app2@http://localhost:3002/remoteEntry.js&#39;
       },
-      shared: ['react', 'react-dom']
+      shared: [&#39;react&#39;, &#39;react-dom&#39;]
     })
   ]
 };
@@ -205,23 +221,23 @@ module.exports = {
 module.exports = {
   plugins: [
     new ModuleFederationPlugin({
-      name: 'app1',
-      filename: 'remoteEntry.js',
+      name: &#39;app1&#39;,
+      filename: &#39;remoteEntry.js&#39;,
       exposes: {
-        './App': './src/App'
+        &#39;./App&#39;: &#39;./src/App&#39;
       },
-      shared: ['react', 'react-dom']
+      shared: [&#39;react&#39;, &#39;react-dom&#39;]
     })
   ]
 };
 
 // 主应用中加载子应用
-import React, { Suspense } from 'react';
-const App1 = React.lazy(() => import('app1/App'));
+import React, { Suspense } from &#39;react&#39;;
+const App1 = React.lazy(() =&gt; import(&#39;app1/App&#39;));
 
 function Layout() {
   return (
-    &lt;div className="layout"&gt;
+    &lt;div className=&quot;layout&quot;&gt;
       &lt;Header /&gt;
       &lt;main&gt;
         &lt;Suspense fallback={&lt;div&gt;Loading...&lt;/div&gt;}&gt;
@@ -233,14 +249,13 @@ function Layout() {
 }
 </code></pre>
 <p>微前端的优势在于：团队可以独立开发、测试和部署应用；可以使用不同的技术栈；故障隔离更好。但同时也带来了复杂性：状态共享、样式隔离、性能开销等问题需要仔细处理。</p>
-
 <h3>Islands Architecture：静态优先的新范式</h3>
-<p>Islands Architecture（孤岛架构）是近年来兴起的一种新范式，由Astro框架推广。它的核心思想是：页面默认是静态的HTML，只有需要交互的部分（"孤岛"）才会加载JavaScript。</p>
+<p>Islands Architecture（孤岛架构）是近年来兴起的一种新范式，由Astro框架推广。它的核心思想是：页面默认是静态的HTML，只有需要交互的部分（&quot;孤岛&quot;）才会加载JavaScript。</p>
 <p>这种架构特别适合内容为主的网站，如博客、电商、文档站点等。它结合了静态站点的性能优势和客户端框架的交互能力。</p>
 <pre><code>---
 // Astro页面（默认静态）
-import ProductCard from '../components/ProductCard.jsx';
-import AddToCartButton from '../components/AddToCartButton.jsx';
+import ProductCard from &#39;../components/ProductCard.jsx&#39;;
+import AddToCartButton from &#39;../components/AddToCartButton.jsx&#39;;
 
 const product = await getProduct(data.id);
 ---
@@ -263,45 +278,215 @@ const product = await getProduct(data.id);
   &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<p>Islands Architecture的核心优势在于性能。页面首次加载时只传输必要的HTML和少量JavaScript，交互组件可以按需加载。这种"静态优先"的策略，使得网站能够在保持丰富交互的同时，实现接近静态站点的加载速度。</p>
-<p>Astro框架还支持"部分水合"（Partial Hydration），即只有孤岛组件会被"水合"为可交互的React/Vue组件，其余部分保持为纯HTML。这大大减少了JavaScript的传输和执行时间。</p>
-
+<p>Islands Architecture的核心优势在于性能。页面首次加载时只传输必要的HTML和少量JavaScript，交互组件可以按需加载。这种&quot;静态优先&quot;的策略，使得网站能够在保持丰富交互的同时，实现接近静态站点的加载速度。</p>
+<p>Astro框架还支持&quot;部分水合&quot;（Partial Hydration），即只有孤岛组件会被&quot;水合&quot;为可交互的React/Vue组件，其余部分保持为纯HTML。这大大减少了JavaScript的传输和执行时间。</p>
 <h3>架构演进的驱动力</h3>
 <p>前端架构的演进并非偶然，而是由多个因素共同驱动的：</p>
-<p>1. 业务复杂度的提升：从简单的展示页面到复杂的Web应用，需要更灵活的架构来支撑业务增长。</p>
-<p>2. 团队规模的扩大：从单人开发到多团队协作，需要架构来支持并行开发和独立部署。</p>
-<p>3. 性能要求的提高：用户对加载速度和交互体验的期望不断提升，推动架构向更高效的方向演进。</p>
-<p>4. 技术生态的成熟：框架、工具链和基础设施的完善，为架构创新提供了可能。</p>
+<ol>
+<li><p>业务复杂度的提升：从简单的展示页面到复杂的Web应用，需要更灵活的架构来支撑业务增长。</p>
+</li>
+<li><p>团队规模的扩大：从单人开发到多团队协作，需要架构来支持并行开发和独立部署。</p>
+</li>
+<li><p>性能要求的提高：用户对加载速度和交互体验的期望不断提升，推动架构向更高效的方向演进。</p>
+</li>
+<li><p>技术生态的成熟：框架、工具链和基础设施的完善，为架构创新提供了可能。</p>
+</li>
+</ol>
 <pre><code>// 现代前端架构的典型技术栈
 {
-  "framework": "Next.js / Nuxt.js / Remix",
-  "styling": "Tailwind CSS / CSS Modules",
-  "state": "Zustand / Jotai / Pinia",
-  "data-fetching": "TanStack Query / SWR",
-  "testing": "Vitest / Playwright",
-  "build": "Vite / Turbopack",
-  "deployment": "Vercel / Netlify / Cloudflare Pages"
+  &quot;framework&quot;: &quot;Next.js / Nuxt.js / Remix&quot;,
+  &quot;styling&quot;: &quot;Tailwind CSS / CSS Modules&quot;,
+  &quot;state&quot;: &quot;Zustand / Jotai / Pinia&quot;,
+  &quot;data-fetching&quot;: &quot;TanStack Query / SWR&quot;,
+  &quot;testing&quot;: &quot;Vitest / Playwright&quot;,
+  &quot;build&quot;: &quot;Vite / Turbopack&quot;,
+  &quot;deployment&quot;: &quot;Vercel / Netlify / Cloudflare Pages&quot;
 }
 </code></pre>
-<p>在选择架构时，需要考虑团队规模、业务特点、性能要求和维护成本。没有"最好"的架构，只有最适合当前场景的架构。</p>
-
+<p>在选择架构时，需要考虑团队规模、业务特点、性能要求和维护成本。没有&quot;最好&quot;的架构，只有最适合当前场景的架构。</p>
 <h3>总结</h3>
 <p>从MVC到微前端再到Islands Architecture，前端架构的演进反映了Web应用从简单到复杂、从单一到多元的发展历程。每种架构都有其适用的场景和局限性，理解它们的设计思想和权衡取舍，是成为优秀前端工程师的关键。在面试中，能够结合项目经验，阐述架构选择的理由和效果，将展现出你的技术深度和工程思维。未来，随着Web技术的不断发展，我们期待看到更多创新的架构范式出现。</p>
+
+					</div>
+					
+					<div id="current-post-cover" data-scr="../../../../img/cart_cover.jpg"></div>
+
+					<div class="investment-container">
+						<div class="investment-header">
+							<div class="investment-title-1">
+								<div class="on">相关文章</div>
+								<div>评论</div>
+								<div>分享</div>
 							</div>
+							<div class="investment-title-2">	            
+								<span>
+									<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+								</span>
+							</div>	
 						</div>
+						
+						<div class="investment-content">
+							<div class="investment-content-list">
+								<div class="relate-post">
+									<ul>
+										<li>
+											<div class="relate-post-text">
+												<p class="relate-post-content">
+													暂无相关文章
+												</p>
+											</div>
+										</li>											
+									</ul>
+								</div>	
+							</div>
+							<div class="investment-content-list">
+								<div class="layout-comment">
+									<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+								</div>
+							</div>
+							<div class="investment-content-list">
+								<div class="layout-share">
+									<div class="social-share"></div>
+									<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+									<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+								</div>
+							</div>
+						</div>	
 					</div>
 				</div>
 			</div>
+
+			<script src="../../../../plugin/clipboard/clipboard.js"></script>
+			<script>
+				function codePreprocessing() {
+					$("#article-content .highlight").each(function() {
+						$(this).wrap('<div id="post-code"></div>');
+					})
+
+					$("#article-content #post-code").each(function() {
+						$(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+					})
+
+					$("#article-content .copy-nav").each(function() {
+						var temp = $(this).next().attr('class'),
+							language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none";
+						$(this).find('.code-language').text(language);
+						$(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+					});
+				}
+
+				function codeCopy() {
+					$('#article-content #post-code').each(function(i) {
+						var codeCopyId = 'codeCopy-' + i;
+						var codeNode = $(this).find('.code'),
+							copyButton = $(this).find('.copy-btn');
+						codeNode.attr('id', codeCopyId);
+						copyButton.attr('data-clipboard-target-id', codeCopyId);
+					})
+
+					var clipboard = new ClipboardJS('.copy-btn', {
+						target: function(trigger) {
+							return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+						}
+					});
+
+					function showTooltip(elem, msg) {		   
+						elem.setAttribute('aria-label', msg);
+						elem.setAttribute('class', 'copy-btn copy-status');
+						setTimeout(function() {
+							elem.setAttribute('class', 'copy-btn');
+						}, 2000);
+					}
+
+					clipboard.on('success', function(e) {
+						e.clearSelection();
+						showTooltip(e.trigger, 'Copied!');
+					});
+					clipboard.on('error', function(e) {
+						console.error('Action:', e.action);
+						console.error('Trigger:', e.trigger);
+					});
+				}
+
+				if ($('.layout-post').length) {
+					codePreprocessing();
+					codeCopy();
+				} 
+			</script>
+
+			<link rel="stylesheet" href="../../../../plugin/fancybox/jquery.fancybox.css">
+			<script src="../../../../plugin/fancybox/jquery.fancybox.js"></script>
+
+			<script type="text/javascript">
+				var titleID = $('.article-title a'),
+					imageID = $('.article-content img'),
+					videoID = $('.article-content video');
+
+				var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+				imageID.each(function() {
+					var imgPath = $(this).attr('src'),
+						imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+					$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+				});
+
+				videoID.each(function() {
+					var videoPath = $(this).attr('src');
+					$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+				});
+
+				if($('#layout-post').length) {
+					$('[data-fancybox="gallery"]').fancybox({
+						loop: true,
+						buttons: [
+							"zoom",
+							"share",
+							"slideShow",
+							"fullScreen",
+							"thumbs",
+							"close"
+						],
+						protect: false
+					});
+				}
+			</script>
 		</main>
 
-	<script src="/plugin/motto/motto.js"></script>	
-	<script type="text/javascript">$(".motto").html( getMingYanContent() );</script>	
-<script src="/plugin/love/love.js"></script>
-	<div id="totop"><a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a></div>
-<script src="/plugin/vibrant/vibrant.js"></script>
-<script src="/plugin/chinese/chinese.js"></script>
-<script src="/plugin/imgLazyLoader/yall.min.js"></script>
-<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
-<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
-<script src="/js/resizediv.js"></script>
-<script src="/js/main.js">
+		<footer>
+			<div class="social">
+				<ul>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-weibo"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="../../../../atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
+				</ul>
+			</div>		
+			<div class="copyright">
+				<p>
+					&copy;2017 - 2026, content by lx_blogs. All Rights Reserved.
+					<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>	
+					<span id="busuanzi_container_page_pv">
+						本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+					</span>
+				</p>
+				<p>
+					<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+				</p>
+			</div>		
+		</footer>
+
+		<script src="../../../../plugin/motto/motto.js"></script>	
+		<script type="text/javascript">$(".motto").html( getMingYanContent() );</script>	
+		<script src="../../../../plugin/love/love.js"></script>
+		<div id="totop"><a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a></div>
+		<script src="../../../../plugin/vibrant/vibrant.js"></script>
+		<script src="../../../../plugin/chinese/chinese.js"></script>
+		<script src="../../../../plugin/imgLazyLoader/yall.min.js"></script>
+		<script src="../../../../plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+		<script src="../../../../plugin/nicescroll/jquery.nicescroll.js"></script>
+		<script src="../../../../js/resizediv.js"></script>
+		<script src="../../../../js/main.js"></script>
+	</body>	
+</html>

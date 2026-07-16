@@ -5,17 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
-    Vue3+TypeScript项目实战 - lx_blogs
+    Vue3+TypeScript项目实战 | lx_blogs
   </title>
   <meta name="author" content="lx_blogs">
-  <meta name="keywords" content="前端开发,JavaScript,React,Vue,Node.js">
-  <meta name="description" content="个人技术博客">
-	<link rel="shortcut icon" href="/img/favicon.ico">
+  <meta name="keywords" content="Vue3,TypeScript,Pinia,Vite">
+  <meta name="description" content="Vue3+TypeScript项目实战">
+	<link rel="shortcut icon" href="../../../../img/favicon.ico">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/Annie.css">
-  <script src="/js/jquery.min.js"></script>
+<link rel="stylesheet" href="../../../../css/Annie.css">
+  <script src="../../../../js/jquery.min.js"></script>
   <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-<script src="/js/leancloud.js"></script>
+<script src="../../../../js/leancloud.js"></script>
 </head>
 	<body>
 		<div id="preloader">
@@ -27,22 +27,22 @@
 		</div>
 	</div>
 
-<header class="fixbackground" data-img-mode="normal" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+<header class="fixbackground" data-img-mode="normal" data-normal-src="../../../../img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
 	<div class="mask">
 		<div class="h-header">
 			<div id="logo">
-				<a href="/">
-					<img src="/img/logo.png" alt="Logo">
+				<a href="../../../../">
+					<img src="../../../../img/logo.png" alt="Logo">
 				</a>
 			</div>
 			<div id="navigation-show">
 				<ul>
-		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
-		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
-		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
-		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
-		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
-		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+		<li class="menu-home"><a href="../../../../" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="../../../../archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="../../../../categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="../../../../tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="../../../../about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="../../../../gallery" class="menu-item-gallery">相册</a></li>
 </ul>
 			</div>				
 		</div>
@@ -57,7 +57,7 @@
 	<div id="progress-bar"></div>
 	<div id="progress-percentage"><h1>0.0%</h1></div>
 	<div class="toc-switch"><span class="switch-button">目录</span></div>
-	<p>Vue3+TypeScript项目实战</p>
+	<p>当前文章&nbsp;:&nbsp;《Vue3+TypeScript项目实战》</p>
 	<a class="nav-trigger"><span></span></a>
 </div>
 
@@ -68,37 +68,56 @@
 	</div>
 	<div class="nav-body">
 		<ul>
-		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
-		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
-		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
-		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
-		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
-		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+		<li class="menu-home"><a href="../../../../" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="../../../../archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="../../../../categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="../../../../tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="../../../../about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="../../../../gallery" class="menu-item-gallery">相册</a></li>
 </ul>
 	</div>
 	<div class="nav-footer">
 		<ul>
 		<li><a href="http://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
-		<li><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
+		<li><a href="../../../../atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
 </ul>
 	</div>
-</nav>			
+</nav>
 		<main>
-			<div class="layout-cart">
-				<div id="layout-cart">
-					<div class="post" id="post">
-						<div class="post-text">
-							<h2 class="post-title-article">Vue3+TypeScript项目实战</h2>
-							<p class="post-time">发布日期: 2021年03月22日</p>
-							<div class="post-content-article">
-<h3>一、项目搭建与配置</h3>
+			<div class="layout-post">
+				<div id="layout-post">
+					<div class="article-title">
+						<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+						<a href="/2021/03/22/Vue3+TypeScript项目实战/" itemprop="url">
+							Vue3+TypeScript项目实战
+						</a>
+					</div>
+
+					<div class="article-meta">
+						<span>
+							<i class="fa fa-calendar"></i>
+							发布于
+							<a href="/2021/03/22/Vue3+TypeScript项目实战/" itemprop="url">
+								<time datetime="2021-03-22T00:00:00.000Z" itemprop="datePublished">
+									2021-03-22
+								</time>
+							</a>
+						</span>
+						<span>
+							<i class="fa fa-tags"></i>
+							<a href="../../../../tags/#Vue3" rel="tag">Vue3</a>, <a href="../../../../tags/#TypeScript" rel="tag">TypeScript</a>, <a href="../../../../tags/#Pinia" rel="tag">Pinia</a>, <a href="../../../../tags/#Vite" rel="tag">Vite</a>
+						</span>
+					</div>
+
+					<div class="article-content" id="article-content">
+						<h3>一、项目搭建与配置</h3>
 <p>Vue3的发布带来了许多令人兴奋的新特性，包括Composition API、更好的TypeScript支持、更快的虚拟DOM等。在实际项目中，使用Vue3配合TypeScript可以大大提升代码的可维护性和开发体验。本文将分享一个完整的Vue3+TypeScript项目搭建过程。</p>
 <p>首先，我们需要使用Vite来创建项目。Vite是Vue3推荐的构建工具，它基于原生ES模块，启动速度极快。执行以下命令创建项目：</p>
 <pre><code>npm init vite@latest my-vue3-project -- --template vue-ts
 cd my-vue3-project
-npm install</code></pre>
+npm install
+</code></pre>
 <p>项目创建后，我们需要配置一些必要的开发依赖。推荐使用ESLint+Prettier进行代码规范检查，使用Husky+lint-staged在提交代码时自动格式化。</p>
-
 <h3>二、TypeScript类型定义</h3>
 <p>在Vue3项目中，TypeScript的类型定义是非常重要的一环。我们需要为组件的props、emits、refs等定义清晰的类型。首先，在src目录下创建types文件夹，用于存放全局类型定义。</p>
 <pre><code>// types/index.ts
@@ -119,9 +138,10 @@ export interface Pagination {
   page: number;
   pageSize: number;
   total: number;
-}</code></pre>
+}
+</code></pre>
 <p>对于组件的props，我们可以使用defineProps来定义类型。Vue3提供了类型推断，可以让我们的代码更加安全。</p>
-<pre><code>&lt;script setup lang="ts"&gt;
+<pre><code>&lt;script setup lang=&quot;ts&quot;&gt;
 interface Props {
   title: string;
   count?: number;
@@ -132,50 +152,50 @@ const props = withDefaults(defineProps&lt;Props&gt;(), {
   count: 0,
   items: () =&gt; []
 });
-&lt;/script&gt;</code></pre>
-
+&lt;/script&gt;
+</code></pre>
 <h3>三、组件封装实践</h3>
 <p>在实际项目中，组件封装是提升代码复用性的关键。Vue3的Composition API让我们可以更灵活地封装组件逻辑。下面以封装一个通用的Button组件为例，展示如何进行组件封装。</p>
 <pre><code>&lt;template&gt;
   &lt;button 
-    :class="['btn', `btn-${type}`, { 'btn-loading': loading }]"
-    :disabled="disabled || loading"
-    @click="handleClick"
+    :class=&quot;[&#39;btn&#39;, `btn-${type}`, { &#39;btn-loading&#39;: loading }]&quot;
+    :disabled=&quot;disabled || loading&quot;
+    @click=&quot;handleClick&quot;
   &gt;
-    &lt;span v-if="loading" class="btn-spinner"&gt;&lt;/span&gt;
+    &lt;span v-if=&quot;loading&quot; class=&quot;btn-spinner&quot;&gt;&lt;/span&gt;
     &lt;slot&gt;&lt;/slot&gt;
   &lt;/button&gt;
 &lt;/template&gt;
 
-&lt;script setup lang="ts"&gt;
+&lt;script setup lang=&quot;ts&quot;&gt;
 interface ButtonProps {
-  type?: 'primary' | 'success' | 'warning' | 'danger';
+  type?: &#39;primary&#39; | &#39;success&#39; | &#39;warning&#39; | &#39;danger&#39;;
   disabled?: boolean;
   loading?: boolean;
 }
 
 const props = withDefaults(defineProps&lt;ButtonProps&gt;(), {
-  type: 'primary',
+  type: &#39;primary&#39;,
   disabled: false,
   loading: false
 });
 
 const emit = defineEmits&lt;{
-  (e: 'click', event: MouseEvent): void;
+  (e: &#39;click&#39;, event: MouseEvent): void;
 }&gt;();
 
 const handleClick = (event: MouseEvent) =&gt; {
-  if (!props.disabled && !props.loading) {
-    emit('click', event);
+  if (!props.disabled &amp;&amp; !props.loading) {
+    emit(&#39;click&#39;, event);
   }
 };
-&lt;/script&gt;</code></pre>
+&lt;/script&gt;
+</code></pre>
 <p>这个Button组件支持多种类型、禁用状态和加载状态。通过TypeScript的类型定义，我们可以在使用时获得完整的类型提示和检查。</p>
-
 <h3>四、Composition API的最佳实践</h3>
 <p>Composition API是Vue3最重要的特性之一。它让我们可以将相关的逻辑组织在一起，而不是分散在data、methods、computed等选项中。在实际项目中，我们可以使用composables来封装可复用的逻辑。</p>
 <pre><code>// composables/useLoading.ts
-import { ref } from 'vue';
+import { ref } from &#39;vue&#39;;
 
 export function useLoading() {
   const loading = ref(false);
@@ -193,9 +213,9 @@ export function useLoading() {
 }
 
 // 使用示例
-&lt;script setup lang="ts"&gt;
-import { useLoading } from '@/composables/useLoading';
-import { fetchUsers } from '@/api/user';
+&lt;script setup lang=&quot;ts&quot;&gt;
+import { useLoading } from &#39;@/composables/useLoading&#39;;
+import { fetchUsers } from &#39;@/api/user&#39;;
 
 const { loading, withLoading } = useLoading();
 
@@ -205,20 +225,20 @@ const loadUsers = async () =&gt; {
     // 处理用户数据
   });
 };
-&lt;/script&gt;</code></pre>
+&lt;/script&gt;
+</code></pre>
 <p>通过这种方式，我们可以将loading状态管理逻辑封装成一个composable，在多个组件中复用。这种模式比Vue2的mixins更加清晰，避免了命名冲突和来源不明确的问题。</p>
-
 <h3>五、状态管理方案</h3>
 <p>Vue3推荐使用Pinia作为状态管理库，它比Vuex更加轻量，且对TypeScript的支持更好。Pinia的API设计更加直观，没有mutations的概念，只有state、getters和actions。</p>
 <pre><code>// stores/user.ts
-import { defineStore } from 'pinia';
-import { ref, computed } from 'vue';
-import type { User } from '@/types';
-import { login, logout } from '@/api/auth';
+import { defineStore } from &#39;pinia&#39;;
+import { ref, computed } from &#39;vue&#39;;
+import type { User } from &#39;@/types&#39;;
+import { login, logout } from &#39;@/api/auth&#39;;
 
-export const useUserStore = defineStore('user', () =&gt; {
+export const useUserStore = defineStore(&#39;user&#39;, () =&gt; {
   const user = ref&lt;User | null&gt;(null);
-  const token = ref&lt;string&gt;('');
+  const token = ref&lt;string&gt;(&#39;&#39;);
 
   const isLoggedIn = computed(() =&gt; !!user.value);
 
@@ -231,33 +251,196 @@ export const useUserStore = defineStore('user', () =&gt; {
   const logoutAction = async () =&gt; {
     await logout();
     user.value = null;
-    token.value = '';
+    token.value = &#39;&#39;;
   };
 
   return { user, token, isLoggedIn, loginAction, logoutAction };
-});</code></pre>
+});
+</code></pre>
 <p>Pinia支持Composition API的写法，让我们可以使用ref和computed来定义state和getters，代码更加简洁。同时，Pinia对TypeScript的类型推断非常完善，无需手动定义类型。</p>
-
 <h3>六、总结</h3>
 <p>Vue3+TypeScript的组合为前端开发带来了更好的开发体验和代码质量。通过合理的类型定义、组件封装和状态管理，我们可以构建出可维护性强的中大型应用。在实际项目中，还需要注意性能优化、错误处理、单元测试等方面，这些都需要在实践中不断探索和总结。</p>
+
+					</div>
+					
+					<div id="current-post-cover" data-scr="../../../../img/cart_cover.jpg"></div>
+
+					<div class="investment-container">
+						<div class="investment-header">
+							<div class="investment-title-1">
+								<div class="on">相关文章</div>
+								<div>评论</div>
+								<div>分享</div>
 							</div>
+							<div class="investment-title-2">	            
+								<span>
+									<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+								</span>
+							</div>	
 						</div>
+						
+						<div class="investment-content">
+							<div class="investment-content-list">
+								<div class="relate-post">
+									<ul>
+										<li>
+											<div class="relate-post-text">
+												<p class="relate-post-content">
+													暂无相关文章
+												</p>
+											</div>
+										</li>											
+									</ul>
+								</div>	
+							</div>
+							<div class="investment-content-list">
+								<div class="layout-comment">
+									<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+								</div>
+							</div>
+							<div class="investment-content-list">
+								<div class="layout-share">
+									<div class="social-share"></div>
+									<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+									<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+								</div>
+							</div>
+						</div>	
 					</div>
 				</div>
 			</div>
+
+			<script src="../../../../plugin/clipboard/clipboard.js"></script>
+			<script>
+				function codePreprocessing() {
+					$("#article-content .highlight").each(function() {
+						$(this).wrap('<div id="post-code"></div>');
+					})
+
+					$("#article-content #post-code").each(function() {
+						$(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+					})
+
+					$("#article-content .copy-nav").each(function() {
+						var temp = $(this).next().attr('class'),
+							language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none";
+						$(this).find('.code-language').text(language);
+						$(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+					});
+				}
+
+				function codeCopy() {
+					$('#article-content #post-code').each(function(i) {
+						var codeCopyId = 'codeCopy-' + i;
+						var codeNode = $(this).find('.code'),
+							copyButton = $(this).find('.copy-btn');
+						codeNode.attr('id', codeCopyId);
+						copyButton.attr('data-clipboard-target-id', codeCopyId);
+					})
+
+					var clipboard = new ClipboardJS('.copy-btn', {
+						target: function(trigger) {
+							return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+						}
+					});
+
+					function showTooltip(elem, msg) {		   
+						elem.setAttribute('aria-label', msg);
+						elem.setAttribute('class', 'copy-btn copy-status');
+						setTimeout(function() {
+							elem.setAttribute('class', 'copy-btn');
+						}, 2000);
+					}
+
+					clipboard.on('success', function(e) {
+						e.clearSelection();
+						showTooltip(e.trigger, 'Copied!');
+					});
+					clipboard.on('error', function(e) {
+						console.error('Action:', e.action);
+						console.error('Trigger:', e.trigger);
+					});
+				}
+
+				if ($('.layout-post').length) {
+					codePreprocessing();
+					codeCopy();
+				} 
+			</script>
+
+			<link rel="stylesheet" href="../../../../plugin/fancybox/jquery.fancybox.css">
+			<script src="../../../../plugin/fancybox/jquery.fancybox.js"></script>
+
+			<script type="text/javascript">
+				var titleID = $('.article-title a'),
+					imageID = $('.article-content img'),
+					videoID = $('.article-content video');
+
+				var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+				imageID.each(function() {
+					var imgPath = $(this).attr('src'),
+						imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+					$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+				});
+
+				videoID.each(function() {
+					var videoPath = $(this).attr('src');
+					$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+				});
+
+				if($('#layout-post').length) {
+					$('[data-fancybox="gallery"]').fancybox({
+						loop: true,
+						buttons: [
+							"zoom",
+							"share",
+							"slideShow",
+							"fullScreen",
+							"thumbs",
+							"close"
+						],
+						protect: false
+					});
+				}
+			</script>
 		</main>
 
-		
-	<script src="/plugin/motto/motto.js"></script>	
-	<script type="text/javascript">$(".motto").html( getMingYanContent() );</script>	
-<script src="/plugin/love/love.js"></script>
-	<div id="totop"><a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a></div>
-<script src="/plugin/vibrant/vibrant.js"></script>
-<script src="/plugin/chinese/chinese.js"></script>
-<script src="/plugin/imgLazyLoader/yall.min.js"></script>
-<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
-<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
-<script src="/js/resizediv.js"></script>
-<script src="/js/main.js"></script>
+		<footer>
+			<div class="social">
+				<ul>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-weibo"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="../../../../atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
+				</ul>
+			</div>		
+			<div class="copyright">
+				<p>
+					&copy;2017 - 2026, content by lx_blogs. All Rights Reserved.
+					<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>	
+					<span id="busuanzi_container_page_pv">
+						本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+					</span>
+				</p>
+				<p>
+					<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+				</p>
+			</div>		
+		</footer>
+
+		<script src="../../../../plugin/motto/motto.js"></script>	
+		<script type="text/javascript">$(".motto").html( getMingYanContent() );</script>	
+		<script src="../../../../plugin/love/love.js"></script>
+		<div id="totop"><a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a></div>
+		<script src="../../../../plugin/vibrant/vibrant.js"></script>
+		<script src="../../../../plugin/chinese/chinese.js"></script>
+		<script src="../../../../plugin/imgLazyLoader/yall.min.js"></script>
+		<script src="../../../../plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+		<script src="../../../../plugin/nicescroll/jquery.nicescroll.js"></script>
+		<script src="../../../../js/resizediv.js"></script>
+		<script src="../../../../js/main.js"></script>
 	</body>	
 </html>

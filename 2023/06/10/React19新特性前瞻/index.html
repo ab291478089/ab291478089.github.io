@@ -5,17 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
-    React19新特性前瞻 - lx_blogs
+    React19新特性前瞻 | lx_blogs
   </title>
   <meta name="author" content="lx_blogs">
-  <meta name="keywords" content="前端开发,JavaScript,React,Vue,Node.js">
-  <meta name="description" content="个人技术博客">
-	<link rel="shortcut icon" href="/img/favicon.ico">
+  <meta name="keywords" content="React19,Compiler,Server Actions,Hooks">
+  <meta name="description" content="React19新特性前瞻">
+	<link rel="shortcut icon" href="../../../../img/favicon.ico">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/Annie.css">
-  <script src="/js/jquery.min.js"></script>
+<link rel="stylesheet" href="../../../../css/Annie.css">
+  <script src="../../../../js/jquery.min.js"></script>
   <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-<script src="/js/leancloud.js"></script>
+<script src="../../../../js/leancloud.js"></script>
 </head>
 	<body>
 		<div id="preloader">
@@ -27,22 +27,22 @@
 		</div>
 	</div>
 
-<header class="fixbackground" data-img-mode="normal" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+<header class="fixbackground" data-img-mode="normal" data-normal-src="../../../../img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
 	<div class="mask">
 		<div class="h-header">
 			<div id="logo">
-				<a href="/">
-					<img src="/img/logo.png" alt="Logo">
+				<a href="../../../../">
+					<img src="../../../../img/logo.png" alt="Logo">
 				</a>
 			</div>
 			<div id="navigation-show">
 				<ul>
-		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
-		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
-		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
-		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
-		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
-		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+		<li class="menu-home"><a href="../../../../" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="../../../../archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="../../../../categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="../../../../tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="../../../../about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="../../../../gallery" class="menu-item-gallery">相册</a></li>
 </ul>
 			</div>				
 		</div>
@@ -57,7 +57,7 @@
 	<div id="progress-bar"></div>
 	<div id="progress-percentage"><h1>0.0%</h1></div>
 	<div class="toc-switch"><span class="switch-button">目录</span></div>
-	<p>React19新特性前瞻</p>
+	<p>当前文章&nbsp;:&nbsp;《React19新特性前瞻》</p>
 	<a class="nav-trigger"><span></span></a>
 </div>
 
@@ -68,42 +68,60 @@
 	</div>
 	<div class="nav-body">
 		<ul>
-		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
-		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
-		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
-		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
-		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
-		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+		<li class="menu-home"><a href="../../../../" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="../../../../archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="../../../../categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="../../../../tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="../../../../about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="../../../../gallery" class="menu-item-gallery">相册</a></li>
 </ul>
 	</div>
 	<div class="nav-footer">
 		<ul>
 		<li><a href="http://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
-		<li><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
+		<li><a href="../../../../atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
 </ul>
 	</div>
-</nav>			
+</nav>
 		<main>
-			<div class="layout-cart">
-				<div id="layout-cart">
-					<div class="post" id="post">
-						<div class="post-text">
-							<h2 class="post-title-article">React19新特性前瞻</h2>
-							<p class="post-time">发布日期: 2023年06月10日</p>
-							<div class="post-content-article">
-<h3>前言</h3>
-<p>React19 是 React 团队在 2023 年推出的重大版本更新，带来了多项革命性的新特性。其中最受关注的莫过于 React Compiler、Server Actions 以及一系列新的 Hooks API。本文将从工程实践的角度，深入解析这些新特性背后的设计思想与使用场景，帮助开发者在面试中展现出对 React 生态的深入理解。</p>
+			<div class="layout-post">
+				<div id="layout-post">
+					<div class="article-title">
+						<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+						<a href="/2023/06/10/React19新特性前瞻/" itemprop="url">
+							React19新特性前瞻
+						</a>
+					</div>
 
+					<div class="article-meta">
+						<span>
+							<i class="fa fa-calendar"></i>
+							发布于
+							<a href="/2023/06/10/React19新特性前瞻/" itemprop="url">
+								<time datetime="2023-06-10T00:00:00.000Z" itemprop="datePublished">
+									2023-06-10
+								</time>
+							</a>
+						</span>
+						<span>
+							<i class="fa fa-tags"></i>
+							<a href="../../../../tags/#React19" rel="tag">React19</a>, <a href="../../../../tags/#Compiler" rel="tag">Compiler</a>, <a href="../../../../tags/#Server Actions" rel="tag">Server Actions</a>, <a href="../../../../tags/#Hooks" rel="tag">Hooks</a>
+						</span>
+					</div>
+
+					<div class="article-content" id="article-content">
+						<h3>前言</h3>
+<p>React19 是 React 团队在 2023 年推出的重大版本更新，带来了多项革命性的新特性。其中最受关注的莫过于 React Compiler、Server Actions 以及一系列新的 Hooks API。本文将从工程实践的角度，深入解析这些新特性背后的设计思想与使用场景，帮助开发者在面试中展现出对 React 生态的深入理解。</p>
 <h3>React Compiler：告别手动 useMemo 与 useCallback</h3>
 <p>在 React 的性能优化实践中，useMemo 和 useCallback 几乎是每个开发者都熟悉的工具。然而，过度使用它们反而会增加代码复杂度，而遗漏使用又会导致不必要的重渲染。React Compiler（原 Project Reactivity）正是为了解决这一长期存在的痛点而生。</p>
 <p>React Compiler 是一个编译时的优化工具，它能够在构建阶段分析组件代码，自动推断出哪些值需要被记忆化（memoization），并在生成的代码中插入相应的缓存逻辑。这意味着开发者可以专注于业务逻辑本身，而无需手动编写大量的性能优化代码。</p>
 <pre><code>// 使用 React Compiler 前
 function ProductList({ products, filter }) {
-  const filteredProducts = useMemo(() => {
-    return products.filter(p => p.category === filter);
+  const filteredProducts = useMemo(() =&gt; {
+    return products.filter(p =&gt; p.category === filter);
   }, [products, filter]);
 
-  const renderItem = useCallback((product) => {
+  const renderItem = useCallback((product) =&gt; {
     return &lt;ProductItem key={product.id} product={product} /&gt;;
   }, []);
 
@@ -115,58 +133,56 @@ function ProductList({ products, filter }) {
   const $ = useMemoCache(2);
   let filteredProducts;
   if ($[0] !== products || $[1] !== filter) {
-    filteredProducts = products.filter(p => p.category === filter);
+    filteredProducts = products.filter(p =&gt; p.category === filter);
     $[0] = products;
     $[1] = filter;
     $[2] = filteredProducts;
   } else {
     filteredProducts = $[2];
   }
-  return &lt;div&gt;{filteredProducts.map(p => &lt;ProductItem key={p.id} product={p} /&gt;)}&lt;/div&gt;;
+  return &lt;div&gt;{filteredProducts.map(p =&gt; &lt;ProductItem key={p.id} product={p} /&gt;)}&lt;/div&gt;;
 }
 </code></pre>
-<p>React Compiler 的核心原理在于对 React 的"纯函数"特性进行假设：只要组件的输入（props、state、context）相同，输出就应当一致。基于这一前提，编译器可以安全地对计算结果进行缓存。当然，这也意味着开发者需要遵循 React 的不可变性原则，避免在渲染过程中产生副作用。</p>
-
+<p>React Compiler 的核心原理在于对 React 的&quot;纯函数&quot;特性进行假设：只要组件的输入（props、state、context）相同，输出就应当一致。基于这一前提，编译器可以安全地对计算结果进行缓存。当然，这也意味着开发者需要遵循 React 的不可变性原则，避免在渲染过程中产生副作用。</p>
 <h3>Server Actions：服务端函数的优雅实现</h3>
 <p>Server Actions 是 React 在服务端组件（RSC）基础上的进一步演进。它允许开发者定义一个函数，并直接在客户端组件中调用，而这个函数的实际执行却发生在服务端。这一特性极大地简化了表单提交、数据变更等场景下的前后端交互逻辑。</p>
 <p>传统的表单提交流程通常需要：编写客户端事件处理函数、发起 fetch 请求、在服务端编写 API 路由、处理响应。而 Server Actions 将这一流程简化为直接调用一个服务端函数，框架会自动处理序列化、网络传输和错误处理。</p>
 <pre><code>// app/actions.js
-'use server';
+&#39;use server&#39;;
 
-import { db } from '@/lib/db';
+import { db } from &#39;@/lib/db&#39;;
 
 export async function createTodo(formData) {
-  const title = formData.get('title');
+  const title = formData.get(&#39;title&#39;);
   // 服务端验证
   if (!title || title.length &lt; 3) {
-    return { error: '标题至少需要3个字符' };
+    return { error: &#39;标题至少需要3个字符&#39; };
   }
   // 直接访问服务端资源
   const todo = await db.todo.create({
     data: { title, completed: false }
   });
   // 触发服务端缓存重验证
-  revalidatePath('/todos');
+  revalidatePath(&#39;/todos&#39;);
   return { data: todo };
 }
 
 // app/todos/page.jsx
-import { createTodo } from '@/actions';
+import { createTodo } from &#39;@/actions&#39;;
 
 export default function TodosPage() {
   return (
     &lt;&gt;
       &lt;h1&gt;我的待办事项&lt;/h1&gt;
       &lt;form action={createTodo}&gt;
-        &lt;input name="title" placeholder="输入待办..." /&gt;
-        &lt;button type="submit"&gt;添加&lt;/button&gt;
+        &lt;input name=&quot;title&quot; placeholder=&quot;输入待办...&quot; /&gt;
+        &lt;button type=&quot;submit&quot;&gt;添加&lt;/button&gt;
       &lt;/form&gt;
     &lt;/&gt;
   );
 }
 </code></pre>
-<p>Server Actions 的另一个重要特性是与 useTransition 的结合。通过 useTransition，我们可以在提交表单时保持页面的可交互性，避免传统表单提交带来的整页刷新。这种"渐进式增强"的设计理念，使得应用既能享受服务端渲染带来的 SEO 优势，又能提供接近客户端应用的流畅体验。</p>
-
+<p>Server Actions 的另一个重要特性是与 useTransition 的结合。通过 useTransition，我们可以在提交表单时保持页面的可交互性，避免传统表单提交带来的整页刷新。这种&quot;渐进式增强&quot;的设计理念，使得应用既能享受服务端渲染带来的 SEO 优势，又能提供接近客户端应用的流畅体验。</p>
 <h3>新 Hooks API：更精细的状态管理</h3>
 <p>React19 引入了一系列新的 Hooks，进一步丰富了开发者的工具箱。其中最具代表性的包括 use、useOptimistic 和 useFormStatus。</p>
 <p>use 是一个革命性的 Hook，它允许在渲染过程中读取 Promise 和 Context 的值。与 useEffect 不同，use 可以在条件语句中使用，这使得异步数据的处理变得更加直观。</p>
@@ -175,7 +191,7 @@ export default function TodosPage() {
   // React 会在 Promise 未就绪时挂起渲染，配合 Suspense 使用
   const comments = use(commentsPromise);
 
-  return comments.map(comment => &lt;p key={comment.id}&gt;{comment.text}&lt;/p&gt;);
+  return comments.map(comment =&gt; &lt;p key={comment.id}&gt;{comment.text}&lt;/p&gt;);
 }
 
 function Page({ commentsPromise }) {
@@ -186,17 +202,17 @@ function Page({ commentsPromise }) {
   );
 }
 </code></pre>
-<p>useOptimistic 则专门用于处理乐观更新场景。在用户提交数据时，我们往往希望界面能够立即响应，而不是等待服务端返回结果。useOptimistic 提供了一种优雅的方式来实现这种"先更新，后验证"的交互模式。</p>
-<pre><code>import { useOptimistic } from 'react';
+<p>useOptimistic 则专门用于处理乐观更新场景。在用户提交数据时，我们往往希望界面能够立即响应，而不是等待服务端返回结果。useOptimistic 提供了一种优雅的方式来实现这种&quot;先更新，后验证&quot;的交互模式。</p>
+<pre><code>import { useOptimistic } from &#39;react&#39;;
 
 function TodoList({ todos, addTodo }) {
   const [optimisticTodos, addOptimistic] = useOptimistic(
     todos,
-    (state, newTodo) => [...state, { text: newTodo, pending: true }]
+    (state, newTodo) =&gt; [...state, { text: newTodo, pending: true }]
   );
 
   async function handleSubmit(formData) {
-    const text = formData.get('text');
+    const text = formData.get(&#39;text&#39;);
     // 立即在 UI 上显示
     addOptimistic(text);
     // 实际的服务端请求
@@ -205,29 +221,28 @@ function TodoList({ todos, addTodo }) {
 
   return (
     &lt;&gt;
-      {optimisticTodos.map((todo, i) => (
+      {optimisticTodos.map((todo, i) =&gt; (
         &lt;div key={i} style={{ opacity: todo.pending ? 0.5 : 1 }}&gt;
           {todo.text}
         &lt;/div&gt;
       ))}
       &lt;form action={handleSubmit}&gt;
-        &lt;input name="text" /&gt;
+        &lt;input name=&quot;text&quot; /&gt;
       &lt;/form&gt;
     &lt;/&gt;
   );
 }
 </code></pre>
 <p>useFormStatus 则用于在表单组件内部获取当前表单的提交状态。这对于实现加载指示器、禁用提交按钮等场景非常有用，避免了手动管理状态带来的样板代码。</p>
-
 <h3>文档元数据与资源管理的新方式</h3>
 <p>React19 还引入了对文档元数据（title、meta、link 等标签）的原生支持。开发者可以直接在组件中渲染这些标签，React 会自动将它们提升到文档的 head 中。这一特性取代了 react-helmet 等第三方库的需求，使得 SEO 优化变得更加简单。</p>
 <pre><code>function BlogPost({ post }) {
   return (
     &lt;article&gt;
       &lt;title&gt;{post.title} | 我的博客&lt;/title&gt;
-      &lt;meta name="description" content={post.summary} /&gt;
-      &lt;meta property="og:title" content={post.title} /&gt;
-      &lt;link rel="canonical" href={`https://myblog.com/posts/${post.slug}`} /&gt;
+      &lt;meta name=&quot;description&quot; content={post.summary} /&gt;
+      &lt;meta property=&quot;og:title&quot; content={post.title} /&gt;
+      &lt;link rel=&quot;canonical&quot; href={`https://myblog.com/posts/${post.slug}`} /&gt;
       &lt;h1&gt;{post.title}&lt;/h1&gt;
       &lt;p&gt;{post.content}&lt;/p&gt;
     &lt;/article&gt;
@@ -235,26 +250,189 @@ function TodoList({ todos, addTodo }) {
 }
 </code></pre>
 <p>同样，对于样式表和脚本等资源的加载，React19 也提供了原生的支持。框架会自动处理资源的去重和优先级，确保关键资源能够被及时加载。</p>
-
 <h3>总结</h3>
 <p>React19 的发布标志着 React 生态进入了一个新的阶段。React Compiler 让性能优化变得自动化，Server Actions 模糊了前后端的边界，而新的 Hooks API 则让状态管理变得更加精细。对于准备面试的开发者来说，理解这些新特性背后的设计思想，以及它们如何解决实际工程问题，将是一个重要的加分项。随着 React19 的逐步普及，我们有理由相信，未来的 React 应用将会更加高效、简洁和优雅。</p>
+
+					</div>
+					
+					<div id="current-post-cover" data-scr="../../../../img/cart_cover.jpg"></div>
+
+					<div class="investment-container">
+						<div class="investment-header">
+							<div class="investment-title-1">
+								<div class="on">相关文章</div>
+								<div>评论</div>
+								<div>分享</div>
 							</div>
+							<div class="investment-title-2">	            
+								<span>
+									<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+								</span>
+							</div>	
 						</div>
+						
+						<div class="investment-content">
+							<div class="investment-content-list">
+								<div class="relate-post">
+									<ul>
+										<li>
+											<div class="relate-post-text">
+												<p class="relate-post-content">
+													暂无相关文章
+												</p>
+											</div>
+										</li>											
+									</ul>
+								</div>	
+							</div>
+							<div class="investment-content-list">
+								<div class="layout-comment">
+									<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+								</div>
+							</div>
+							<div class="investment-content-list">
+								<div class="layout-share">
+									<div class="social-share"></div>
+									<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+									<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+								</div>
+							</div>
+						</div>	
 					</div>
 				</div>
 			</div>
+
+			<script src="../../../../plugin/clipboard/clipboard.js"></script>
+			<script>
+				function codePreprocessing() {
+					$("#article-content .highlight").each(function() {
+						$(this).wrap('<div id="post-code"></div>');
+					})
+
+					$("#article-content #post-code").each(function() {
+						$(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+					})
+
+					$("#article-content .copy-nav").each(function() {
+						var temp = $(this).next().attr('class'),
+							language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none";
+						$(this).find('.code-language').text(language);
+						$(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+					});
+				}
+
+				function codeCopy() {
+					$('#article-content #post-code').each(function(i) {
+						var codeCopyId = 'codeCopy-' + i;
+						var codeNode = $(this).find('.code'),
+							copyButton = $(this).find('.copy-btn');
+						codeNode.attr('id', codeCopyId);
+						copyButton.attr('data-clipboard-target-id', codeCopyId);
+					})
+
+					var clipboard = new ClipboardJS('.copy-btn', {
+						target: function(trigger) {
+							return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+						}
+					});
+
+					function showTooltip(elem, msg) {		   
+						elem.setAttribute('aria-label', msg);
+						elem.setAttribute('class', 'copy-btn copy-status');
+						setTimeout(function() {
+							elem.setAttribute('class', 'copy-btn');
+						}, 2000);
+					}
+
+					clipboard.on('success', function(e) {
+						e.clearSelection();
+						showTooltip(e.trigger, 'Copied!');
+					});
+					clipboard.on('error', function(e) {
+						console.error('Action:', e.action);
+						console.error('Trigger:', e.trigger);
+					});
+				}
+
+				if ($('.layout-post').length) {
+					codePreprocessing();
+					codeCopy();
+				} 
+			</script>
+
+			<link rel="stylesheet" href="../../../../plugin/fancybox/jquery.fancybox.css">
+			<script src="../../../../plugin/fancybox/jquery.fancybox.js"></script>
+
+			<script type="text/javascript">
+				var titleID = $('.article-title a'),
+					imageID = $('.article-content img'),
+					videoID = $('.article-content video');
+
+				var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+				imageID.each(function() {
+					var imgPath = $(this).attr('src'),
+						imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+					$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+				});
+
+				videoID.each(function() {
+					var videoPath = $(this).attr('src');
+					$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+				});
+
+				if($('#layout-post').length) {
+					$('[data-fancybox="gallery"]').fancybox({
+						loop: true,
+						buttons: [
+							"zoom",
+							"share",
+							"slideShow",
+							"fullScreen",
+							"thumbs",
+							"close"
+						],
+						protect: false
+					});
+				}
+			</script>
 		</main>
 
-	<script src="/plugin/motto/motto.js"></script>	
-	<script type="text/javascript">$(".motto").html( getMingYanContent() );</script>	
-<script src="/plugin/love/love.js"></script>
-	<div id="totop"><a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a></div>
-<script src="/plugin/vibrant/vibrant.js"></script>
-<script src="/plugin/chinese/chinese.js"></script>
-<script src="/plugin/imgLazyLoader/yall.min.js"></script>
-<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
-<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
-<script src="/js/resizediv.js"></script>
-<script src="/js/main.js"></script>
+		<footer>
+			<div class="social">
+				<ul>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-weibo"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="../../../../atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
+				</ul>
+			</div>		
+			<div class="copyright">
+				<p>
+					&copy;2017 - 2026, content by lx_blogs. All Rights Reserved.
+					<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>	
+					<span id="busuanzi_container_page_pv">
+						本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+					</span>
+				</p>
+				<p>
+					<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+				</p>
+			</div>		
+		</footer>
+
+		<script src="../../../../plugin/motto/motto.js"></script>	
+		<script type="text/javascript">$(".motto").html( getMingYanContent() );</script>	
+		<script src="../../../../plugin/love/love.js"></script>
+		<div id="totop"><a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a></div>
+		<script src="../../../../plugin/vibrant/vibrant.js"></script>
+		<script src="../../../../plugin/chinese/chinese.js"></script>
+		<script src="../../../../plugin/imgLazyLoader/yall.min.js"></script>
+		<script src="../../../../plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+		<script src="../../../../plugin/nicescroll/jquery.nicescroll.js"></script>
+		<script src="../../../../js/resizediv.js"></script>
+		<script src="../../../../js/main.js"></script>
 	</body>	
 </html>

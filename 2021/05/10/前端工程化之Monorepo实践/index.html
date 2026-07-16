@@ -5,17 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
-    前端工程化之Monorepo实践 - lx_blogs
+    前端工程化之Monorepo实践 | lx_blogs
   </title>
   <meta name="author" content="lx_blogs">
-  <meta name="keywords" content="前端开发,JavaScript,React,Vue,Node.js">
-  <meta name="description" content="个人技术博客">
-	<link rel="shortcut icon" href="/img/favicon.ico">
+  <meta name="keywords" content="Monorepo,pnpm,Turborepo,工程化">
+  <meta name="description" content="前端工程化之Monorepo实践">
+	<link rel="shortcut icon" href="../../../../img/favicon.ico">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/Annie.css">
-  <script src="/js/jquery.min.js"></script>
+<link rel="stylesheet" href="../../../../css/Annie.css">
+  <script src="../../../../js/jquery.min.js"></script>
   <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-<script src="/js/leancloud.js"></script>
+<script src="../../../../js/leancloud.js"></script>
 </head>
 	<body>
 		<div id="preloader">
@@ -27,22 +27,22 @@
 		</div>
 	</div>
 
-<header class="fixbackground" data-img-mode="normal" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+<header class="fixbackground" data-img-mode="normal" data-normal-src="../../../../img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
 	<div class="mask">
 		<div class="h-header">
 			<div id="logo">
-				<a href="/">
-					<img src="/img/logo.png" alt="Logo">
+				<a href="../../../../">
+					<img src="../../../../img/logo.png" alt="Logo">
 				</a>
 			</div>
 			<div id="navigation-show">
 				<ul>
-		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
-		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
-		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
-		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
-		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
-		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+		<li class="menu-home"><a href="../../../../" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="../../../../archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="../../../../categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="../../../../tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="../../../../about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="../../../../gallery" class="menu-item-gallery">相册</a></li>
 </ul>
 			</div>				
 		</div>
@@ -57,7 +57,7 @@
 	<div id="progress-bar"></div>
 	<div id="progress-percentage"><h1>0.0%</h1></div>
 	<div class="toc-switch"><span class="switch-button">目录</span></div>
-	<p>前端工程化之Monorepo实践</p>
+	<p>当前文章&nbsp;:&nbsp;《前端工程化之Monorepo实践》</p>
 	<a class="nav-trigger"><span></span></a>
 </div>
 
@@ -68,114 +68,134 @@
 	</div>
 	<div class="nav-body">
 		<ul>
-		<li class="menu-home"><a href="/" class="menu-item-home">主页</a></li>
-		<li class="menu-archive"><a href="/archives" class="menu-item-archive">归档</a></li>
-		<li class="menu-categories"><a href="/categories" class="menu-item-categories">分类</a></li>
-		<li class="menu-tags"><a href="/tags" class="menu-item-tags">标签</a></li>
-		<li class="menu-about"><a href="/about" class="menu-item-about">关于</a></li>
-		<li class="menu-gallery"><a href="/gallery" class="menu-item-gallery">相册</a></li>
+		<li class="menu-home"><a href="../../../../" class="menu-item-home">主页</a></li>
+		<li class="menu-archive"><a href="../../../../archives" class="menu-item-archive">归档</a></li>
+		<li class="menu-categories"><a href="../../../../categories" class="menu-item-categories">分类</a></li>
+		<li class="menu-tags"><a href="../../../../tags" class="menu-item-tags">标签</a></li>
+		<li class="menu-about"><a href="../../../../about" class="menu-item-about">关于</a></li>
+		<li class="menu-gallery"><a href="../../../../gallery" class="menu-item-gallery">相册</a></li>
 </ul>
 	</div>
 	<div class="nav-footer">
 		<ul>
 		<li><a href="http://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
-		<li><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
+		<li><a href="../../../../atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
 </ul>
 	</div>
-</nav>			
+</nav>
 		<main>
-			<div class="layout-cart">
-				<div id="layout-cart">
-					<div class="post" id="post">
-						<div class="post-text">
-							<h2 class="post-title-article">前端工程化之Monorepo实践</h2>
-							<p class="post-time">发布日期: 2021年05月10日</p>
-							<div class="post-content-article">
-<h3>一、什么是Monorepo</h3>
+			<div class="layout-post">
+				<div id="layout-post">
+					<div class="article-title">
+						<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+						<a href="/2021/05/10/前端工程化之Monorepo实践/" itemprop="url">
+							前端工程化之Monorepo实践
+						</a>
+					</div>
+
+					<div class="article-meta">
+						<span>
+							<i class="fa fa-calendar"></i>
+							发布于
+							<a href="/2021/05/10/前端工程化之Monorepo实践/" itemprop="url">
+								<time datetime="2021-05-10T00:00:00.000Z" itemprop="datePublished">
+									2021-05-10
+								</time>
+							</a>
+						</span>
+						<span>
+							<i class="fa fa-tags"></i>
+							<a href="../../../../tags/#Monorepo" rel="tag">Monorepo</a>, <a href="../../../../tags/#pnpm" rel="tag">pnpm</a>, <a href="../../../../tags/#Turborepo" rel="tag">Turborepo</a>, <a href="../../../../tags/#工程化" rel="tag">工程化</a>
+						</span>
+					</div>
+
+					<div class="article-content" id="article-content">
+						<h3>一、什么是Monorepo</h3>
 <p>Monorepo（单一代码仓库）是一种将多个项目的代码集中在一个代码仓库中进行管理的策略。与传统的多仓库（Multirepo）策略不同，Monorepo可以让团队在一个仓库中管理多个相关的项目、库或应用。这种策略在大型互联网公司中已经被广泛采用，如Google、Facebook、Microsoft等。</p>
 <p>在前端领域，Monorepo的优势尤为明显。前端项目通常由多个相关的包组成，如UI组件库、工具函数库、业务模块等。使用Monorepo可以方便地在这些包之间共享代码、统一版本管理、简化依赖管理。</p>
-
 <h3>二、pnpm workspace介绍与配置</h3>
 <p>pnpm是一个高性能的包管理器，它通过硬链接和符号链接的方式，避免了依赖的重复下载和安装。pnpm的workspace功能允许我们在一个仓库中管理多个包，并且可以自动处理包之间的依赖关系。</p>
 <p>首先，我们需要在项目根目录创建pnpm-workspace.yaml文件来定义workspace的结构：</p>
 <pre><code># pnpm-workspace.yaml
 packages:
-  - 'packages/*'
-  - 'apps/*'
-  - 'tools/*'</code></pre>
+  - &#39;packages/*&#39;
+  - &#39;apps/*&#39;
+  - &#39;tools/*&#39;
+</code></pre>
 <p>然后，在各个包的package.json中，可以通过workspace:协议来引用其他包：</p>
 <pre><code>// packages/ui/package.json
 {
-  "name": "@myorg/ui",
-  "version": "1.0.0",
-  "dependencies": {
-    "@myorg/utils": "workspace:*",
-    "react": "^17.0.2"
+  &quot;name&quot;: &quot;@myorg/ui&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;dependencies&quot;: {
+    &quot;@myorg/utils&quot;: &quot;workspace:*&quot;,
+    &quot;react&quot;: &quot;^17.0.2&quot;
   }
-}</code></pre>
+}
+</code></pre>
 <p>使用pnpm workspace的好处在于：首先，它可以自动将workspace:协议替换为实际的版本号，方便发布；其次，pnpm的严格依赖隔离可以避免幽灵依赖问题；最后，pnpm的安装速度比npm和yarn快很多。</p>
-
 <h3>三、Turborepo实现高效构建</h3>
 <p>Turborepo是一个针对JavaScript和TypeScript monorepo的高性能构建系统。它可以通过智能的任务调度和缓存机制，显著提升构建速度。Turborepo的核心特性包括：并行任务执行、远程缓存、增量构建等。</p>
 <p>在项目根目录创建turbo.json配置文件：</p>
 <pre><code>// turbo.json
 {
-  "$schema": "https://turborepo.org/schema.json",
-  "pipeline": {
-    "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"]
+  &quot;$schema&quot;: &quot;https://turborepo.org/schema.json&quot;,
+  &quot;pipeline&quot;: {
+    &quot;build&quot;: {
+      &quot;dependsOn&quot;: [&quot;^build&quot;],
+      &quot;outputs&quot;: [&quot;dist/**&quot;, &quot;.next/**&quot;]
     },
-    "test": {
-      "dependsOn": ["build"],
-      "outputs": []
+    &quot;test&quot;: {
+      &quot;dependsOn&quot;: [&quot;build&quot;],
+      &quot;outputs&quot;: []
     },
-    "lint": {
-      "outputs": []
+    &quot;lint&quot;: {
+      &quot;outputs&quot;: []
     },
-    "dev": {
-      "cache": false
+    &quot;dev&quot;: {
+      &quot;cache&quot;: false
     }
   }
-}</code></pre>
+}
+</code></pre>
 <p>在上面的配置中，build任务依赖于其依赖包的build任务（通过^build表示），并且会缓存dist和.next目录。这意味着如果某个包的代码没有变化，Turborepo会直接使用缓存的结果，而不需要重新构建。</p>
-
 <h3>四、依赖管理策略</h3>
 <p>在Monorepo中，依赖管理是一个需要重点关注的问题。我们需要确保各个包使用相同版本的公共依赖，避免版本冲突和重复安装。pnpm提供了几种机制来帮助我们管理依赖：</p>
 <p>首先，我们可以在根目录的package.json中定义公共依赖，这些依赖会被所有包共享：</p>
 <pre><code>// package.json (root)
 {
-  "name": "my-monorepo",
-  "private": true,
-  "devDependencies": {
-    "typescript": "^4.5.0",
-    "eslint": "^8.0.0",
-    "prettier": "^2.5.0",
-    "@types/node": "^16.0.0"
+  &quot;name&quot;: &quot;my-monorepo&quot;,
+  &quot;private&quot;: true,
+  &quot;devDependencies&quot;: {
+    &quot;typescript&quot;: &quot;^4.5.0&quot;,
+    &quot;eslint&quot;: &quot;^8.0.0&quot;,
+    &quot;prettier&quot;: &quot;^2.5.0&quot;,
+    &quot;@types/node&quot;: &quot;^16.0.0&quot;
   },
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": ["react"]
+  &quot;pnpm&quot;: {
+    &quot;peerDependencyRules&quot;: {
+      &quot;ignoreMissing&quot;: [&quot;react&quot;]
     }
   }
-}</code></pre>
+}
+</code></pre>
 <p>其次，我们可以使用pnpm的overrides功能来强制所有包使用特定版本的依赖：</p>
 <pre><code>// package.json (root)
 {
-  "pnpm": {
-    "overrides": {
-      "lodash": "^4.17.21",
-      "axios": "^0.24.0"
+  &quot;pnpm&quot;: {
+    &quot;overrides&quot;: {
+      &quot;lodash&quot;: &quot;^4.17.21&quot;,
+      &quot;axios&quot;: &quot;^0.24.0&quot;
     }
   }
-}</code></pre>
+}
+</code></pre>
 <p>这种方式可以确保整个monorepo使用统一的依赖版本，避免安全漏洞和兼容性问题。</p>
-
 <h3>五、代码共享与版本发布</h3>
 <p>在Monorepo中，代码共享变得非常简单。我们可以将通用的工具函数、类型定义、组件等提取到独立的包中，其他包可以直接引用。例如：</p>
 <pre><code>// packages/utils/src/index.ts
 export function formatDate(date: Date): string {
-  return date.toISOString().split('T')[0];
+  return date.toISOString().split(&#39;T&#39;)[0];
 }
 
 export function debounce&lt;T extends (...args: any[]) =&gt; any&gt;(
@@ -190,7 +210,8 @@ export function debounce&lt;T extends (...args: any[]) =&gt; any&gt;(
 }
 
 // packages/app/src/index.ts
-import { formatDate, debounce } from '@myorg/utils';</code></pre>
+import { formatDate, debounce } from &#39;@myorg/utils&#39;;
+</code></pre>
 <p>对于版本发布，我们可以使用Changesets来管理版本变更。Changesets是一个专门用于monorepo版本管理的工具，它可以自动计算版本号、生成CHANGELOG、处理包之间的依赖关系。</p>
 <pre><code># 安装changesets
 pnpm add -Dw @changesets/cli
@@ -203,38 +224,201 @@ pnpm changeset
 
 # 版本发布
 pnpm changeset version
-pnpm changeset publish</code></pre>
+pnpm changeset publish
+</code></pre>
 <p>Changesets会根据每个包的变更自动计算版本号，并更新包之间的依赖关系。这种方式比手动管理版本号更加可靠和高效。</p>
-
 <h3>六、CI/CD优化</h3>
 <p>在Monorepo中，CI/CD的优化非常重要。由于仓库中包含多个包，每次提交都构建所有包会非常耗时。我们可以使用Turborepo的过滤功能来只构建受影响的包：</p>
 <pre><code># 只构建受@myorg/ui影响的包
 pnpm turbo build --filter=@myorg/ui...
 
 # 只构建最近一次提交变更的包
-pnpm turbo build --filter=...[HEAD^1]</code></pre>
+pnpm turbo build --filter=...[HEAD^1]
+</code></pre>
 <p>此外，我们还可以结合GitHub Actions等CI工具，实现自动化的构建、测试和发布流程。通过合理的缓存策略和增量构建，可以将CI时间从几十分钟缩短到几分钟。</p>
-
 <h3>七、总结</h3>
 <p>Monorepo是一种强大的代码管理策略，它可以提升代码复用性、简化依赖管理、统一开发规范。通过pnpm workspace、Turborepo、Changesets等工具的组合使用，我们可以构建一个高效的Monorepo工程化体系。当然，Monorepo也带来了一些挑战，如仓库体积增大、权限管理复杂等，需要在实践中不断优化和完善。</p>
+
+					</div>
+					
+					<div id="current-post-cover" data-scr="../../../../img/cart_cover.jpg"></div>
+
+					<div class="investment-container">
+						<div class="investment-header">
+							<div class="investment-title-1">
+								<div class="on">相关文章</div>
+								<div>评论</div>
+								<div>分享</div>
 							</div>
+							<div class="investment-title-2">	            
+								<span>
+									<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+								</span>
+							</div>	
 						</div>
+						
+						<div class="investment-content">
+							<div class="investment-content-list">
+								<div class="relate-post">
+									<ul>
+										<li>
+											<div class="relate-post-text">
+												<p class="relate-post-content">
+													暂无相关文章
+												</p>
+											</div>
+										</li>											
+									</ul>
+								</div>	
+							</div>
+							<div class="investment-content-list">
+								<div class="layout-comment">
+									<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+								</div>
+							</div>
+							<div class="investment-content-list">
+								<div class="layout-share">
+									<div class="social-share"></div>
+									<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+									<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+								</div>
+							</div>
+						</div>	
 					</div>
 				</div>
 			</div>
+
+			<script src="../../../../plugin/clipboard/clipboard.js"></script>
+			<script>
+				function codePreprocessing() {
+					$("#article-content .highlight").each(function() {
+						$(this).wrap('<div id="post-code"></div>');
+					})
+
+					$("#article-content #post-code").each(function() {
+						$(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+					})
+
+					$("#article-content .copy-nav").each(function() {
+						var temp = $(this).next().attr('class'),
+							language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none";
+						$(this).find('.code-language').text(language);
+						$(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+					});
+				}
+
+				function codeCopy() {
+					$('#article-content #post-code').each(function(i) {
+						var codeCopyId = 'codeCopy-' + i;
+						var codeNode = $(this).find('.code'),
+							copyButton = $(this).find('.copy-btn');
+						codeNode.attr('id', codeCopyId);
+						copyButton.attr('data-clipboard-target-id', codeCopyId);
+					})
+
+					var clipboard = new ClipboardJS('.copy-btn', {
+						target: function(trigger) {
+							return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+						}
+					});
+
+					function showTooltip(elem, msg) {		   
+						elem.setAttribute('aria-label', msg);
+						elem.setAttribute('class', 'copy-btn copy-status');
+						setTimeout(function() {
+							elem.setAttribute('class', 'copy-btn');
+						}, 2000);
+					}
+
+					clipboard.on('success', function(e) {
+						e.clearSelection();
+						showTooltip(e.trigger, 'Copied!');
+					});
+					clipboard.on('error', function(e) {
+						console.error('Action:', e.action);
+						console.error('Trigger:', e.trigger);
+					});
+				}
+
+				if ($('.layout-post').length) {
+					codePreprocessing();
+					codeCopy();
+				} 
+			</script>
+
+			<link rel="stylesheet" href="../../../../plugin/fancybox/jquery.fancybox.css">
+			<script src="../../../../plugin/fancybox/jquery.fancybox.js"></script>
+
+			<script type="text/javascript">
+				var titleID = $('.article-title a'),
+					imageID = $('.article-content img'),
+					videoID = $('.article-content video');
+
+				var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+				imageID.each(function() {
+					var imgPath = $(this).attr('src'),
+						imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+					$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+				});
+
+				videoID.each(function() {
+					var videoPath = $(this).attr('src');
+					$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+				});
+
+				if($('#layout-post').length) {
+					$('[data-fancybox="gallery"]').fancybox({
+						loop: true,
+						buttons: [
+							"zoom",
+							"share",
+							"slideShow",
+							"fullScreen",
+							"thumbs",
+							"close"
+						],
+						protect: false
+					});
+				}
+			</script>
 		</main>
 
-			
-	<script src="/plugin/motto/motto.js"></script>	
-	<script type="text/javascript">$(".motto").html( getMingYanContent() );</script>	
-<script src="/plugin/love/love.js"></script>
-	<div id="totop"><a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a></div>
-<script src="/plugin/vibrant/vibrant.js"></script>
-<script src="/plugin/chinese/chinese.js"></script>
-<script src="/plugin/imgLazyLoader/yall.min.js"></script>
-<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
-<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
-<script src="/js/resizediv.js"></script>
-<script src="/js/main.js"></script>
+		<footer>
+			<div class="social">
+				<ul>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-weibo"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+					<li><a href="http://github.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="../../../../atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>			
+				</ul>
+			</div>		
+			<div class="copyright">
+				<p>
+					&copy;2017 - 2026, content by lx_blogs. All Rights Reserved.
+					<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>	
+					<span id="busuanzi_container_page_pv">
+						本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+					</span>
+				</p>
+				<p>
+					<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+				</p>
+			</div>		
+		</footer>
+
+		<script src="../../../../plugin/motto/motto.js"></script>	
+		<script type="text/javascript">$(".motto").html( getMingYanContent() );</script>	
+		<script src="../../../../plugin/love/love.js"></script>
+		<div id="totop"><a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a></div>
+		<script src="../../../../plugin/vibrant/vibrant.js"></script>
+		<script src="../../../../plugin/chinese/chinese.js"></script>
+		<script src="../../../../plugin/imgLazyLoader/yall.min.js"></script>
+		<script src="../../../../plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+		<script src="../../../../plugin/nicescroll/jquery.nicescroll.js"></script>
+		<script src="../../../../js/resizediv.js"></script>
+		<script src="../../../../js/main.js"></script>
 	</body>	
 </html>
