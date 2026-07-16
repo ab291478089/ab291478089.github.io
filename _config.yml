@@ -1,0 +1,7 @@
+exclude:
+  - articles/
+  - node_modules/
+  - fix-2019-articles.js
+  - fix-archives.js
+  - fix-pages.js
+  - md2html.js
